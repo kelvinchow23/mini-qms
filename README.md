@@ -73,6 +73,13 @@ decision on every item.
 - **No SOP before its process.** Each procedure is about one page and is written just
   before it's first needed. A minimum viable 9001 QMS is about 6–8 short SOPs plus records.
 
+## Why git?
+
+Git has known problems as a QMS, especially for non-technical people. miniQMS uses git
+as the **database**, not the interface: people work through agents and readable
+generated documents. See [docs/RATIONALE.md](docs/RATIONALE.md), which answers the main
+critiques point by point.
+
 ## Structure
 
 This repo is the **org-level QMS**: SOPs, templates, reusable CI checks and the base
