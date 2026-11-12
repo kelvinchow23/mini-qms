@@ -1,3 +1,3 @@
-# mini-qms-ai
+# miniQMS
 
-A lightweight, AI-assisted Quality Management System (QMS).
+A lightweight, agent-assisted quality management system.
