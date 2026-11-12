@@ -148,7 +148,8 @@ team, first without control, then with it.
 
 ## Status
 
-QMS-rev A skeleton: not started. See [docs/HANDOFF.md](docs/HANDOFF.md) for the original brief.
+Building QMS-rev A. See [docs/ROADMAP.md](docs/ROADMAP.md) for the plan and
+[docs/HANDOFF.md](docs/HANDOFF.md) for the original brief.
 
 Until QMS-rev A is tagged, miniQMS is developed with lightweight branches and PRs (no ECRs).
 After the tag, changes to miniQMS itself follow miniQMS's own change control.
