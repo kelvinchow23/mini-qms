@@ -92,15 +92,59 @@ and each product records which QMS revision it was built under.
 ## First showcase: the photoreactor
 
 The first product run through miniQMS is the photoreactor
-([`kelvinchow23/photo-reactor`](https://github.com/kelvinchow23/photo-reactor)):
-planning → requirements → design → purchasing → build → test → sign-off.
-The PCB and the MCAD were both designed with agents.
+([`kelvinchow23/photo-reactor`](https://github.com/kelvinchow23/photo-reactor)).
 
-It's done when:
-- SN001 is released.
-- `trace SN001` resolves every part to its vendor, order, date, cost and inspection result.
+### How it started
+
+The photoreactor wasn't planned as a QMS showcase. It started as a design-sharing repo,
+and the first iteration was built almost entirely by agents:
+
+- **The PCB and the housing were designed by agents.** No human worked in KiCad or did
+  the CAD modelling directly. The human coached the agents through chat: stating intent,
+  questioning choices, asking for changes and checking the results.
+- **That coaching worked like a live design review:** intent, risks, changes and checks,
+  discussed in conversation. That's where miniQMS's "design review by conversation" comes from.
+- **Then the agents picked the parts.** At that point, the obvious question was: if agents
+  can design it and source it, why not run the *whole* process with agents, under real
+  control? miniQMS is the answer to that question.
+
+### Iteration 1: captured after the fact, not backdated
+
+Iteration 1 (build B001) was designed and its parts were bought **before miniQMS
+existed**. Real projects often look like this: the prototype comes first and the quality
+system arrives later. miniQMS handles it openly instead of rewriting history:
+
+- **The pre-QMS state is frozen as it was.** The photoreactor repo is tagged
+  `baseline-pre-QMS` without rewriting any git history.
+- **Every record shows the date it was actually created.** Purchases are captured from the
+  real order confirmations and invoices, with a deviation note explaining they're
+  retroactive. Supplier approval is recorded as retroactive too. Incoming inspection is
+  done now, on the parts as they are.
+- **Missing reviews aren't presented as if they happened.** The design chats that exist
+  are archived as evidence. A formal design review of the iteration 1 baseline is held
+  under SOP-003 and dated when it actually happens.
+- **ISO 9001 doesn't require history from before the QMS existed.** What it requires is
+  that work is controlled from adoption onward, and that a design is verified before
+  release. The retroactive capture is recorded as a deviation, so an auditor can see
+  exactly where control began.
+
+### Iteration 2: the first fully controlled run
+
+The second iteration is the first one run under miniQMS from the start. Its design-review
+chats are minuted and signed off as they happen, its parts are bought under the purchasing
+process, and every unit is traced from order to sign-off.
+
+Comparing the two iterations is part of the showcase: the same product and the same small
+team, first without control, then with it.
+
+### It's done when
+
+- An iteration 2 unit is released, and `trace <serial>` resolves every part to its vendor,
+  order, date, cost and inspection result.
+- Iteration 1 is fully captured, with its deviation notes, and no backdated records.
 - An outside person runs a mock audit with no major findings.
-- There's an honest write-up of what the agents did well and badly.
+- There's an honest write-up of what the agents did well and badly, including where they
+  were wrong.
 
 ## Status
 
