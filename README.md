@@ -105,3 +105,12 @@ It's done when:
 ## Status
 
 QMS-rev A skeleton: not started. See [docs/HANDOFF.md](docs/HANDOFF.md) for the original brief.
+
+Until QMS-rev A is tagged, miniQMS is developed with lightweight branches and PRs (no ECRs).
+After the tag, changes to miniQMS itself follow miniQMS's own change control.
+
+## Open questions
+
+- **Interface for non-technical engineering teams.** What app or GUI lets a typical
+  engineering team use this without seeing git? Options to explore: a simple web front
+  end over the repo, GitHub Projects, or Cowork or another agent as the main interface.
