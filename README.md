@@ -28,7 +28,7 @@ own products on it.
 
 ### Hardware treated like software
 - **Git is the PLM.** An issue is a change request (ECR), a PR is the change order (ECO),
-  and a human merge is the approval. Releases are tags.
+  and a human approves it. Releases are tags.
 - **Part lifecycle lives in git.** `parts.csv` is the part master. Each part has a part
   number, revision and lifecycle state (draft → released → obsolete). A state or revision
   changes only through a reviewed PR.
@@ -49,22 +49,32 @@ own products on it.
 - CAD tools are connected through small adapters, so switching from Fusion to Onshape
   doesn't change the process.
 
-### Design review by conversation
-Design work, including PCB layout and MCAD, is largely done by agents, steered by a
-human through chat. That chat is the design review, so it needs to produce proper records:
+### Coworkable, not fully agentic
+Humans and agents work on the **same** design. Either can change the CAD or the PCB,
+every change records who made it, and agents never silently overwrite human work. The
+human stays in the loop through short check-ins, not a constant stream of questions.
 
-1. The review happens as a conversation with the agent: design intent, changes, checks
-   and the **risks discussed**.
-2. The agent produces **review minutes** from it: scope, design revision reviewed, items
-   checked, risks raised and how each was handled, decisions, and open actions. The raw
-   transcript is archived next to the minutes as evidence.
-3. A human checks the minutes against the transcript and **signs them off** by approving
-   the PR.
-4. **Gate:** the next phase can't start until the review minutes are signed off and every
-   action is closed or explicitly carried forward.
+### Design review like a real review meeting
+Much of the design work, including PCB layout and MCAD, is done by agents steered by a
+human through chat. Approval fatigue is a real risk, so miniQMS separates three kinds of
+interaction, and only one of them is an approval:
 
-Agents never sign off. An AI finding is input to the review, and a human records a
-decision on every item.
+- **Check-ins** keep the human up to date: what changed, who changed it, what's next.
+  No decision is needed.
+- **Working decisions** steer the work ("use the 0805 part"). They're captured, but
+  they aren't approvals.
+- **Formal reviews** happen at phase gates and before a change is released. The agent
+  prepares a review package: changes grouped as a person would present them, links to
+  exactly where to look, before/after renders and annotated screenshots of physical
+  changes, affected requirements and risks, and findings from an independent AI reviewer.
+  It walks the human through the package. The human accepts or rejects each item, then
+  answers **yes or no** to a question that names exactly what's being approved.
+
+The minutes are generated from the review, and the raw transcript is archived next to
+them. CI checks that each approval quoted in the minutes really appears in the
+transcript. Agents never sign off.
+
+See [docs/REVIEW-MODEL.md](docs/REVIEW-MODEL.md) for the full model.
 
 ### Only as much process as needed
 - **Risk-based traceability.** Critical parts (Class A) are traced to a specific order
@@ -92,19 +102,64 @@ and each product records which QMS revision it was built under.
 ## First showcase: the photoreactor
 
 The first product run through miniQMS is the photoreactor
-([`kelvinchow23/photo-reactor`](https://github.com/kelvinchow23/photo-reactor)):
-planning → requirements → design → purchasing → build → test → sign-off.
-The PCB and the MCAD were both designed with agents.
+([`kelvinchow23/photo-reactor`](https://github.com/kelvinchow23/photo-reactor)).
 
-It's done when:
-- SN001 is released.
-- `trace SN001` resolves every part to its vendor, order, date, cost and inspection result.
+### How it started
+
+The photoreactor wasn't planned as a QMS showcase. It started as a design-sharing repo,
+and the first iteration was built almost entirely by agents:
+
+- **The PCB and the housing were designed by agents.** No human worked in KiCad or did
+  the CAD modelling directly. The human coached the agents through chat: stating intent,
+  questioning choices, asking for changes and checking the results.
+- **That coaching worked like a live design review:** intent, risks, changes and checks,
+  discussed in conversation. That's where miniQMS's "design review by conversation" comes from.
+- **Then the agents picked the parts.** At that point, the obvious question was: if agents
+  can design it and source it, why not run the *whole* process with agents, under real
+  control? miniQMS is the answer to that question.
+
+### Iteration 1: captured after the fact, not backdated
+
+Iteration 1 (build B001) was designed and its parts were bought **before miniQMS
+existed**. Real projects often look like this: the prototype comes first and the quality
+system arrives later. miniQMS handles it openly instead of rewriting history:
+
+- **The pre-QMS state is frozen as it was.** The photoreactor repo is tagged
+  `baseline-pre-QMS` without rewriting any git history.
+- **Every record shows the date it was actually created.** Purchases are captured from the
+  real order confirmations and invoices, with a deviation note explaining they're
+  retroactive. Supplier approval is recorded as retroactive too. Incoming inspection is
+  done now, on the parts as they are.
+- **Missing reviews aren't presented as if they happened.** The design chats that exist
+  are archived as evidence. A formal design review of the iteration 1 baseline is held
+  under SOP-003 and dated when it actually happens.
+- **ISO 9001 doesn't require history from before the QMS existed.** What it requires is
+  that work is controlled from adoption onward, and that a design is verified before
+  release. The retroactive capture is recorded as a deviation, so an auditor can see
+  exactly where control began.
+
+### Iteration 2: the first fully controlled run
+
+The second iteration is the first one run under miniQMS from the start. Its design-review
+chats are minuted and signed off as they happen, its parts are bought under the purchasing
+process, and every unit is traced from order to sign-off.
+
+Comparing the two iterations is part of the showcase: the same product and the same small
+team, first without control, then with it.
+
+### It's done when
+
+- An iteration 2 unit is released, and `trace <serial>` resolves every part to its vendor,
+  order, date, cost and inspection result.
+- Iteration 1 is fully captured, with its deviation notes, and no backdated records.
 - An outside person runs a mock audit with no major findings.
-- There's an honest write-up of what the agents did well and badly.
+- There's an honest write-up of what the agents did well and badly, including where they
+  were wrong.
 
 ## Status
 
-QMS-rev A skeleton: not started. See [docs/HANDOFF.md](docs/HANDOFF.md) for the original brief.
+Building QMS-rev A. See [docs/ROADMAP.md](docs/ROADMAP.md) for the plan and
+[docs/HANDOFF.md](docs/HANDOFF.md) for the original brief.
 
 Until QMS-rev A is tagged, miniQMS is developed with lightweight branches and PRs (no ECRs).
 After the tag, changes to miniQMS itself follow miniQMS's own change control.
