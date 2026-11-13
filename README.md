@@ -28,7 +28,7 @@ own products on it.
 
 ### Hardware treated like software
 - **Git is the PLM.** An issue is a change request (ECR), a PR is the change order (ECO),
-  and a human merge is the approval. Releases are tags.
+  and a human approves it. Releases are tags.
 - **Part lifecycle lives in git.** `parts.csv` is the part master. Each part has a part
   number, revision and lifecycle state (draft → released → obsolete). A state or revision
   changes only through a reviewed PR.
@@ -49,22 +49,32 @@ own products on it.
 - CAD tools are connected through small adapters, so switching from Fusion to Onshape
   doesn't change the process.
 
-### Design review by conversation
-Design work, including PCB layout and MCAD, is largely done by agents, steered by a
-human through chat. That chat is the design review, so it needs to produce proper records:
+### Coworkable, not fully agentic
+Humans and agents work on the **same** design. Either can change the CAD or the PCB,
+every change records who made it, and agents never silently overwrite human work. The
+human stays in the loop through short check-ins, not a constant stream of questions.
 
-1. The review happens as a conversation with the agent: design intent, changes, checks
-   and the **risks discussed**.
-2. The agent produces **review minutes** from it: scope, design revision reviewed, items
-   checked, risks raised and how each was handled, decisions, and open actions. The raw
-   transcript is archived next to the minutes as evidence.
-3. A human checks the minutes against the transcript and **signs them off** by approving
-   the PR.
-4. **Gate:** the next phase can't start until the review minutes are signed off and every
-   action is closed or explicitly carried forward.
+### Design review like a real review meeting
+Much of the design work, including PCB layout and MCAD, is done by agents steered by a
+human through chat. Approval fatigue is a real risk, so miniQMS separates three kinds of
+interaction, and only one of them is an approval:
 
-Agents never sign off. An AI finding is input to the review, and a human records a
-decision on every item.
+- **Check-ins** keep the human up to date: what changed, who changed it, what's next.
+  No decision is needed.
+- **Working decisions** steer the work ("use the 0805 part"). They're captured, but
+  they aren't approvals.
+- **Formal reviews** happen at phase gates and before a change is released. The agent
+  prepares a review package: changes grouped as a person would present them, links to
+  exactly where to look, before/after renders and annotated screenshots of physical
+  changes, affected requirements and risks, and findings from an independent AI reviewer.
+  It walks the human through the package. The human accepts or rejects each item, then
+  answers **yes or no** to a question that names exactly what's being approved.
+
+The minutes are generated from the review, and the raw transcript is archived next to
+them. CI checks that each approval quoted in the minutes really appears in the
+transcript. Agents never sign off.
+
+See [docs/REVIEW-MODEL.md](docs/REVIEW-MODEL.md) for the full model.
 
 ### Only as much process as needed
 - **Risk-based traceability.** Critical parts (Class A) are traced to a specific order

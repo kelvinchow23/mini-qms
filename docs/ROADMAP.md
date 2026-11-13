@@ -13,12 +13,12 @@ Status: ✅ merged · 🔄 open · ⬜ not started
 |---|---|---|
 | 1 | README thesis, rationale, original brief | ✅ |
 | 2 | MIT license, `AGENTS.md` hard rules, `CLAUDE.md` pointer, line endings | 🔄 |
-| 3 | Showcase origin story, retroactive capture of iteration 1, this roadmap | 🔄 |
-| 4 | **SOP-001 Document and change control**, plus ECR issue template and PR/ECO template. Defines what counts as an approval. | ⬜ |
+| 3 | Showcase origin story, retroactive capture of iteration 1, this roadmap, review and coworking model | 🔄 |
+| 4 | **SOP-001 Document and change control**, plus ECR issue template and PR/ECO template. Defines approval by outcome: who, what (ID and revision), decision, when, evidence. Also defines roles (`roles.yaml`), the one-person safeguards, and whether agents may merge after a verified approval. | ⬜ |
 | 5 | **SOP-002 Part numbering, revisions and part classes**, plus `parts.csv` / `bom.csv` schema and lifecycle states | ⬜ |
-| 6 | **SOP-003 Design review**, plus review-minutes template (risks, decisions, actions, human disposition per item) and transcript archiving | ⬜ |
+| 6 | **SOP-003 Design review**, following [REVIEW-MODEL.md](REVIEW-MODEL.md): check-ins vs. working decisions vs. formal reviews; review-package and minutes templates (change groups, where to look, visuals, independent AI findings, disposition per item, explicit yes/no); transcript archiving | ⬜ |
 | 7 | **SOP-004 Design and development planning**, plus `plan.yaml` (phase gates 0–5 with target date, actual date and approver; date changes go through a PR with a reason) | ⬜ |
-| 8 | **CI checks:** BOM/parts lint, commit-message lint, `plan.yaml` validation | ⬜ |
+| 8 | **CI checks:** BOM/parts lint, commit-message lint, `plan.yaml` / `gates.yaml` validation, approval-quote check (each approval cited in the minutes exists in the archived transcript) | ⬜ |
 | 9 | **Copier product template:** product repo structure wired to the CI checks and `AGENTS.md`, recording which QMS rev it's built under | ⬜ |
 | 10 | **Dry run and release:** generate a throwaway product, fix what breaks, write a CHANGELOG, tag `QMS-rev-A` | ⬜ |
 
