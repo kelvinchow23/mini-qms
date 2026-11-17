@@ -115,6 +115,12 @@ the answer must respond to a question that names exactly what's being approved.
 
 Nobody fills in a form. The records come from how the review was actually run.
 
+### 5. A human merges
+
+After a yes, the human merges the change. **Agents never merge**, even after a verified
+approval. Formal reviews are rare, deliberate events, so one click costs little. It keeps
+the final step an authenticated human action, separate from anything an agent wrote.
+
 ## Where this lives
 
 | What | Where |
