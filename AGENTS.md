@@ -6,7 +6,7 @@ vendor-specific files.
 
 ## What this repo is
 
-miniQMS is a lean, ISO 9001-style QMS for small hardware teams. This repo is the
+minimalQMS is a lean, ISO 9001-style QMS for small hardware teams. This repo is the
 **org-level QMS**: SOPs, templates, reusable CI checks and the Copier template that
 generates product repos. Read [README.md](README.md) for the thesis and
 [docs/RATIONALE.md](docs/RATIONALE.md) for the design reasoning.
@@ -24,7 +24,7 @@ product-template/       Copier template for product repos (planned)
 
 ## Current mode: bootstrap (before QMS-rev A)
 
-miniQMS hasn't been released yet, so it doesn't control its own changes yet.
+minimalQMS hasn't been released yet, so it doesn't control its own changes yet.
 - Work on a branch, one chunk of work per PR. No ECR issues needed.
 - Branch names: `docs/...`, `sop/...`, `ci/...`, `template/...`, `chore/...`.
 - Commit format: `[DOC-ID] summary` (for example `[SOP-001] add approval rules`), or
@@ -33,7 +33,7 @@ miniQMS hasn't been released yet, so it doesn't control its own changes yet.
 After `QMS-rev-A` is tagged, this repo follows its own SOP-001: every change needs an
 ECR issue, and every commit references it (`(ECR #n)`).
 
-## Hard rules (apply in every miniQMS repo)
+## Hard rules (apply in every minimalQMS repo)
 
 1. **Never commit to `main`.** Always use a branch and a PR.
 2. **Never approve, merge or sign off anything.** Never mark a record approved,
