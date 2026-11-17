@@ -109,6 +109,10 @@ QMS-rev A skeleton: not started. See [docs/HANDOFF.md](docs/HANDOFF.md) for the 
 Until QMS-rev A is tagged, miniQMS is developed with lightweight branches and PRs (no ECRs).
 After the tag, changes to miniQMS itself follow miniQMS's own change control.
 
+## License
+
+[MIT](LICENSE). Use it, fork it, build products on it.
+
 ## Open questions
 
 - **Interface for non-technical engineering teams.** What app or GUI lets a typical
