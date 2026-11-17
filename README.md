@@ -1,4 +1,4 @@
-# miniQMS
+# minimalQMS
 
 A lean, ISO 9001-style quality management system for hardware that a very small
 team, even one person, can actually run. AI agents do the design legwork and the
@@ -11,7 +11,7 @@ tape: document control, approval chases, purchasing paperwork, traceability reco
 and audit preparation. In a traditional organisation, much of the headcount around a
 product exists only to keep that machinery running.
 
-miniQMS tests a different claim:
+minimalQMS tests a different claim:
 
 > A small team can develop hardware with **controlled, traceable, auditable**
 > engineering, without the admin overhead, by treating hardware a bit more like
@@ -56,7 +56,7 @@ human stays in the loop through short check-ins, not a constant stream of questi
 
 ### Design review like a real review meeting
 Much of the design work, including PCB layout and MCAD, is done by agents steered by a
-human through chat. Approval fatigue is a real risk, so miniQMS separates three kinds of
+human through chat. Approval fatigue is a real risk, so minimalQMS separates three kinds of
 interaction, and only one of them is an approval:
 
 - **Check-ins** keep the human up to date: what changed, who changed it, what's next.
@@ -85,7 +85,7 @@ See [docs/REVIEW-MODEL.md](docs/REVIEW-MODEL.md) for the full model.
 
 ## Why git?
 
-Git has known problems as a QMS, especially for non-technical people. miniQMS uses git
+Git has known problems as a QMS, especially for non-technical people. minimalQMS uses git
 as the **database**, not the interface: people work through agents and readable
 generated documents. See [docs/RATIONALE.md](docs/RATIONALE.md), which answers the main
 critiques point by point.
@@ -101,7 +101,7 @@ and each product records which QMS revision it was built under.
 
 ## First showcase: the photoreactor
 
-The first product run through miniQMS is the photoreactor
+The first product run through minimalQMS is the photoreactor
 ([`kelvinchow23/photo-reactor`](https://github.com/kelvinchow23/photo-reactor)).
 
 ### How it started
@@ -113,16 +113,16 @@ and the first iteration was built almost entirely by agents:
   the CAD modelling directly. The human coached the agents through chat: stating intent,
   questioning choices, asking for changes and checking the results.
 - **That coaching worked like a live design review:** intent, risks, changes and checks,
-  discussed in conversation. That's where miniQMS's "design review by conversation" comes from.
+  discussed in conversation. That's where minimalQMS's "design review by conversation" comes from.
 - **Then the agents picked the parts.** At that point, the obvious question was: if agents
   can design it and source it, why not run the *whole* process with agents, under real
-  control? miniQMS is the answer to that question.
+  control? minimalQMS is the answer to that question.
 
 ### Iteration 1: captured after the fact, not backdated
 
-Iteration 1 (build B001) was designed and its parts were bought **before miniQMS
+Iteration 1 (build B001) was designed and its parts were bought **before minimalQMS
 existed**. Real projects often look like this: the prototype comes first and the quality
-system arrives later. miniQMS handles it openly instead of rewriting history:
+system arrives later. minimalQMS handles it openly instead of rewriting history:
 
 - **The pre-QMS state is frozen as it was.** The photoreactor repo is tagged
   `baseline-pre-QMS` without rewriting any git history.
@@ -140,7 +140,7 @@ system arrives later. miniQMS handles it openly instead of rewriting history:
 
 ### Iteration 2: the first fully controlled run
 
-The second iteration is the first one run under miniQMS from the start. Its design-review
+The second iteration is the first one run under minimalQMS from the start. Its design-review
 chats are minuted and signed off as they happen, its parts are bought under the purchasing
 process, and every unit is traced from order to sign-off.
 
@@ -161,8 +161,8 @@ team, first without control, then with it.
 Building QMS-rev A. See [docs/ROADMAP.md](docs/ROADMAP.md) for the plan and
 [docs/HANDOFF.md](docs/HANDOFF.md) for the original brief.
 
-Until QMS-rev A is tagged, miniQMS is developed with lightweight branches and PRs (no ECRs).
-After the tag, changes to miniQMS itself follow miniQMS's own change control.
+Until QMS-rev A is tagged, minimalQMS is developed with lightweight branches and PRs (no ECRs).
+After the tag, changes to minimalQMS itself follow minimalQMS's own change control.
 
 ## License
 

@@ -1,9 +1,9 @@
 # Roadmap to QMS-rev A
 
-QMS-rev A is the first release of miniQMS: enough to run photoreactor iteration 2 under
+QMS-rev A is the first release of minimalQMS: enough to run photoreactor iteration 2 under
 control from its first design review. **Deadline: before iteration 2's first design review.**
 
-Until it's tagged, miniQMS is built with lightweight branches and PRs (see AGENTS.md).
+Until it's tagged, minimalQMS is built with lightweight branches and PRs (see AGENTS.md).
 
 ## Planned PRs
 

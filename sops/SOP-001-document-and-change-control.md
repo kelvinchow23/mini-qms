@@ -4,99 +4,112 @@ title: Document and change control
 rev: A
 status: draft          # draft until released with QMS-rev A
 owner: Quality lead     # a role, see roles.yaml
+standard: ISO 9001:2026 # clause refs not yet checked against the purchased text
 ---
 
 # SOP-001 Document and change control
 
+Each section has a **Basis** line. *ISO* means the standard requires it (clause given).
+*minimalQMS* means it's our choice, which a team using minimalQMS may change.
+
 ## 1. Purpose
-Make sure everyone works from the current approved version of each document, every
-change is deliberate and traceable, and every approval can be proven. (ISO 9001 §7.5, §8.5.6)
+Make sure everyone works from the current approved version, every change is deliberate
+and traceable, and every approval can be proven.
+*Basis: ISO §7.5, §8.3.6, §8.5.6*
 
 ## 2. Scope
-All controlled documents and records in miniQMS repos: SOPs, templates, requirements,
-design data exported to git, BOMs, part masters, plans, review minutes, purchase, build and
-test records. CAD files themselves stay in the CAD tool. The git records cite the exact
-CAD version.
+All controlled documents and records in minimalQMS repos. CAD files stay in the CAD tool.
+Records in git cite the exact CAD version.
+*Basis: ISO §7.5.3. Keeping CAD out of git is a minimalQMS choice.*
 
 ## 3. Roles
-Roles, not people, are named in procedures. Each repo's `roles.yaml` assigns people to
-roles. One person may hold several roles (see §8).
+Procedures name roles. Each repo's `roles.yaml` says who holds each role. One person may
+hold several.
 
 | Role | Responsibility |
 |---|---|
-| **Author** | Drafts or changes a document or design. Can be a human or an agent. |
-| **Reviewer** | Checks the content. Can be a human or an independent agent; agent findings are input only. |
-| **Approver** | A named human authorised in `roles.yaml` to approve this type of change. |
-| **Quality lead** | Owns this SOP and the QMS overall. Approves deviations. |
+| **Author** | Drafts or changes a document or design. A human or an agent. |
+| **Reviewer** | Checks the content. A human or an independent agent; agent findings are input only. |
+| **Approver** | A named human, authorised in `roles.yaml`. |
+| **Quality lead** | Owns the QMS. Approves deviations. |
 
-## 4. Definitions
-- **Controlled document:** tells people how to work (SOP, template, requirement,
-  drawing). It's changed only through this procedure.
-- **Record:** evidence that something happened (minutes, PO, test result). Once
-  approved, it's never edited. Corrections are new records that reference the original.
-- **ECR (engineering change request):** a request to change something, with the reason.
-- **ECO (engineering change order):** the change itself, made on a branch and proposed as a PR.
-- **Deviation:** a recorded, approved departure from a procedure, with its reason and scope.
+*Basis: ISO §5.3 (assign responsibilities and authorities). Role names and agent roles
+are minimalQMS choices.*
+
+## 4. Documents and records
+- **Controlled document:** says how to work (SOP, template, requirement, drawing). It's
+  changed only through §6.
+- **Record:** evidence that something happened. It's never edited after approval.
+  Corrections are new records that reference the original.
+
+*Basis: ISO §7.5.3 (records protected from unintended changes)*
 
 ## 5. Identification and versions
-- Every controlled document has an **ID**, a **title**, a **revision** (A, B, C …) and a
-  **status** (draft / released / obsolete) in its header.
-- **The released version is whatever is on `main`.** Branches are drafts. Anything
-  printed or exported is uncontrolled unless it was generated from a tagged release and
-  says so.
-- Documents from outside (standards, datasheets, supplier specs) are listed with the
-  version used in the repo's external-documents list.
+- Every controlled document's header gives its ID, title, revision (A, B, …) and status
+  (draft / released / obsolete).
+- **What's on `main` is the released version.** Branches are drafts. Exports are
+  uncontrolled unless generated from a tagged release.
+- External documents (standards, datasheets, supplier specs) are listed with the version
+  used.
+
+*Basis: ISO §7.5.2 (identification, review and approval), §7.5.3 (version control,
+external documents)*
 
 ## 6. Change procedure
-1. **Request.** Open an ECR that says what should change and why. During a live
-   design session, an agent can draft the ECR from the conversation, and the author
-   confirms it.
-2. **Change.** The author makes the change on a branch, scoped to that ECR. Commits use
-   the format in `AGENTS.md` and reference the ECR.
-3. **Check.** CI runs automatically. A failed check blocks the change unless a deviation
-   is approved (see §9).
-4. **Review.** Small changes: the approver reviews the PR. Design changes and phase gates:
-   a formal review under SOP-003.
-5. **Approve.** The approver gives an explicit approval meeting §7.
-6. **Merge.** A human merges the PR. **Agents never merge.** The merge releases the
-   change, and the ECR is closed with a link to it.
-7. **Release.** Product or QMS releases are marked with a tag, created by a human.
+1. **Request.** An ECR says what should change and why. An agent may draft it from a
+   conversation, and the author confirms it.
+2. **Change.** Made on a branch, scoped to one ECR. Commits use the `AGENTS.md` format.
+3. **Check.** CI runs. A failed check blocks the change unless a deviation is approved (§9).
+4. **Review.** Small changes: a PR review. Design changes and phase gates: a formal review
+   (SOP-003).
+5. **Approve.** An explicit approval that meets §7.
+6. **Merge.** A human merges. **Agents never merge.** The ECR is closed with a link to the change.
+7. **Release.** A human tags product and QMS releases.
 
-Bump the revision of every document or part that changes, and update everything that
-cites it in the same change.
+Update everything that cites a changed item in the same change.
+
+*Basis: ISO §8.3.6 and §8.5.6 (changes reviewed and authorised, with records of who
+authorised them and the actions taken). ECR/ECO terms, git mechanics and "agents never
+merge" are minimalQMS choices.*
 
 ## 7. What an approval must prove
-An approval is valid only if the record shows all of these:
+An approval is valid only if the record shows:
 
 | Element | Example |
 |---|---|
-| **Who** approved, by name, authorised in `roles.yaml` | A. Engineer, approver |
+| **Who**, a named person authorised in `roles.yaml` | A. Engineer, approver |
 | **What** exactly, by ID and revision | PCB-0001 rev B; DR-004 |
-| **The decision** | Approved / rejected / approved with actions A-12 |
-| **When** | The actual date and time. Never backdated. |
-| **Evidence**, kept unaltered | The PR approval, or the human's reply in an archived transcript, quoted and located in the minutes |
+| **The decision** | Approved / rejected / approved with actions |
+| **When** | Actual date and time. Never backdated. |
+| **Evidence**, kept unaltered | A PR approval, or the human's reply in an archived transcript, quoted and located in the minutes |
 
 A reply counts as approval only when it answers a question that names exactly what's
-being approved. Casual replies during working sessions ("ok", "sure, do that") are
-working decisions, not approvals. Agents never approve.
+being approved. Casual replies during work are working decisions, not approvals. Agents
+never approve. No handwritten or digital signature is needed.
 
-## 8. One-person safeguards
-When the same person is both author and approver:
-- an **independent review** is required: a fresh agent session with no memory of the
-  design work, and the human records a decision on every finding;
-- formal approvals of human-authored work should come **after a break** (ideally the next
-  day), not straight after finishing the work;
-- the **internal audit** must be done by someone other than the person whose work is
-  audited (an outside person if necessary).
+*Basis: ISO §8.5.6 and §8.6 (traceability to the person authorising). ISO doesn't require
+signatures; electronic approval is accepted (APG guidance on documented information). The
+explicit-question rule is a minimalQMS choice.*
+
+## 8. When one person holds several roles
+- **Internal audit** is done by someone other than the person whose work is audited.
+  In a one-person organisation, that means an outside person.
+  *Basis: ISO §9.2.2 (objectivity and impartiality)*
+- When the author also approves, a **fresh agent session** with no memory of the work
+  reviews it first, and the human records a decision on each finding. Approving after a
+  break (ideally the next day) is recommended.
+  *Basis: minimalQMS choice. ISO doesn't require reviewers independent of the author.*
 
 ## 9. Deviations
-If a procedure can't be followed (for example records captured after the fact, or an
-override of a failed CI check), write a deviation record using the template. It must give
-the reason, the scope, the affected items and any compensating actions, and the quality
-lead must approve it **before** the deviating work is released. Retroactive capture is
-always a deviation.
+If a procedure can't be followed, write a deviation record (template) with the reason,
+scope, affected items and compensating actions. The quality lead approves it **before**
+the work is released. Capturing records after the fact is always a deviation.
+*Basis: ISO §8.6 (release before planned arrangements are complete needs authorisation),
+§8.7. The deviation record itself is a minimalQMS choice.*
 
-## 10. Records
-- Records are kept in git for the life of the product plus at least 3 years.
-- They're never deleted or rewritten. Git history is never force-pushed on `main`.
-- Formal-review transcripts are archived unaltered next to their minutes.
+## 10. Retention
+Records are kept in git for the life of the product plus at least 3 years. They're never
+deleted, and `main` is never force-pushed. Formal-review transcripts are archived unaltered
+next to their minutes.
+*Basis: ISO §7.5.3 requires deciding retention and protecting records. The period is a
+minimalQMS choice; customer or legal requirements may need longer.*
