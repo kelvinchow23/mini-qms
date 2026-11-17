@@ -1,0 +1,23 @@
+# Who holds which role (SOP-001 §3). Procedures name roles, never people.
+# One person can hold several roles. When the team changes, update this file through a PR.
+
+people:
+  - id: ae
+    name: A. Engineer
+    github: a-engineer
+
+roles:
+  quality_lead: [ae]
+  approver:
+    design: [ae]           # design changes and phase gates
+    documents: [ae]        # SOPs, templates
+    release: [ae]          # product releases and tags
+  internal_auditor: []     # must not audit their own work; name an outside person
+
+# Agents are authors and reviewers, never approvers.
+# List the ones in use so records can name them.
+agents:
+  - id: design-agent
+    tool: "<e.g. Claude Code / Codex>"
+  - id: review-agent
+    tool: "<independent session, ideally a different model>"

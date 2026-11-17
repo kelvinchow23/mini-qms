@@ -12,9 +12,9 @@ Status: ✅ merged · 🔄 open · ⬜ not started
 | # | Contents | Status |
 |---|---|---|
 | 1 | README thesis, rationale, original brief | ✅ |
-| 2 | MIT license, `AGENTS.md` hard rules, `CLAUDE.md` pointer, line endings | 🔄 |
-| 3 | Showcase origin story, retroactive capture of iteration 1, this roadmap, review and coworking model | 🔄 |
-| 4 | **SOP-001 Document and change control**, plus ECR issue template and PR/ECO template. Defines approval by outcome: who, what (ID and revision), decision, when, evidence. Also defines roles (`roles.yaml`), and the one-person safeguards. Decided: agents never merge. A human merge follows every formal approval. | ⬜ |
+| 2 | MIT license, `AGENTS.md` hard rules, `CLAUDE.md` pointer, line endings | ✅ |
+| 3 | Showcase origin story, retroactive capture of iteration 1, this roadmap, review and coworking model | ✅ |
+| 4 | **SOP-001 Document and change control**, plus ECR issue template and PR/ECO template. Defines approval by outcome: who, what (ID and revision), decision, when, evidence. Also defines roles (`roles.yaml`), and the one-person safeguards. Decided: agents never merge. A human merge follows every formal approval. | 🔄 |
 | 5 | **SOP-002 Part numbering, revisions and part classes**, plus `parts.csv` / `bom.csv` schema and lifecycle states | ⬜ |
 | 6 | **SOP-003 Design review**, following [REVIEW-MODEL.md](REVIEW-MODEL.md): check-ins vs. working decisions vs. formal reviews; review-package and minutes templates (change groups, where to look, visuals, independent AI findings, disposition per item, explicit yes/no); transcript archiving | ⬜ |
 | 7 | **SOP-004 Design and development planning**, plus `plan.yaml` (phase gates 0–5 with target date, actual date and approver; date changes go through a PR with a reason) | ⬜ |
