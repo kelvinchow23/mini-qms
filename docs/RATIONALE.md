@@ -3,18 +3,18 @@
 The best-known argument against running a QMS in git is OpenRegulatory's
 [*GitHub QMS: We No Longer Recommend It*](https://openregulatory.com/articles/we-no-longer-recommend-github-gitlab-as-qms-software)
 (Oliver Eidel, ~2023). It comes from real client experience, and it's right about the
-setup it describes. This document explains what miniQMS does differently and what
+setup it describes. This document explains what minimalQMS does differently and what
 risks are still open.
 
 Context: OpenRegulatory sells a purpose-built QMS (Formwork) and works mainly with
-medical-device companies under ISO 13485. miniQMS targets small, engineering-led
+medical-device companies under ISO 13485. minimalQMS targets small, engineering-led
 hardware teams under ISO 9001. Those differences matter, but the critique deserves an
 answer either way.
 
 ## The core shift: git is the database, not the interface
 
 The 2023 critique assumed that people work in git: they edit Markdown, open PRs and
-review diffs. In miniQMS, people work through **agents** (Claude Code, Cowork, Codex)
+review diffs. In minimalQMS, people work through **agents** (Claude Code, Cowork, Codex)
 and through **generated documents**:
 
 | Layer | What it is | Who touches it |
@@ -58,7 +58,7 @@ language ("draft an ECR for the new LED supplier", "what changed in rev B and wh
 output. Nobody has to learn git.
 
 **Still open:**
-- **A new bottleneck:** whoever maintains the agent instructions and CI checks. miniQMS
+- **A new bottleneck:** whoever maintains the agent instructions and CI checks. minimalQMS
   aims to package those once so each team doesn't have to rebuild them.
 - If the agent interface isn't good enough, a non-technical hire will still struggle.
   This has to be tested with a real non-technical user before claiming it works.
@@ -107,7 +107,7 @@ branches.
   AI: plain files a person could open in 20 years. Agent instructions live in a generic
   `AGENTS.md`, not tied to any one vendor.
 - **Regulated medical devices.** ISO 13485 and 21 CFR Part 11 add e-signature and
-  software-validation requirements that miniQMS doesn't address. Using it there is out of
+  software-validation requirements that minimalQMS doesn't address. Using it there is out of
   scope until someone does that work.
 
 ## How we'll know if this is right

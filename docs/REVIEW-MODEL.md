@@ -6,7 +6,7 @@ SOP-004 (planning). The SOPs state the requirements; this document explains the 
 
 ## Principle: coworkable, not fully agentic
 
-miniQMS is built for **humans and agents working on the same design**, not for agents
+minimalQMS is built for **humans and agents working on the same design**, not for agents
 working alone while a human rubber-stamps the output.
 
 - **Both can change the design.** A human might move a mounting hole in Fusion or reroute
@@ -27,7 +27,7 @@ working alone while a human rubber-stamps the output.
 ## Three kinds of interaction
 
 Asking for approval on every step causes approval fatigue: the human ends up typing
-"yes" without reading. miniQMS separates three kinds of interaction, and only one of
+"yes" without reading. minimalQMS separates three kinds of interaction, and only one of
 them is an approval.
 
 | | **Check-in** | **Working decision** | **Formal review** |
