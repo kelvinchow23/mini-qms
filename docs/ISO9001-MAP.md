@@ -50,8 +50,8 @@ requires SOPs. That's why each SOP is about one page.
 | 8.4.1 | Supplier evaluation and monitoring | `suppliers.csv` | SOP-005 |
 | 8.5.2 | Unique identification where traceability is needed | Serial numbers, `trace.csv`, purchase lines (Class A/B) | SOP-002, SOP-006 |
 | 8.5.3 | Customer or supplier property lost or damaged | An NC record if it happens | SOP-008 |
-| 8.5.6 | Changes reviewed: results, who authorised, actions | ECR, ECO PR, approval | **SOP-001** |
-| 8.6 | Release, traced to the person who authorised it | `release.yaml`, approved and merged by a named human | SOP-007 |
+| 8.5.6 | Changes reviewed: results, who authorized, actions | ECR, ECO PR, approval | **SOP-001** |
+| 8.6 | Release, traced to the person who authorized it | `release.yaml`, approved and merged by a named human | SOP-007 |
 | 8.7 | Nonconforming outputs, actions, concessions, who decided | `NC-nnn.md` | SOP-008 |
 | 9.1.1 | Monitoring and measurement results | Objectives tracking | Management layer |
 | 9.2.2 | Internal audit programme and results | Audit plan and report | Management layer (yearly) |
@@ -72,7 +72,7 @@ These are minimalQMS choices, and SOPs mark them as such so others can drop or c
 
 The **only** independence requirement is for internal audit: auditors must be objective
 and impartial (9.2.2). Auditing your own work isn't acceptable, so a one-person
-organisation needs an outside auditor.
+organization needs an outside auditor.
 
 ## New or expanded in 2026 (from secondary sources, to verify)
 
@@ -83,7 +83,7 @@ These mostly affect the management layer, which comes after rev A:
 - **6.1.2 / 6.1.3:** risks and opportunities are now separate clauses, with actions
   proportionate to impact.
 - **6.3:** planning of changes is expanded.
-- **7.1.6:** organisational knowledge is retained, applied and shared. The git history,
+- **7.1.6:** organizational knowledge is retained, applied and shared. The git history,
   review minutes and lessons learned largely cover this.
 - **9.2.2:** each audit needs defined objectives.
 - **9.3:** new management-review inputs.

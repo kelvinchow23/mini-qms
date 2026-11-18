@@ -19,8 +19,8 @@ purchase.
 
 ## 2. Scope
 All items and services bought for a product: parts, PCBs, printing and machining. The
-organisation's ordering process is outside this procedure. Requisitions, POs, approvals
-and invoices remain in the organisation's own systems; the product repo keeps a list that
+organization's ordering process is outside this procedure. Requisitions, POs, approvals
+and invoices remain in the organization's own systems; the product repo keeps a list that
 refers to them.
 *Basis: minimalQMS choice*
 
@@ -30,7 +30,7 @@ refers to them.
 
 | Basis | Meaning |
 |---|---|
-| `authorised-distributor` | Authorised distributor for the manufacturer (e.g. Mouser, Digi-Key) |
+| `authorized-distributor` | Authorized distributor for the manufacturer (e.g. Mouser, Digi-Key) |
 | `manufacturer-direct` | Bought from the manufacturer or its own store |
 | `established-supplier` | Widely used industrial supplier with published specifications (e.g. McMaster-Carr) |
 | `prior-good-results` | Used before without nonconformances |
@@ -46,7 +46,7 @@ refers to them.
 ## 4. Purchase list
 Record each item ordered as one line in `purchases.csv`:
 - line ID (`P-nnnn`), PN, description, quantity, supplier and link to the item;
-- `order_ref`: the organisation's requisition or PO number;
+- `order_ref`: the organization's requisition or PO number;
 - order date; on receipt, received date, quantity and supplier lot or job number;
 - inspection result for Class A lines (SOP-006).
 
@@ -60,7 +60,7 @@ minimalQMS choice.*
 1. Generate the purchasing upload files with the part library's `requisition.py`, from
    `bom.csv` and the build quantity. It produces one file per supplier in the purchasing
    system's upload format, less stock on hand.
-2. Check the files, then upload them to the organisation's purchasing system.
+2. Check the files, then upload them to the organization's purchasing system.
 3. Record each placed order with the part library's `record_order.py`. It adds the
    `purchases.csv` lines and stores the uploaded file in `purchasing/requisitions/`.
 
@@ -68,7 +68,7 @@ minimalQMS choice.*
 
 ## 6. Records
 `purchases.csv`, `suppliers.csv` and the uploaded files in `purchasing/requisitions/` are
-controlled under SOP-001. The organisation keeps
+controlled under SOP-001. The organization keeps
 the documents behind each `order_ref` for the same retention period, and retrieves them
 by reference when required.
 *Basis: ISO §7.5.3*

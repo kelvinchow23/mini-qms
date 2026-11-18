@@ -8,7 +8,7 @@ clerical work. Humans make every decision.
 
 Developing physical products under a quality system usually involves a lot of red
 tape: document control, approval chases, purchasing paperwork, traceability records
-and audit preparation. In a traditional organisation, much of the headcount around a
+and audit preparation. In a traditional organization, much of the headcount around a
 product exists only to keep that machinery running.
 
 minimalQMS tests a different claim:
@@ -164,7 +164,7 @@ Building QMS-rev A. See [docs/ROADMAP.md](docs/ROADMAP.md) for the plan and
 Until QMS-rev A is tagged, minimalQMS is developed with lightweight branches and PRs (no ECRs).
 After the tag, changes to minimalQMS itself follow minimalQMS's own change control.
 
-## License
+## Licence
 
 [MIT](LICENSE). Use it, fork it, build products on it.
 

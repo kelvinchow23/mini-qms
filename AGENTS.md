@@ -76,7 +76,7 @@ ECR issue, and every commit references it (`(ECR #n)`).
   *minimalQMS choice* if it doesn't. Check against [docs/ISO9001-MAP.md](docs/ISO9001-MAP.md).
   Don't add requirements the standard doesn't impose unless they clearly save the human work.
 - **Never copy text from ISO standards** (copyrighted). Cite clause numbers and paraphrase.
-  Reuse open templates only if their license allows it (see [docs/SOURCES.md](docs/SOURCES.md)),
+  Reuse open templates only if their licence allows it (see [docs/SOURCES.md](docs/SOURCES.md)),
   and record them in `NOTICE`.
 - **Tables are data, not Markdown.** Lists that grow (parts, BOMs, requirements, risks,
   purchases, trace, test results) are CSV or YAML, never Markdown tables. Small, fixed
@@ -87,4 +87,7 @@ ECR issue, and every commit references it (`(ECR #n)`).
 - **Tool-agnostic.** Don't hard-code one AI vendor, CAD tool or the GitHub UI into
   procedures. Name the role ("the approver", "the MCAD tool") and give the current tool
   as an example.
+- **Canadian English spelling:** -ize and -yze (organization, authorize, analyze), -our
+  (colour, behaviour), -re (centre), "licence" as the noun and "license" as the verb. Keep
+  proper names as they are ("MIT License"), and code identifiers unchanged.
 - **Line endings are LF** (enforced by `.gitattributes`).

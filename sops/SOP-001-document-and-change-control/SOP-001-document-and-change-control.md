@@ -88,7 +88,7 @@ explicit-question rule is a minimalQMS choice.*
 
 ## 8. One person in several roles
 Internal audit must be done by someone other than the person whose work is audited; in a
-one-person organisation, this is an outside person. When the author is also the approver,
+one-person organization, this is an outside person. When the author is also the approver,
 a fresh agent session with no memory of the work reviews it first, and the approver
 records a decision on each finding. Approval should follow a break, ideally the next day.
 *Basis: ISO §9.2.2 for internal audit. The independent agent review is a minimalQMS
