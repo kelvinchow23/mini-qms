@@ -1,0 +1,3 @@
+id,description,cal_required,cal_due,cal_ref,notes
+EQ-001,Bench multimeter,yes,2027-06-30,CERT-1234,example row - delete
+EQ-002,USB power meter,no,,,indicative checks only - not used for accept/reject

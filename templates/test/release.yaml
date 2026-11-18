@@ -1,0 +1,13 @@
+# Release record (SOP-007 §6). Prepared by an agent; approved and merged by a human.
+build: B002
+units:
+  - sn: SN003
+    config_ok: true            # matches build.yaml config
+    tests: all-pass            # or list NC refs with use-as-is dispositions
+    trace_complete: true
+    deviations: []
+decision: pending              # released / not-released, set from the approval
+approval:                      # SOP-001 §7, filled in from the approval evidence
+  by: null
+  when: null
+  evidence: null               # PR link or transcript location
