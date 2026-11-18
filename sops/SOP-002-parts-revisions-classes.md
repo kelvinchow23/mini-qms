@@ -22,35 +22,37 @@ Everything that appears on a BOM: purchased parts, made parts (PCBs, printed or 
 parts, harnesses), assemblies, firmware and consumables. Also serial numbers of built units.
 
 ## 3. Part numbers
-| Format | Used for | Examples |
-|---|---|---|
-| **`CCC-NNNN`** | Parts: single items with no sub-parts, made or purchased | `PCB-0001` bare board, `MEC-0003` printed bracket, `RES-0002` resistor |
-| **`CCC-A-NNNN`** | Assemblies: items with sub-parts, or that require an assembly or modification instruction | `PCB-A-0001` assembled board, `HRN-A-0002` harness, `SYS-A-0001` complete product |
 
-`CCC` is a category code. `A` is a fixed letter that marks an assembly. `NNNN` is the next
-free number in that category. Use capital letters, digits and hyphens only.
+| Type | Format | Kept in | Example |
+|---|---|---|---|
+| **OTS part** (off the shelf) | `CCC-NNNN` | Part library (`parts-library` repo) | `FST-0001` M3x8 screws |
+| **Custom part** | `PPP-NNNN` | Product repo, `03_release/parts.csv` | `PRX-0004` printed lid |
+| **Custom assembly** | `PPP-A-NNNN` | Product repo, `03_release/parts.csv` | `PRX-A-0003` assembled PCB |
 
-Part numbers are allocated from the organisation's part library (the `parts-library` repo),
-which holds the category codes and the data for purchased parts. The product repo's
-`parts.csv` lists the PNs the product uses, with their revisions and lifecycle.
-- A part number never changes meaning and is never reused.
-- An assembly built from one main part shares its number (e.g. `PCB-0001` bare board,
-  `PCB-A-0001` assembled board).
-- A PCB ordered already assembled is an assembly (`PCB-A-NNNN`) with its own revision.
-- Purchased parts also receive an internal PN, mapped to the manufacturer part number in
-  `parts.csv`. A change of supplier is then a one-line change.
+- `CCC` is an OTS category code; `PPP` is the project code. Both are 3 capital letters,
+  registered in the part library, and never the same. `A` is a fixed letter that marks an
+  assembly.
+- An assembly has sub-parts or requires an assembly or modification instruction. A PCB
+  ordered already assembled is an assembly.
+- Custom parts and assemblies share one number sequence per project.
+- Allocate numbers with the part library's `new_pn.py`. A part number never changes meaning
+  and is never reused.
+- OTS records hold where to buy: manufacturer, MPN, supplier, supplier part number, link,
+  and unit price with its date. Custom records hold revision, lifecycle, make method and
+  source (CAD reference), plus the same purchasing columns when the part is bought from a
+  fabricator.
 
-*Basis: ISO §8.5.2. The format is a minimalQMS choice; category codes are adapted from
+*Basis: ISO §8.5.2. The format is a minimalQMS choice; OTS category codes are adapted from
 gitplm (see NOTICE).*
 
 ## 4. Revisions
-The revision is a separate field, not part of the PN: `PCB-0001` rev `B`. Revisions run
+The revision is a separate field, not part of the PN: `PRX-0002` rev `B`. Revisions run
 A, B, C …, omitting I, O, Q, S, X and Z.
 - **Interchangeable change** (same form, fit and function): increment the revision.
 - **Non-interchangeable change:** assign a new PN.
 - Firmware uses its version tag (e.g. `v1.2.0`) as the revision.
-- Purchased parts have no internal revision (`-`); the manufacturer part number defines
-  them. A replacement MPN that is not a drop-in substitute receives a new PN.
+- OTS parts have no internal revision; the manufacturer part number defines them. A
+  replacement MPN that is not a drop-in substitute receives a new PN.
 
 A revision change follows SOP-001: everything that cites the part (`parts.csv`, BOMs,
 drawings) is updated in the same change.
@@ -58,7 +60,7 @@ drawings) is updated in the same change.
 minimalQMS choice based on common drafting practice.*
 
 ## 5. Lifecycle
-Each PN in `parts.csv` has one lifecycle state:
+Each PN (OTS and custom) has one lifecycle state:
 
 | State | Meaning |
 |---|---|
@@ -77,16 +79,16 @@ State changes follow SOP-001.
 | **B** | Bulk hardware: screws, standoffs, heat-set inserts, wire, crimps | The bulk purchase | Visual check, not recorded |
 | **C** | Consumables: glue, flux, solder, zip ties | Not traced | None |
 
-The class is set per PN in `parts.csv`. When in doubt, assign the higher class.
+The class is set per PN. When in doubt, assign the higher class.
 *Basis: ISO §8.5.2 and §8.4.2 allow traceability and control to be set by risk. The A/B/C
 scheme is a minimalQMS choice.*
 
 ## 7. Serial numbers
-Assemblies (`CCC-A-NNNN`) receive a serial number. Parts do not; they are traced by
+Assemblies (`PPP-A-NNNN`) receive a serial number. Parts do not; they are traced by
 purchase line or print job.
 - **Format:** `<PN>-YYMMDD<letter>`, where the date is the assembly date (or the receipt
   date for purchased assemblies) and the letter counts units of that PN on that date: A,
-  B … Z, then AA. Example: `PCB-A-0001-261118A`.
+  B … Z, then AA. Example: `PRX-A-0003-261118A`.
 - **Label:** mark the serial number on the unit. Where the PN is already marked on the unit,
   the label may show only `YYMMDD<letter>`.
 - **Record:** the serial number is listed in the build record (SOP-006), which links it to
@@ -97,11 +99,11 @@ purchase line or print job.
 *Basis: ISO §8.5.2. The format is a minimalQMS choice.*
 
 ## 8. Records
-- `parts.csv`: part master, one row per PN.
-- `bom.csv`: one row per line item, exported from the CAD tools at release and joined with
-  `parts.csv`.
-- The part library's `parts.csv` and `categories.csv`: organisation-wide PN register.
+- Product repo `03_release/parts.csv`: custom parts and assemblies.
+- Product repo `03_release/bom.csv`: master BOM, one block of lines per assembly (top level
+  and each sub-assembly), referring to OTS and custom PNs alike. Exported from the CAD tools
+  at release.
+- Part library: OTS `parts.csv`, `categories.csv` and `projects.csv`.
 
-These records are controlled under SOP-001. CI checks that every BOM line has a PN that
-exists in `parts.csv`, is `released` and has a class, and that purchased parts have a
-supplier.
+These records are controlled under SOP-001. CI checks that every BOM line refers to an
+existing, `released` PN with a class, and that bought items have a supplier.

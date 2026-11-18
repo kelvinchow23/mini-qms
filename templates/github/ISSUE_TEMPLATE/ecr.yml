@@ -10,7 +10,7 @@ body:
     attributes:
       label: Affected items
       description: Part numbers or document IDs, with their current revision.
-      placeholder: "PCB-0001 rev A, HSG-0002 rev B"
+      placeholder: "PRX-0002 rev A, PRX-0005 rev B"
     validations:
       required: true
   - type: textarea

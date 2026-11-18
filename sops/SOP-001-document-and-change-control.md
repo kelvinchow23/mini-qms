@@ -74,7 +74,7 @@ An approval is valid only when the record shows:
 | Element | Example |
 |---|---|
 | **Who:** a named person listed in `roles.yaml` | A. Engineer, approver |
-| **What:** the exact items, by ID and revision | PCB-0001 rev B; DR-004 |
+| **What:** the exact items, by ID and revision | PRX-0002 rev B; DR-004 |
 | **Decision** | Approved, rejected, or approved with actions |
 | **When:** the actual date and time | Never backdated |
 | **Evidence**, kept unaltered | A PR approval, or the human's reply quoted from an archived transcript |

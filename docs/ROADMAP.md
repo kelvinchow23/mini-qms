@@ -16,7 +16,7 @@ One SOP per PR. Status: ✅ merged · 🔄 open · ⬜ not started
 | 3 | Showcase origin story, retroactive capture of iteration 1, this roadmap, review and coworking model | #3 | ✅ |
 | – | Rename to minimalQMS | #5 | ✅ |
 | 4 | **SOP-001 Document and change control:** approval by outcome (who, what, decision, when, evidence), roles (`roles.yaml`), one-person safeguards, deviations. ECR, ECO, deviation and roles templates. ISO 9001 requirements map and sources. Agents never merge. | #4 | ✅ |
-| 5 | **SOP-002 Part numbering, revisions and part classes:** `CCC-NNNN` parts and `CCC-A-NNNN` assemblies, separate revision letters, interchangeability rule, lifecycle states, A/B/C classes, serial numbers. `parts.csv` and `bom.csv` templates. | #15 | ✅ |
+| 5 | **SOP-002 Part numbering, revisions and part classes:** `CCC-NNNN` OTS parts and `PPP-NNNN` / `PPP-A-NNNN` custom parts (project code), separate revision letters, interchangeability rule, lifecycle states, A/B/C classes, serial numbers. `parts.csv` and `bom.csv` templates. | #15 | ✅ |
 | – | Interfaces: shared names, IDs, product repo layout, data flow ([INTERFACES.md](INTERFACES.md)) and this index | #13 | ✅ |
 | 6 | **SOP-003 Design review:** check-ins vs. working decisions vs. formal reviews; package, minutes and work log templates | #7 | ✅ |
 | 7 | **SOP-004 Design and development planning:** gates G0–G5, `plan.yaml`, `gates.yaml`, `requirements.yaml`, `risks.csv` | #8 | ✅ |

@@ -1,3 +1,4 @@
-pn,rev,description,class,lifecycle,make_buy,manufacturer,mpn,supplier,supplier_pn,link,cad_ref,notes
-PCB-0001,A,Example bare PCB,A,draft,make,,,JLCPCB,,,KiCad tag pcb-0001-revA,example row - delete
-RES-0001,-,Example 10k 0603 1% resistor,B,released,buy,Yageo,RC0603FR-0710KL,Digi-Key,311-10.0KHRCT-ND,https://www.digikey.com/,,example row - delete
+pn,rev,description,class,lifecycle,make,source,drawing,supplier,supplier_pn,link,unit_price,currency,price_date,notes
+PRX-A-0001,A,Example complete product,A,draft,assemble,Fusion: Photoreactor top v40,,,,,,,,example row - delete
+PRX-0002,A,Example bare PCB,A,draft,fab,KiCad: hardware/pcb/driver.kicad_pro (tag prx-0002-revA),,JLCPCB,,https://jlcpcb.com,2.10,USD,2026-11-18,example row - delete
+PRX-0004,A,Example printed bracket,A,draft,print,Fusion: Bracket v7,,,,,,,,example row - delete
