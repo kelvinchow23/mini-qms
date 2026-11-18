@@ -111,7 +111,7 @@ and change only through a revision of this SOP.
 
 | ID | Title | File | Used in product repos as |
 |---|---|---|---|
-| SOP-001-A01 | ECR form (GitHub issue form) | [SOP-001-A01-ecr-form.yml](SOP-001-A01-ecr-form.yml) | `.github/ISSUE_TEMPLATE/ecr.yml` |
+| SOP-001-A01 | ECR form | [SOP-001-A01-ecr-form.md](SOP-001-A01-ecr-form.md) | `.github/ISSUE_TEMPLATE/ecr.md` |
 | SOP-001-A02 | ECO pull request template | [SOP-001-A02-eco-pr-template.md](SOP-001-A02-eco-pr-template.md) | `.github/pull_request_template.md` |
 | SOP-001-A03 | Deviation record | [SOP-001-A03-deviation.md](SOP-001-A03-deviation.md) | `deviations/DEV-nnn.md` |
 | SOP-001-A04 | Roles register | [SOP-001-A04-roles.yaml](SOP-001-A04-roles.yaml) | `roles.yaml` |
