@@ -59,6 +59,20 @@ explicit approval (SOP-001 section 7). Record the actual date and the approval r
 in `plan.yaml`.
 *Basis: ISO §8.3.4, §8.3.5*
 
+## 7. Iterations
+Development repeats in iterations. Each iteration starts at G0 from the last released
+revisions and passes the gates again.
+- **Inputs:** lessons learned (G5), nonconformances (SOP-008), feedback from use, and open
+  ECRs. G0 records which ECRs the iteration covers.
+- **Scope of each gate:** only what the iteration changes. A gate the iteration does not
+  affect is skipped, with the reason in `plan.yaml`. Review packages cover the changes since
+  the last release.
+- **Plan:** each iteration has its own `plan.yaml` entry (`iteration: n`).
+- **Between iterations:** a change to a released design that does not justify an iteration
+  follows SOP-001 alone (ECR, review, new revision) without gates.
+
+*Basis: ISO §8.3.2, §8.3.6. The iteration model is a minimalQMS choice.*
+
 ## Appendices
 Appendices are forms and templates that belong to this SOP. They carry the SOP's revision
 and change only through a revision of this SOP.
