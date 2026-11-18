@@ -5,33 +5,33 @@ control from its first design review. **Deadline: before iteration 2's first des
 
 Until it's tagged, minimalQMS is built with lightweight branches and PRs (see AGENTS.md).
 
-## Planned PRs
+## Planned steps
 
-Status: ✅ merged · 🔄 open · ⬜ not started
+One SOP per PR. Status: ✅ merged · 🔄 open · ⬜ not started
 
-| # | Contents | Status |
-|---|---|---|
-| 1 | README thesis, rationale, original brief | ✅ |
-| 2 | MIT license, `AGENTS.md` hard rules, `CLAUDE.md` pointer, line endings | ✅ |
-| 3 | Showcase origin story, retroactive capture of iteration 1, this roadmap, review and coworking model | ✅ |
-| 4 | **SOP-001 Document and change control**, plus ECR issue template and PR/ECO template. Defines approval by outcome: who, what (ID and revision), decision, when, evidence. Also defines roles (`roles.yaml`), and the one-person safeguards. Decided: agents never merge. A human merge follows every formal approval. | 🔄 |
-| 5 | **SOP-002 Part numbering, revisions and part classes**, plus `parts.csv` / `bom.csv` schema and lifecycle states | ⬜ |
-| 6 | **SOP-003 Design review**, following [REVIEW-MODEL.md](REVIEW-MODEL.md): check-ins vs. working decisions vs. formal reviews; review-package and minutes templates (change groups, where to look, visuals, independent AI findings, disposition per item, explicit yes/no); transcript archiving | ⬜ |
-| 7 | **SOP-004 Design and development planning**, plus `plan.yaml` (phase gates 0–5 with target date, actual date and approver; date changes go through a PR with a reason) | ⬜ |
-| 8 | **CI checks:** BOM/parts lint, commit-message lint, `plan.yaml` / `gates.yaml` validation, approval-quote check (each approval cited in the minutes exists in the archived transcript) | ⬜ |
-| 9 | **Copier product template:** product repo structure wired to the CI checks and `AGENTS.md`, recording which QMS rev it's built under | ⬜ |
-| 10 | **Dry run and release:** generate a throwaway product, fix what breaks, write a CHANGELOG, tag `QMS-rev-A` | ⬜ |
+| Step | Contents | GitHub PR | Status |
+|---|---|---|---|
+| 1 | README thesis, rationale, original brief | #1 | ✅ |
+| 2 | MIT license, `AGENTS.md` hard rules, `CLAUDE.md` pointer, line endings | #2 | ✅ |
+| 3 | Showcase origin story, retroactive capture of iteration 1, this roadmap, review and coworking model | #3 | ✅ |
+| – | Rename to minimalQMS | #5 | 🔄 |
+| 4 | **SOP-001 Document and change control:** approval by outcome (who, what, decision, when, evidence), roles (`roles.yaml`), one-person safeguards, deviations. ECR, ECO, deviation and roles templates. ISO 9001 requirements map and sources. Agents never merge. | #4 | 🔄 |
+| 5 | **SOP-002 Part numbering, revisions and part classes:** `CCC-NNNN` part numbers (adapted from gitplm), separate revision letters, interchangeability rule, lifecycle states, A/B/C classes, serial numbers. `parts.csv`, `bom.csv` and `part-categories.csv` templates. | #6 | 🔄 |
+| 6 | **SOP-003 Design review**, following [REVIEW-MODEL.md](REVIEW-MODEL.md): check-ins vs. working decisions vs. formal reviews; review-package and minutes templates; transcript archiving | | ⬜ |
+| 7 | **SOP-004 Design and development planning:** `plan.yaml` and `gates.yaml` (phase gates 0–5, target and actual dates, approver) | | ⬜ |
+| 8 | **SOP-005 Purchasing and suppliers:** a barebones `purchases.csv` (links, plus references to the real requisitions and POs, which stay in the organisation's own systems) and `suppliers.csv` (one-line approval basis). Needed for iteration 2 orders and to capture iteration 1. | | ⬜ |
+| 9 | **CI checks:** BOM/parts lint, commit-message lint, `plan.yaml` / `gates.yaml` validation, approval-quote check, the `trace` script | | ⬜ |
+| 10 | **Copier product template:** product repo structure wired to the CI checks and `AGENTS.md`, recording which QMS rev it's built under | | ⬜ |
+| 11 | **Dry run and release:** generate a throwaway product, fix what breaks, write a CHANGELOG, tag `QMS-rev-A` | | ⬜ |
 
-**If iteration 2 starts early:** ship the SOPs and templates (PRs 4–7) first, tag them as
-QMS-rev A, and add the CI checks and Copier template (PRs 8–9) as QMS-rev B during
+**If iteration 2 starts early:** ship the SOPs and templates (steps 4–8) first, tag them as
+QMS-rev A, and add the CI checks and Copier template (steps 9–10) as QMS-rev B during
 iteration 2. Iteration 2's repo can be set up by hand from the templates in the meantime.
 
 ## After rev A (each written just before it's needed)
 
 - **Document rendering:** PDF/Word output of controlled documents with approval blocks.
   Needed before a non-technical user or an auditor gets involved.
-- **Purchasing and supplier control:** approved supplier list. Needed before iteration 2
-  orders parts.
 - **Incoming inspection and build records.**
 - **Test and release.**
 - **Nonconformance and corrective action.**
