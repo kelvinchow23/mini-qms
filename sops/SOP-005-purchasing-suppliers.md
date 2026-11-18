@@ -26,8 +26,17 @@ refers to them.
 
 ## 3. Suppliers
 `suppliers.csv` lists each supplier with a status (`approved`, `conditional` or
-`removed`), a date, and a one-line basis (e.g. "authorised distributor", "used previously
-with good results", "sole source").
+`removed`), a date, and a basis chosen from:
+
+| Basis | Meaning |
+|---|---|
+| `authorised-distributor` | Authorised distributor for the manufacturer (e.g. Mouser, Digi-Key) |
+| `manufacturer-direct` | Bought from the manufacturer or its own store |
+| `established-supplier` | Widely used industrial supplier with published specifications (e.g. McMaster-Carr) |
+| `prior-good-results` | Used before without nonconformances |
+| `sole-source` | Only available source for the item |
+| `trial` | First order; status `conditional` until incoming inspection passes |
+
 - Add a supplier before its first order. A supplier added after the fact requires a
   deviation (SOP-001 section 9).
 - Review the supplier's status when the supplier causes a nonconformance (SOP-008).
@@ -43,18 +52,23 @@ Record each item ordered as one line in `purchases.csv`:
 
 Order only PNs that are `released` in `parts.csv` (SOP-002). Prototype parts for design
 work are the exception; mark them `proto` in `notes`. Prototype parts must not be used in
-a released build. Prices are optional.
+a released build.
 *Basis: ISO §8.4.3, §8.5.2. Referring to external records instead of copying them is a
 minimalQMS choice.*
 
-## 5. Order list for a build
-An agent may generate the order list from `bom.csv` and the build quantity, grouped by
-supplier and less bulk stock on hand. The buyer places the order in the organisation's
-system and records the order reference.
+## 5. Ordering for a build
+1. Generate the purchasing upload files with the part library's `requisition.py`, from
+   `bom.csv` and the build quantity. It produces one file per supplier in the purchasing
+   system's upload format, less stock on hand.
+2. Check the files, then upload them to the organisation's purchasing system.
+3. Record each placed order with the part library's `record_order.py`. It adds the
+   `purchases.csv` lines and stores the uploaded file in `purchasing/requisitions/`.
+
 *Basis: minimalQMS choice*
 
 ## 6. Records
-`purchases.csv` and `suppliers.csv` are controlled under SOP-001. The organisation keeps
+`purchases.csv`, `suppliers.csv` and the uploaded files in `purchasing/requisitions/` are
+controlled under SOP-001. The organisation keeps
 the documents behind each `order_ref` for the same retention period, and retrieves them
 by reference when required.
 *Basis: ISO §7.5.3*

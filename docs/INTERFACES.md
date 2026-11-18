@@ -23,6 +23,7 @@ worklog.md                      SOP-003  check-ins and notable working decisions
 purchasing/
   purchases.csv                 SOP-005
   suppliers.csv                 SOP-005
+  requisitions/<order_ref>.csv  SOP-005  purchasing upload files as submitted
 builds/B00n/
   build.yaml                    SOP-006  build header and unit list
   inspection.csv                SOP-006  incoming inspection of Class A lines
