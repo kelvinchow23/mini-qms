@@ -1,0 +1,19 @@
+# Design and development plan (SOP-004 §4). Change through a PR; old values stay in git history.
+product: ASY-0001          # top-level part number
+iteration: 2
+qms_rev: QMS-rev-A          # the minimalQMS release this product is run under
+goal: "<one or two sentences>"
+scope:
+  in: []
+  out: []
+make_buy:                    # what's made in-house vs bought
+  - {item: PCB-0001, decision: make, note: "fabricated by an outside PCB house"}
+roles: roles.yaml
+gates:
+  - {gate: G0, target: YYYY-MM-DD, actual: null, approval: null}
+  - {gate: G1, target: YYYY-MM-DD, actual: null, approval: null}
+  - {gate: G2, target: YYYY-MM-DD, actual: null, approval: null}
+  - {gate: G3, target: YYYY-MM-DD, actual: null, approval: null}
+  - {gate: G4, target: YYYY-MM-DD, actual: null, approval: null}
+  - {gate: G5, target: YYYY-MM-DD, actual: null, approval: null}
+skipped_gates: []            # e.g. [{gate: G1, reason: "..."}]

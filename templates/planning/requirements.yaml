@@ -1,0 +1,7 @@
+# Requirements (SOP-004 §5). Frozen at G1; change through SOP-001.
+# verification: test / inspection / analysis / review
+- id: REQ-001
+  statement: "<what the product must do or be, measurably>"
+  source: "<customer / standard / internal>"
+  verification: test
+  verified_by: TP-001     # test procedure, review or analysis reference
