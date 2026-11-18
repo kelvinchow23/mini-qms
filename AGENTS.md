@@ -36,8 +36,10 @@ ECR issue, and every commit references it (`(ECR #n)`).
 ## Hard rules (apply in every minimalQMS repo)
 
 1. **Never commit to `main`.** Always use a branch and a PR.
-2. **Never approve, merge or sign off anything.** Never mark a record approved,
-   released or signed. Approval is a human action. You may *prepare* a PR for approval.
+2. **Never approve, merge or sign off anything.** Approval is a human action. You may
+   *prepare* a PR or record for approval, and you may *record* a human's approval by
+   quoting their exact words with the evidence location (SOP-001 §7). Never write an
+   approval that a human didn't give.
 3. **Never backdate a record.** Use the real date. When capturing something after the
    fact, say so and add a deviation note.
 4. **Never bump a part or document revision without updating everything that cites it**
@@ -56,15 +58,24 @@ ECR issue, and every commit references it (`(ECR #n)`).
 - **SOPs are short:** about one page each. Write an SOP only for a process that's about to
   be run. Plain language. Each SOP has a document ID, a revision and a "Purpose / Scope /
   Procedure / Records" structure.
+- **SOP style: formal and concise.**
+  - Present tense with the role as subject for responsibilities ("The approver decides …").
+    Imperative for steps ("Determine the root cause.").
+  - **Must** or **never** only for hard constraints. **May** for permissions.
+  - No contractions, idioms, asides or explanations of reasoning. Reasons belong in `docs/`.
+  - Number sections only. Steps are a short numbered list, with no sub-clauses.
+  - One idea per sentence, with no padding. Cross-references in brackets, e.g. (SOP-001).
+  - One term per concept, as defined in [docs/INTERFACES.md](docs/INTERFACES.md).
 - **Mark the basis of every SOP section:** *ISO §x.y* if the standard requires it, or
   *minimalQMS choice* if it doesn't. Check against [docs/ISO9001-MAP.md](docs/ISO9001-MAP.md).
   Don't add requirements the standard doesn't impose unless they clearly save the human work.
 - **Never copy text from ISO standards** (copyrighted). Cite clause numbers and paraphrase.
   Reuse open templates only if their license allows it (see [docs/SOURCES.md](docs/SOURCES.md)),
   and record them in `NOTICE`.
-- **Tables are data, not Markdown.** Store anything tabular as CSV or YAML, never as a
-  Markdown table in a controlled record. (Markdown tables in explanatory docs like the
-  README are fine.)
+- **Tables are data, not Markdown.** Lists that grow (parts, BOMs, requirements, risks,
+  purchases, trace, test results) are CSV or YAML, never Markdown tables. Small, fixed
+  tables inside a single record (e.g. dispositions in review minutes) and tables in
+  explanatory docs are fine.
 - **Records must make sense without AI:** plain text that a person can read in 20
   years. Don't depend on any tool-specific format.
 - **Tool-agnostic.** Don't hard-code one AI vendor, CAD tool or the GitHub UI into
