@@ -27,7 +27,7 @@ One SOP per PR. Status: ✅ merged · 🔄 open · ⬜ not started
 | ⏸ | **SOP-009 Management layer** (scope, policy, objectives, internal audit, management review, training): held until real data exists | | ⬜ |
 | 9 | **CI checks:** BOM/parts lint, commit-message lint, `plan.yaml` / `gates.yaml` validation, approval-quote check, the `trace` script | | ⬜ |
 | 10 | **Copier product template:** product repo structure wired to the CI checks and `AGENTS.md`, recording which QMS rev it's built under | | ⬜ |
-| 11 | **Dry run and release:** generate a throwaway product, fix what breaks, write a CHANGELOG, tag `QMS-rev-A` | | ⬜ |
+| 11 | **Dry run and release:** generate a throwaway product, fix what breaks, write a CHANGELOG, tag `QMS-rev-A`. At the tag, enforce "agents never merge" on GitHub: agents get their own account, and a ruleset on `main` lets only the human merge. The bootstrap merge exception in AGENTS.md is removed. | | ⬜ |
 
 | – | Follow-ups: retention kept indefinitely (#16); assemblies and serial numbers (#17); gate timeline figure (#18); purchasing via parts-library (#19) | #16–#19 | ✅ |
 | – | Project codes for custom parts (`PPP-NNNN`, `PPP-A-NNNN`); part library holds OTS parts only | #20, parts-library#2 | 🔄 |
