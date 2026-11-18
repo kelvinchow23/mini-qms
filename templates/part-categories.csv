@@ -1,9 +1,8 @@
 code,description,typical_class
-ASY,Assembly or product (mechanical or top level),A
-PCA,Printed circuit assembly (populated board),A
-PCB,Bare printed circuit board,A
-MEC,Custom mechanical part (printed or machined),A
-HRN,Cable harness made in-house,A
+SYS,Complete product or system (always an assembly: SYS-A-NNNN),A
+PCB,Printed circuit board (bare: PCB-NNNN; assembled: PCB-A-NNNN),A
+MEC,Custom mechanical part (printed or machined); MEC-A-NNNN for mechanical subassemblies,A
+HRN,Cable harness made in-house (HRN-A-NNNN),A
 DFW,Firmware loaded onto a board,A
 DOC,Standalone document or drawing,-
 CON,Connectors,B

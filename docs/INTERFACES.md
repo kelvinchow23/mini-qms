@@ -39,8 +39,9 @@ deviations/DEV-nnn.md           SOP-001
 
 | ID | Meaning | Defined in | Example |
 |---|---|---|---|
-| `CCC-NNNN` + rev | Part or assembly | SOP-002 | `PCB-0001` rev `B` |
-| `SNnnn` | Unit serial number | SOP-002 | `SN001` |
+| `CCC-NNNN` + rev | Part | SOP-002 | `PCB-0001` rev `B` |
+| `CCC-A-NNNN` + rev | Assembly | SOP-002 | `PCB-A-0001` rev `A` |
+| `<PN>-YYMMDD<letter>` | Serial number (assemblies only) | SOP-002 | `PCB-A-0001-261118A` |
 | ECR `#n` | Change request (an issue) | SOP-001 | `ECR #12` |
 | `DEV-nnn` | Deviation | SOP-001 | `DEV-001` |
 | `DR-nnn` | Formal design review | SOP-003 | `DR-004` |
@@ -88,7 +89,7 @@ SOP-003 review approval ───────────► SOP-004 gate passed
 SOP-002 parts.csv (class) ─────────► SOP-005 what to buy · SOP-006 what to inspect and trace
 SOP-005 purchases.csv (P-nnnn) ────► SOP-006 inspection and trace.csv
 SOP-006 inspection fail ───────────► SOP-008 NC record
-SOP-006 built units (SNnnn) ───────► SOP-007 tests and release
+SOP-006 built units (serials) ─────► SOP-007 tests and release
 SOP-007 test fail ─────────────────► SOP-008 NC record
 SOP-008 corrective action ─────────► SOP-001 ECR, if the design must change
 ```

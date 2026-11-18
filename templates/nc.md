@@ -4,7 +4,7 @@ raised: YYYY-MM-DD           # the day it was found
 raised_by: ae                # id from roles.yaml, or agent plus directing human
 found_in: incoming-inspection # incoming-inspection / test / use / customer / supplier / process
 items:                       # everything affected; use trace to find all units
-  - {pn: PCB-0001, rev: B, sns: [SN003], lines: [P-0001]}
+  - {pn: PCB-A-0001, rev: A, sns: [PCB-A-0001-261125A], lines: [P-0001]}
 status: open                 # open / dispositioned / closed
 disposition: null            # use-as-is / rework / scrap / return
 decided_by: null

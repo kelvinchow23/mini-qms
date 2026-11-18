@@ -1,5 +1,5 @@
 # Design and development plan (SOP-004 §4). Change through a PR; old values stay in git history.
-product: ASY-0001          # top-level part number
+product: SYS-A-0001        # top-level part number
 iteration: 2
 qms_rev: QMS-rev-A          # the minimalQMS release this product is run under
 goal: "<one or two sentences>"

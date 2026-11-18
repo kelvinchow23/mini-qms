@@ -1,3 +1,4 @@
-sn,pn,rev,qty,line_id,notes
-SN003,PCB-0001,B,1,P-0001,
-all,FST-0001,-,12,P-0007,Class B: traced once per build
+sn,pn,rev,qty,line_id,child_sn,notes
+SYS-A-0001-261202A,PCB-A-0001,A,1,P-0001,PCB-A-0001-261125A,purchased assembled board with its own serial
+SYS-A-0001-261202A,MEC-0003,C,2,P-0004,,printed parts traced to print job
+all,FST-0001,-,12,P-0007,,Class B: traced once per build
