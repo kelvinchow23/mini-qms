@@ -8,7 +8,7 @@ requires, and where each requirement is covered, is in
 | SOP | Title | What it controls | Main records | ISO 9001 |
 |---|---|---|---|---|
 | [001](SOP-001-document-and-change-control.md) | Document and change control | Versions, changes (ECR → PR → approval → human merge), what an approval must prove, roles, deviations, retention | `roles.yaml`, ECRs, PRs, `DEV-nnn` | 5.3, 7.5, 8.3.6, 8.5.6 |
-| [002](SOP-002-parts-revisions-classes.md) | Part numbering, revisions and part classes | `CCC-NNNN` parts and `CCC-A-NNNN` assemblies, revisions, lifecycle, A/B/C traceability classes, serial numbers | `parts.csv`, `bom.csv` | 8.4.2, 8.5.2 |
+| [002](SOP-002-parts-revisions-classes.md) | Part numbering, revisions and part classes | `CCC-NNNN` OTS parts, `PPP-NNNN` / `PPP-A-NNNN` custom parts and assemblies, revisions, lifecycle, A/B/C traceability classes, serial numbers | `parts.csv`, `bom.csv` | 8.4.2, 8.5.2 |
 | [003](SOP-003-design-review.md) | Design review | Check-ins, working decisions and formal reviews; review packages, minutes and approval | `DR-nnn/`, `worklog.md` | 8.3.4, 8.3.6 |
 | [004](SOP-004-design-planning.md) | Design and development planning | Phase gates G0–G5, plan dates, requirements, risks | `plan.yaml`, `gates.yaml`, `requirements.yaml`, `risks.csv` | 6.1, 8.3.2–8.3.5 |
 | [005](SOP-005-purchasing-suppliers.md) | Purchasing and suppliers | Supplier approval; purchase list referring to the organisation's own requisitions and POs | `suppliers.csv`, `purchases.csv` | 8.4 |

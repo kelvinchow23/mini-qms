@@ -39,9 +39,10 @@ deviations/DEV-nnn.md           SOP-001
 
 | ID | Meaning | Defined in | Example |
 |---|---|---|---|
-| `CCC-NNNN` + rev | Part | SOP-002 | `PCB-0001` rev `B` |
-| `CCC-A-NNNN` + rev | Assembly | SOP-002 | `PCB-A-0001` rev `A` |
-| `<PN>-YYMMDD<letter>` | Serial number (assemblies only) | SOP-002 | `PCB-A-0001-261118A` |
+| `CCC-NNNN` | OTS part (part library) | SOP-002 | `FST-0001` |
+| `PPP-NNNN` + rev | Custom part (product repo) | SOP-002 | `PRX-0004` rev `B` |
+| `PPP-A-NNNN` + rev | Custom assembly (product repo) | SOP-002 | `PRX-A-0003` rev `A` |
+| `<PN>-YYMMDD<letter>` | Serial number (assemblies only) | SOP-002 | `PRX-A-0003-261118A` |
 | ECR `#n` | Change request (an issue) | SOP-001 | `ECR #12` |
 | `DEV-nnn` | Deviation | SOP-001 | `DEV-001` |
 | `DR-nnn` | Formal design review | SOP-003 | `DR-004` |

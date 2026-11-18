@@ -52,7 +52,7 @@ choice (SOP-001 section 8).*
    with action (`A-nnn`, with an owner).
 3. The approver accepts or rejects each independent finding, with a reason for rejection.
 4. The agent asks one question that names exactly what is being approved, e.g. *"Approve
-   DR-004: PCB-0001 rev B, 5 groups accepted, 1 with action A-012?"*
+   DR-004: PRX-0002 rev B, 5 groups accepted, 1 with action A-012?"*
 5. The approver answers yes or no. The answer is the approval (SOP-001 section 7).
 
 Conduct the review in an agent tool that saves the session transcript.

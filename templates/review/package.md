@@ -11,7 +11,7 @@ prepared_on: YYYY-MM-DD
 ## Scope
 | Item | From rev | To rev | CAD / source version |
 |---|---|---|---|
-| PCB-0001 | A | B | KiCad tag pcb-0001-revB |
+| PRX-0002 | A | B | KiCad tag prx-0002-revB |
 
 ## Agenda
 1. <change group 1>

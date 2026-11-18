@@ -2,11 +2,11 @@
 build: B002
 started: YYYY-MM-DD
 builder: ae                    # id from roles.yaml
-assembly: {pn: SYS-A-0001, rev: B}
+assembly: {pn: PRX-A-0001, rev: B}
 qms_rev: QMS-rev-A
 config:                        # revision of every made part and firmware used
-  PCB-A-0001: A
-  MEC-0001: C
-  DFW-0001: v1.2.0
-units: [SYS-A-0001-261202A, SYS-A-0001-261202B]
+  PRX-A-0003: A
+  PRX-0004: C
+  PRX-0006: v1.2.0
+units: [PRX-A-0001-261202A, PRX-A-0001-261202B]
 deviations: []                 # e.g. [DEV-001]

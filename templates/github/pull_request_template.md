@@ -3,7 +3,7 @@
 ## ECO for ECR #<!-- number -->
 
 **Items and revisions**
-<!-- e.g. PCB-0001 rev A → rev B; HSG-0002 rev B → rev C (Fusion version 52) -->
+<!-- e.g. PRX-0002 rev A → rev B; PRX-0005 rev B → rev C (Fusion version 52) -->
 
 **What changed and why**
 <!-- Plain language. Group related changes the way you'd present them in a review. -->

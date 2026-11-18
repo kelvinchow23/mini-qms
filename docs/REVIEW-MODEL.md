@@ -62,7 +62,7 @@ not like scrolling through a diff.
 Before the review, the agent puts together a package (generated, not hand-written):
 
 - **Scope:** what's under review, from which revision to which (for example
-  `PCB-0001 rev A → rev B`, Fusion version 47 → 52), and which ECRs it covers.
+  `PRX-0002 rev A → rev B`, Fusion version 47 → 52), and which ECRs it covers.
 - **Agenda:** the changes grouped the way a person would present them (for example
   "LED thermal path", "connector moved", "BOM substitutions"), not one entry per file.
 - **For each change group:**
@@ -96,7 +96,7 @@ For each independent finding: accept it, or reject it with a reason.
 
 At the end, the agent repeats back exactly what's being decided, for example:
 
-> *Approve DR-004: PCB-0001 rev B and HSG-0002 rev C, 5 change groups accepted,
+> *Approve DR-004: PRX-0002 rev B and PRX-0005 rev C, 5 change groups accepted,
 > 1 accepted with action (A-12, owner: KC), 1 finding rejected?*
 
 The human answers **yes or no**. That reply is the approval. A vague "ok" doesn't count:
