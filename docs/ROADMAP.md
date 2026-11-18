@@ -29,8 +29,9 @@ One SOP per PR. Status: ✅ merged · 🔄 open · ⬜ not started
 | 10 | **Copier product template:** product repo structure wired to the CI checks and `AGENTS.md`, recording which QMS rev it's built under | | ⬜ |
 | 11 | **Dry run and release:** generate a throwaway product, fix what breaks, write a CHANGELOG, tag `QMS-rev-A` | | ⬜ |
 
-| – | Follow-ups: retention kept indefinitely (#16); `CCC-A-NNNN` assemblies, serial numbers and parts-library allocation (#17); gate timeline figure (#18); purchasing via parts-library (#19) | #16–#19 | 🔄 |
-| – | **parts-library repo:** organisation-wide PN register, purchasing upload generator, order recording ([kelvinchow23/parts-library](https://github.com/kelvinchow23/parts-library)) | parts-library#1 | 🔄 |
+| – | Follow-ups: retention kept indefinitely (#16); assemblies and serial numbers (#17); gate timeline figure (#18); purchasing via parts-library (#19) | #16–#19 | ✅ |
+| – | Project codes for custom parts (`PPP-NNNN`, `PPP-A-NNNN`); part library holds OTS parts only | #20, parts-library#2 | 🔄 |
+| – | **parts-library repo:** organisation-wide PN register, purchasing upload generator, order recording ([kelvinchow23/parts-library](https://github.com/kelvinchow23/parts-library)) | parts-library#1 | ✅ |
 
 **If iteration 2 starts early:** ship the SOPs and templates (steps 4–8c) first, tag them as
 QMS-rev A, and add the CI checks and Copier template (steps 9–10) as QMS-rev B during
