@@ -36,8 +36,10 @@ ECR issue, and every commit references it (`(ECR #n)`).
 ## Hard rules (apply in every minimalQMS repo)
 
 1. **Never commit to `main`.** Always use a branch and a PR.
-2. **Never approve, merge or sign off anything.** Never mark a record approved,
-   released or signed. Approval is a human action. You may *prepare* a PR for approval.
+2. **Never approve, merge or sign off anything.** Approval is a human action. You may
+   *prepare* a PR or record for approval, and you may *record* a human's approval by
+   quoting their exact words with the evidence location (SOP-001 §7). Never write an
+   approval that a human didn't give.
 3. **Never backdate a record.** Use the real date. When capturing something after the
    fact, say so and add a deviation note.
 4. **Never bump a part or document revision without updating everything that cites it**
@@ -62,9 +64,10 @@ ECR issue, and every commit references it (`(ECR #n)`).
 - **Never copy text from ISO standards** (copyrighted). Cite clause numbers and paraphrase.
   Reuse open templates only if their license allows it (see [docs/SOURCES.md](docs/SOURCES.md)),
   and record them in `NOTICE`.
-- **Tables are data, not Markdown.** Store anything tabular as CSV or YAML, never as a
-  Markdown table in a controlled record. (Markdown tables in explanatory docs like the
-  README are fine.)
+- **Tables are data, not Markdown.** Lists that grow (parts, BOMs, requirements, risks,
+  purchases, trace, test results) are CSV or YAML, never Markdown tables. Small, fixed
+  tables inside a single record (e.g. dispositions in review minutes) and tables in
+  explanatory docs are fine.
 - **Records must make sense without AI:** plain text that a person can read in 20
   years. Don't depend on any tool-specific format.
 - **Tool-agnostic.** Don't hard-code one AI vendor, CAD tool or the GitHub UI into
