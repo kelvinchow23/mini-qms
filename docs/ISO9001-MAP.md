@@ -34,7 +34,7 @@ requires SOPs. That's why each SOP is about one page.
 | Clause | Requirement | minimalQMS | When |
 |---|---|---|---|
 | 4.3 | Scope of the QMS | `qms/scope.md` | Management layer, after rev A |
-| 4.4 | Information needed to run the processes | SOPs, `AGENTS.md`, templates | Rev A onward |
+| 4.4 | Information needed to run the processes | SOP-001 to SOP-008, `AGENTS.md`, templates | Rev A |
 | 5.2 | Quality policy | `qms/policy.md` (a few lines) | Management layer |
 | 6.2 | Quality objectives | `qms/objectives.yaml` (measurable, e.g. admin hours per build) | Management layer |
 
@@ -43,20 +43,20 @@ requires SOPs. That's why each SOP is about one page.
 | Clause | Evidence of… | minimalQMS record | When |
 |---|---|---|---|
 | 4.4 | Processes ran as planned | Git history, PRs, CI results | Rev A |
-| 7.1.5 | Measuring equipment fit for purpose, and calibration | `equipment/` calibration register, plus a CI check for expired tools | Before iteration 2 testing |
+| 7.1.5 | Measuring equipment fit for purpose, and calibration | `equipment/equipment.csv`, plus a CI check for overdue equipment | SOP-007 |
 | 7.2 | Competence | `qms/training.csv` (person, skill, evidence) | Management layer |
-| 8.2.3 | Review of customer or product requirements | `requirements.yaml` and its approval | Iteration 2, phase 1 |
+| 8.2.3 | Review of customer or product requirements | `requirements.yaml`, approved at G1 | SOP-004 |
 | 8.3.2–8.3.6 | Design planning, inputs, reviews, outputs, changes | `plan.yaml`, requirements, review minutes and transcripts, released design exports, ECR/ECO | SOP-003, SOP-004 |
-| 8.4.1 | Supplier evaluation and monitoring | Approved supplier list | Purchasing SOP, before iteration 2 orders |
-| 8.5.2 | Unique identification where traceability is needed | Serial numbers, `trace.csv`, POs (Class A/B parts) | Build records |
-| 8.5.3 | Customer or supplier property lost or damaged | A nonconformance record if it happens | Nonconformance SOP |
+| 8.4.1 | Supplier evaluation and monitoring | `suppliers.csv` | SOP-005 |
+| 8.5.2 | Unique identification where traceability is needed | Serial numbers, `trace.csv`, purchase lines (Class A/B) | SOP-002, SOP-006 |
+| 8.5.3 | Customer or supplier property lost or damaged | An NC record if it happens | SOP-008 |
 | 8.5.6 | Changes reviewed: results, who authorised, actions | ECR, ECO PR, approval | **SOP-001** |
-| 8.6 | Release, traced to the person who authorised it | Release PR and tag by a named human | Test and release SOP |
-| 8.7 | Nonconforming outputs, actions, concessions, who decided | Nonconformance record | Nonconformance SOP |
+| 8.6 | Release, traced to the person who authorised it | `release.yaml`, approved and merged by a named human | SOP-007 |
+| 8.7 | Nonconforming outputs, actions, concessions, who decided | `NC-nnn.md` | SOP-008 |
 | 9.1.1 | Monitoring and measurement results | Objectives tracking | Management layer |
 | 9.2.2 | Internal audit programme and results | Audit plan and report | Management layer (yearly) |
 | 9.3.3 | Management review results | Review minutes | Management layer (yearly) |
-| 10.2.2 | Nonconformities and corrective actions | Corrective action records | Nonconformance SOP |
+| 10.2.2 | Nonconformities and corrective actions | Corrective-action section of `NC-nnn.md` | SOP-008 |
 
 ## What the standard does *not* require
 
