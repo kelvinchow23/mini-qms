@@ -9,54 +9,52 @@ standard: ISO 9001:2026 # clause refs not yet checked against the purchased text
 
 # SOP-004 Design and development planning
 
-Each section has a **Basis** line: *ISO §x.y* (required) or *minimalQMS choice*.
+Each section ends with its basis: *ISO §x.y* (required by the standard) or *minimalQMS
+choice* (may be changed by teams using minimalQMS).
 
 ## 1. Purpose
-Plan each product's development in stages with clear gates, so it's known what must be
-true before moving on. Planning shouldn't turn into project-management overhead.
-*Basis: ISO §8.3.2 (plan stages, reviews, verification and validation, responsibilities,
-interfaces, and involvement of relevant parties)*
+To plan each product's development in stages, with gates that state what must be complete
+before work proceeds.
+*Basis: ISO §8.3.2*
 
 ## 2. Scope
-Every product repo, from the start of a project or iteration to close-out. How the
-schedule is managed day to day isn't covered; use any tool.
+Every product repo, from the start of a project or iteration to close-out. Day-to-day
+scheduling is outside this procedure; any tool may be used.
 
 ## 3. Phase gates
-| Gate | Name | What must be true |
+
+| Gate | Name | Required to pass |
 |---|---|---|
 | **G0** | Scope | `plan.yaml` approved: goal, scope, make/buy, roles, target dates |
 | **G1** | Requirements frozen | `requirements.yaml` and `risks.csv` approved in a formal review |
 | **G2** | Design complete | Design reviewed against requirements and risks; actions closed or carried forward |
-| **G3** | Released for build | Parts and BOM released (SOP-002); test procedures written (SOP-007) |
-| **G4** | Built and verified | Every unit tested and released or dispositioned (SOP-007, SOP-008) |
-| **G5** | Close-out | Lessons learned written, including where AI was wrong |
+| **G3** | Released for build | Parts and BOM released (SOP-002); test procedures released (SOP-007) |
+| **G4** | Built and verified | Every unit released or dispositioned (SOP-007, SOP-008) |
+| **G5** | Close-out | Lessons learned recorded, including errors made by agents |
 
-`gates.yaml` lists the records each gate needs. CI blocks a gate whose records are
-missing. A product may drop a gate that doesn't apply, with a reason in `plan.yaml`.
-*Basis: ISO §8.3.2 (stages and controls). The six gates are a minimalQMS choice.*
+`gates.yaml` lists the records each gate requires. CI blocks a gate with missing records.
+A gate that does not apply may be skipped, with the reason stated in `plan.yaml`.
+*Basis: ISO §8.3.2. The six gates are a minimalQMS choice.*
 
-## 4. The plan
-`plan.yaml` gives the goal, scope, responsibilities (from `roles.yaml`), and for each gate
-the **target date**, the **actual date** and the approval reference. When a target date
-moves, it's changed through a PR with a one-line reason. Old targets stay in the git history.
-*Basis: ISO §8.3.2. Recording planned vs. actual dates is a minimalQMS choice; it also
-measures how lean the process really is.*
+## 4. Plan
+`plan.yaml` states the goal, scope, responsibilities (from `roles.yaml`), and for each
+gate the target date, actual date and approval reference. Change a target date through a
+PR with a one-line reason; earlier targets remain in the git history.
+*Basis: ISO §8.3.2. Recording planned and actual dates is a minimalQMS choice.*
 
 ## 5. Requirements and risks
-- `requirements.yaml`: each requirement has an ID (`REQ-nnn`), a statement, its source
-  (customer, standard, internal) and a **verification method** (test, inspection,
-  analysis or review).
-- `risks.csv`: a lightweight FMEA. Each line has an ID (`RISK-nnn`), the hazard or failure,
-  its effect, severity and likelihood (1–5 each), the controls, and the requirement or
-  test that verifies them.
-- Both are frozen at G1. Later changes go through SOP-001.
+- `requirements.yaml`: each requirement has an ID (`REQ-nnn`), a statement, a source
+  (customer, standard or internal) and a verification method (test, inspection, analysis
+  or review).
+- `risks.csv`: a simplified FMEA. Each line has an ID (`RISK-nnn`), the hazard or failure,
+  its effect, severity and likelihood (1–5), the controls, and the requirement or test that
+  verifies the controls.
 
-*Basis: ISO §8.3.3 (design inputs, including standards and the consequences of failure),
-§6.1.2 (actions on risks proportionate to their impact). The FMEA format is a minimalQMS
-choice.*
+Both are frozen at G1. Later changes follow SOP-001.
+*Basis: ISO §8.3.3, §6.1.2. The FMEA format is a minimalQMS choice.*
 
-## 6. Gate approval
-Gates G1–G3 are passed by a formal review (SOP-003). G0, G4 and G5 are passed by an
-explicit approval under SOP-001 §7. The actual date and approval reference are then
-recorded in `plan.yaml`.
-*Basis: ISO §8.3.4, §8.3.5 (design outputs meet input requirements)*
+## 6. Passing a gate
+Gates G1–G3 are passed by a formal review (SOP-003). Gates G0, G4 and G5 are passed by an
+explicit approval (SOP-001 section 7). Record the actual date and the approval reference
+in `plan.yaml`.
+*Basis: ISO §8.3.4, §8.3.5*
