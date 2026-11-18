@@ -1,0 +1,12 @@
+# Build record header (SOP-006 §4). Use actual dates; never backdate.
+build: B002
+started: YYYY-MM-DD
+builder: ae                    # id from roles.yaml
+assembly: {pn: ASY-0001, rev: B}
+qms_rev: QMS-rev-A
+config:                        # revision of every made part and firmware used
+  PCB-0001: B
+  MEC-0001: C
+  DFW-0001: v1.2.0
+units: [SN003, SN004]
+deviations: []                 # e.g. [DEV-001]

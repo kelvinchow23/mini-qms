@@ -1,0 +1,2 @@
+line_id,pn,date,inspector,checks,result,nc,evidence
+P-0001,PCB-0001,2026-11-21,ae,"right part and rev; qty 5; no damage; outline 100x80 mm",pass,,photos/P-0001.jpg
