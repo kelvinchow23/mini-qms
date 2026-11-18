@@ -1,0 +1,2 @@
+id,hazard_or_failure,effect,severity_1to5,likelihood_1to5,controls,verified_by,status
+RISK-001,Example: LED optical output exposes user's eyes,Eye injury,4,2,Interlocked opaque lid; warning label,REQ-003 / TP-002,open
