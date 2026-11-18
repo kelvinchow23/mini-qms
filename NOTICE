@@ -1,0 +1,12 @@
+minimalQMS
+Copyright (c) 2026 Kelvin Chow. Licensed under the MIT License (see LICENSE).
+
+This project adapts material from the following sources:
+
+- git-plm/parts, partnumbers.md (https://github.com/git-plm/parts)
+  Used in: sops/SOP-002-parts-revisions-classes.md (part number format and guidelines),
+           templates/part-categories.csv (category codes, adapted and shortened).
+  Changes: format shortened to CCC-NNNN; revision kept as a separate field rather than
+           encoded in the part number; category list reduced.
+  License: MIT
+  Copyright (c) 2024 Git PLM
