@@ -1,0 +1,2 @@
+line_id,pn,description,qty,supplier,link,order_ref,order_date,received_date,received_qty,lot,inspection,notes
+P-0001,RES-0001,10k 0603 1% resistor,100,Digi-Key,https://www.digikey.com/,PO-45012,2026-11-20,,,,na,example row - delete
