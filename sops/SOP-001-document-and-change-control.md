@@ -100,8 +100,6 @@ affected work is released. Records captured after the fact always require a devi
 *Basis: ISO §8.6, §8.7. The deviation record is a minimalQMS choice.*
 
 ## 10. Retention
-Records are kept in git for the life of the product plus at least 3 years. Records are
-never deleted, and `main` is never force-pushed. Formal-review transcripts are archived
-unaltered with their minutes.
-*Basis: ISO §7.5.3 requires a defined retention. The period is a minimalQMS choice;
-customer or legal requirements may require longer.*
+Records are retained indefinitely in the repository and are not deleted. `main` is never
+force-pushed. Formal-review transcripts are archived unaltered with their minutes.
+*Basis: ISO §7.5.3*
