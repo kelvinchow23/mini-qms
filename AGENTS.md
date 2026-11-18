@@ -56,6 +56,12 @@ ECR issue, and every commit references it (`(ECR #n)`).
 - **SOPs are short:** about one page each. Write an SOP only for a process that's about to
   be run. Plain language. Each SOP has a document ID, a revision and a "Purpose / Scope /
   Procedure / Records" structure.
+- **Mark the basis of every SOP section:** *ISO §x.y* if the standard requires it, or
+  *minimalQMS choice* if it doesn't. Check against [docs/ISO9001-MAP.md](docs/ISO9001-MAP.md).
+  Don't add requirements the standard doesn't impose unless they clearly save the human work.
+- **Never copy text from ISO standards** (copyrighted). Cite clause numbers and paraphrase.
+  Reuse open templates only if their license allows it (see [docs/SOURCES.md](docs/SOURCES.md)),
+  and record them in `NOTICE`.
 - **Tables are data, not Markdown.** Store anything tabular as CSV or YAML, never as a
   Markdown table in a controlled record. (Markdown tables in explanatory docs like the
   README are fine.)

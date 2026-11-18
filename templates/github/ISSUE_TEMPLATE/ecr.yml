@@ -1,0 +1,49 @@
+# ECR: engineering change request (SOP-001 §6, step 1)
+# A GitHub issue form, so it shows up as a simple form rather than a Markdown file.
+name: ECR (change request)
+description: Ask for a change to a part, design or document, and say why.
+title: "ECR: <short description>"
+labels: ["ECR"]
+body:
+  - type: input
+    id: items
+    attributes:
+      label: Affected items
+      description: Part numbers or document IDs, with their current revision.
+      placeholder: "PCB-0001 rev A, HSG-0002 rev B"
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What should change
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why
+      description: The problem, requirement, finding or opportunity behind it.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: >
+        Affected requirements and risks, units already built or parts already ordered,
+        cost or schedule. Write "unknown" if it isn't known yet.
+  - type: dropdown
+    id: review
+    attributes:
+      label: Review needed
+      options:
+        - PR review (small change)
+        - Formal design review (SOP-003)
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Raised from
+      description: For example a design session, review DR-004, a test failure or a supplier change.
