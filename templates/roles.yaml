@@ -12,6 +12,7 @@ roles:
     design: [ae]           # design changes and phase gates
     documents: [ae]        # SOPs, templates
     release: [ae]          # product releases and tags
+    nonconformance: [ae]   # dispositions and corrective-action decisions (SOP-008)
   internal_auditor: []     # must not audit their own work; name an outside person
 
 # Agents are authors and reviewers, never approvers.
