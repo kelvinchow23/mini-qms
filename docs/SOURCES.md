@@ -10,7 +10,7 @@ What minimalQMS is based on. Checked 2026-11-17.
 | ISO 9001:2015 | The previous edition. Most public guidance refers to it. | Withdrawn; transition ends about 30 Sept 2029 |
 | ISO 19011 | Guidelines for auditing | To use when writing the internal-audit procedure |
 
-minimalQMS never copies text from ISO standards. It cites clause numbers and summarises
+minimalQMS never copies text from ISO standards. It cites clause numbers and summarizes
 requirements in plain language.
 
 ## Free official guidance
@@ -29,11 +29,11 @@ requirements in plain language.
 
 ## Open templates we may build from
 
-minimalQMS is MIT-licensed, so we only reuse content whose license allows it. Anything
-reused gets an entry in `NOTICE` (source, license, commit) and keeps any required
+minimalQMS is MIT-licensed, so we only reuse content whose licence allows it. Anything
+reused gets an entry in `NOTICE` (source, licence, commit) and keeps any required
 attribution.
 
-| Source | License | What we'd use it for |
+| Source | Licence | What we'd use it for |
 |---|---|---|
 | [OpenRegulatory templates](https://github.com/openregulatory/templates) at commit `aad8277` (2024-06-04) | **CC BY 4.0** at that commit. Current versions are CC BY-NC-SA 4.0 and **can't be used.** | Structure for nonconformance/CAPA, internal audit, management review and supplier control SOPs, adapted from ISO 13485 down to 9001 |
 | [GSTT-CSC QMS-Template](https://github.com/GSTT-CSC/QMS-Template) | Apache-2.0 (many SOPs derive from OpenRegulatory, so credit both) | GitHub-based PR review and change management, as a reference |
@@ -44,8 +44,8 @@ attribution.
 ## Reference only (don't copy)
 
 - [Tidepool QMS](https://www.tidepool.org/blog/tidepools-open-source-qms-gets-iso-13485-certified):
-  the license for its SOPs is unclear.
+  the licence for its SOPs is unclear.
 - Current OpenRegulatory templates (NonCommercial) and the dearauditor SOPs (ShareAlike):
-  their licenses aren't compatible with MIT.
+  their licences aren't compatible with MIT.
 - [OpenRegulatory, *GitHub QMS: We No Longer Recommend It*](https://openregulatory.com/articles/we-no-longer-recommend-github-gitlab-as-qms-software):
   the critique answered in [RATIONALE.md](RATIONALE.md).

@@ -81,7 +81,7 @@ IDs are never reused. Numbers are zero-padded so they sort correctly.
 | `status` (supplier) | `approved` / `conditional` / `removed` | suppliers.csv |
 | dates | ISO format `YYYY-MM-DD`, the actual date, never backdated | everywhere |
 | people | the `id` from `roles.yaml` | everywhere |
-| `order_ref` | the organisation's own requisition or PO number; the documents stay in its own system | purchases.csv |
+| `order_ref` | the organization's own requisition or PO number; the documents stay in its own system | purchases.csv |
 
 ## Who produces what for whom
 

@@ -8,5 +8,5 @@ This project adapts material from the following sources:
            category codes (now kept in the parts-library repo).
   Changes: OTS format shortened to CCC-NNNN; revision kept as a separate field rather than
            encoded in the part number; category list reduced.
-  License: MIT
+  Licence: MIT
   Copyright (c) 2024 Git PLM

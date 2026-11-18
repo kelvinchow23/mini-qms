@@ -56,7 +56,7 @@ before merge.
 
 ## 7. Records
 `TP-nnn.md`, `equipment.csv`, `test_results.csv` and `release.yaml` are controlled under
-SOP-001. Calibration certificates may be kept in the organisation's own systems and
+SOP-001. Calibration certificates may be kept in the organization's own systems and
 referred to by number.
 
 ## Appendices
