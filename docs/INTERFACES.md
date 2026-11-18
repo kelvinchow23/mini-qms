@@ -19,7 +19,6 @@ worklog.md                      SOP-003  check-ins and notable working decisions
   reviews/DR-nnn/               SOP-003  package, minutes, transcript, visuals
 03_release/
   parts.csv, bom.csv            SOP-002
-  part-categories.csv           SOP-002
   test_procedures/TP-nnn.md     SOP-007
 purchasing/
   purchases.csv                 SOP-005

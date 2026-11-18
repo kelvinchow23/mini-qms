@@ -27,9 +27,12 @@ parts, harnesses), assemblies, firmware and consumables. Also serial numbers of 
 | **`CCC-NNNN`** | Parts: single items with no sub-parts, made or purchased | `PCB-0001` bare board, `MEC-0003` printed bracket, `RES-0002` resistor |
 | **`CCC-A-NNNN`** | Assemblies: items with sub-parts, or that require an assembly or modification instruction | `PCB-A-0001` assembled board, `HRN-A-0002` harness, `SYS-A-0001` complete product |
 
-`CCC` is a category code from `part-categories.csv`. `A` is a fixed letter that marks an
-assembly. `NNNN` is the next free number in that category. Use capital letters, digits
-and hyphens only.
+`CCC` is a category code. `A` is a fixed letter that marks an assembly. `NNNN` is the next
+free number in that category. Use capital letters, digits and hyphens only.
+
+Part numbers are allocated from the organisation's part library (the `parts-library` repo),
+which holds the category codes and the data for purchased parts. The product repo's
+`parts.csv` lists the PNs the product uses, with their revisions and lifecycle.
 - A part number never changes meaning and is never reused.
 - An assembly built from one main part shares its number (e.g. `PCB-0001` bare board,
   `PCB-A-0001` assembled board).
@@ -97,7 +100,7 @@ purchase line or print job.
 - `parts.csv`: part master, one row per PN.
 - `bom.csv`: one row per line item, exported from the CAD tools at release and joined with
   `parts.csv`.
-- `part-categories.csv`: category codes in use.
+- The part library's `parts.csv` and `categories.csv`: organisation-wide PN register.
 
 These records are controlled under SOP-001. CI checks that every BOM line has a PN that
 exists in `parts.csv`, is `released` and has a class, and that purchased parts have a
