@@ -117,7 +117,7 @@ def main():
         ax.text(lx + 0.65, ly, text, va="center", fontsize=8.5, color=MUTED)
         lx += 0.65 + len(text) * 0.105 + 0.6
 
-    ax.text(left + 0.05, top - 0.05, "minimalQMS: how a product moves through the SOPs (not to scale)",
+    ax.text(left + 0.05, top - 0.05, "minimalQMS: one iteration through the SOPs (not to scale)",
             ha="left", va="center", fontsize=12, color=INK, fontweight="bold")
 
     fig.tight_layout(pad=0.4)
