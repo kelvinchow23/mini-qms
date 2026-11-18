@@ -58,3 +58,14 @@ before merge.
 `TP-nnn.md`, `equipment.csv`, `test_results.csv` and `release.yaml` are controlled under
 SOP-001. Calibration certificates may be kept in the organisation's own systems and
 referred to by number.
+
+## Appendices
+Appendices are forms and templates that belong to this SOP. They carry the SOP's revision
+and change only through a revision of this SOP.
+
+| ID | Title | File | Used in product repos as |
+|---|---|---|---|
+| SOP-007-A01 | Test procedure | [SOP-007-A01-test-procedure.md](SOP-007-A01-test-procedure.md) | `03_release/test_procedures/TP-nnn.md` |
+| SOP-007-A02 | Test results | [SOP-007-A02-test-results.csv](SOP-007-A02-test-results.csv) | `builds/B00n/test_results.csv` |
+| SOP-007-A03 | Equipment and calibration list | [SOP-007-A03-equipment.csv](SOP-007-A03-equipment.csv) | `equipment/equipment.csv` |
+| SOP-007-A04 | Release record | [SOP-007-A04-release.yaml](SOP-007-A04-release.yaml) | `builds/B00n/release.yaml` |

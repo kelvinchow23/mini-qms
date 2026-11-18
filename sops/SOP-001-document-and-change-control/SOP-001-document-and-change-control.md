@@ -44,7 +44,8 @@ references the original.
 
 ## 5. Identification and versions
 Each controlled document's header states its ID, title, revision (A, B …) and status
-(draft, released or obsolete). The version on `main` is the released version; branches
+(draft, released or obsolete). Forms and templates are appendices of their SOP
+(`SOP-nnn-Ann`), kept in the SOP's folder, and share the SOP's revision. The version on `main` is the released version; branches
 are drafts. Exports are uncontrolled unless generated from a tagged release. External
 documents (standards, datasheets, supplier specifications) are listed with the version
 used.
@@ -94,7 +95,7 @@ records a decision on each finding. Approval should follow a break, ideally the 
 choice; ISO does not require reviewers independent of the author.*
 
 ## 9. Deviations
-When a procedure cannot be followed, record a deviation (`DEV-nnn`) stating the reason,
+When a procedure cannot be followed, record a deviation (`DEV-nnn`, SOP-001-A03) stating the reason,
 scope, affected items and compensating actions. The quality lead approves it before the
 affected work is released. Records captured after the fact always require a deviation.
 *Basis: ISO §8.6, §8.7. The deviation record is a minimalQMS choice.*
@@ -103,3 +104,14 @@ affected work is released. Records captured after the fact always require a devi
 Records are retained indefinitely in the repository and are not deleted. `main` is never
 force-pushed. Formal-review transcripts are archived unaltered with their minutes.
 *Basis: ISO §7.5.3*
+
+## Appendices
+Appendices are forms and templates that belong to this SOP. They carry the SOP's revision
+and change only through a revision of this SOP.
+
+| ID | Title | File | Used in product repos as |
+|---|---|---|---|
+| SOP-001-A01 | ECR form (GitHub issue form) | [SOP-001-A01-ecr-form.yml](SOP-001-A01-ecr-form.yml) | `.github/ISSUE_TEMPLATE/ecr.yml` |
+| SOP-001-A02 | ECO pull request template | [SOP-001-A02-eco-pr-template.md](SOP-001-A02-eco-pr-template.md) | `.github/pull_request_template.md` |
+| SOP-001-A03 | Deviation record | [SOP-001-A03-deviation.md](SOP-001-A03-deviation.md) | `deviations/DEV-nnn.md` |
+| SOP-001-A04 | Roles register | [SOP-001-A04-roles.yaml](SOP-001-A04-roles.yaml) | `roles.yaml` |

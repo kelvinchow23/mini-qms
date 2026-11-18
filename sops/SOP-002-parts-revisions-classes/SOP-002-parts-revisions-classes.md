@@ -107,3 +107,12 @@ purchase line or print job.
 
 These records are controlled under SOP-001. CI checks that every BOM line refers to an
 existing, `released` PN with a class, and that bought items have a supplier.
+
+## Appendices
+Appendices are forms and templates that belong to this SOP. They carry the SOP's revision
+and change only through a revision of this SOP.
+
+| ID | Title | File | Used in product repos as |
+|---|---|---|---|
+| SOP-002-A01 | Custom parts list | [SOP-002-A01-custom-parts.csv](SOP-002-A01-custom-parts.csv) | `03_release/parts.csv` |
+| SOP-002-A02 | Master BOM | [SOP-002-A02-bom.csv](SOP-002-A02-bom.csv) | `03_release/bom.csv` |

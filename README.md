@@ -92,7 +92,7 @@ critiques point by point.
 
 ## Structure
 
-This repo is the **org-level QMS**: SOPs, templates, reusable CI checks and the base
+This repo is the **org-level QMS**: SOPs with their appendices (forms and templates), reusable CI checks and the base
 agent instructions. It's versioned by revision (`QMS-rev A`, …).
 
 Each product lives in its own repo, generated from a **Copier** template here. Running

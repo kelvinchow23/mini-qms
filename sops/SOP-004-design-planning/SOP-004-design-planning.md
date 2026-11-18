@@ -58,3 +58,14 @@ Gates G1–G3 are passed by a formal review (SOP-003). Gates G0, G4 and G5 are p
 explicit approval (SOP-001 section 7). Record the actual date and the approval reference
 in `plan.yaml`.
 *Basis: ISO §8.3.4, §8.3.5*
+
+## Appendices
+Appendices are forms and templates that belong to this SOP. They carry the SOP's revision
+and change only through a revision of this SOP.
+
+| ID | Title | File | Used in product repos as |
+|---|---|---|---|
+| SOP-004-A01 | Development plan | [SOP-004-A01-plan.yaml](SOP-004-A01-plan.yaml) | `00_planning/plan.yaml` |
+| SOP-004-A02 | Gate requirements | [SOP-004-A02-gates.yaml](SOP-004-A02-gates.yaml) | `00_planning/gates.yaml` |
+| SOP-004-A03 | Requirements | [SOP-004-A03-requirements.yaml](SOP-004-A03-requirements.yaml) | `01_requirements/requirements.yaml` |
+| SOP-004-A04 | Risk list (simplified FMEA) | [SOP-004-A04-risks.csv](SOP-004-A04-risks.csv) | `01_requirements/risks.csv` |

@@ -33,9 +33,9 @@ One SOP per PR. Status: ✅ merged · 🔄 open · ⬜ not started
 | – | Project codes for custom parts (`PPP-NNNN`, `PPP-A-NNNN`); part library holds OTS parts only | #20, parts-library#2 | 🔄 |
 | – | **parts-library repo:** organisation-wide PN register, purchasing upload generator, order recording ([kelvinchow23/parts-library](https://github.com/kelvinchow23/parts-library)) | parts-library#1 | ✅ |
 
-**If iteration 2 starts early:** ship the SOPs and templates (steps 4–8c) first, tag them as
+**If iteration 2 starts early:** ship the SOPs and appendices (steps 4–8c) first, tag them as
 QMS-rev A, and add the CI checks and Copier template (steps 9–10) as QMS-rev B during
-iteration 2. Iteration 2's repo can be set up by hand from the templates in the meantime.
+iteration 2. Iteration 2's repo can be set up by hand from the SOP appendices in the meantime.
 
 ## After rev A (each written just before it's needed)
 

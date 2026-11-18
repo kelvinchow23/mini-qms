@@ -44,6 +44,7 @@ deviations/DEV-nnn.md           SOP-001
 | `PPP-A-NNNN` + rev | Custom assembly (product repo) | SOP-002 | `PRX-A-0003` rev `A` |
 | `<PN>-YYMMDD<letter>` | Serial number (assemblies only) | SOP-002 | `PRX-A-0003-261118A` |
 | ECR `#n` | Change request (an issue) | SOP-001 | `ECR #12` |
+| `SOP-nnn-Ann` | SOP appendix (form or template) | SOP-001 | `SOP-003-A01` review package |
 | `DEV-nnn` | Deviation | SOP-001 | `DEV-001` |
 | `DR-nnn` | Formal design review | SOP-003 | `DR-004` |
 | `A-nnn` | Action from a review | SOP-003 | `A-012` |

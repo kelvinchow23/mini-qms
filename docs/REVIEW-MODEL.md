@@ -129,7 +129,7 @@ the final step an authenticated human action, separate from anything an agent wr
 | When formal reviews happen; package and minutes requirements | SOP-003 |
 | Which reviews gate which phases | SOP-004 and the product's `gates.yaml` |
 | How agents prepare packages, run walkthroughs and log check-ins | `AGENTS.md` |
-| Package and minutes formats | Templates in the product repo |
+| Package and minutes formats | SOP-003-A01 and SOP-003-A02 |
 | Checking that cited approvals exist in transcripts | CI |
 
 ## Tools to look at (not decided)
