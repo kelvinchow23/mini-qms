@@ -29,6 +29,7 @@ contents. Testing and release are covered by SOP-007.
 | **B** | Visually confirm the item. No record beyond the received date in `purchases.csv`. |
 | **C** | No inspection. |
 
+A purchased assembly receives its serial number at inspection (SOP-002 section 7).
 When a Class A item fails, mark it `fail`, segregate it from accepted stock, and raise an
 NC (SOP-008). Photos may be stored with the inspection record.
 *Basis: ISO §8.4.2, §8.6. Classes are defined in SOP-002.*
@@ -45,8 +46,8 @@ Use only `released` parts and revisions (SOP-002). Any other use requires a devi
 *Basis: ISO §8.5.1, §8.5.2*
 
 ## 5. Trace record
-`trace.csv` has one row per unit per traced part: serial number, PN, revision, quantity and
-purchase line (`P-nnnn`). Class A parts are traced per unit. Class B parts are traced once
+`trace.csv` has one row per unit per traced part: serial number, PN, revision, quantity,
+purchase line (`P-nnnn`), and the sub-assembly's own serial number where it has one. Class A parts are traced per unit. Class B parts are traced once
 per build (serial number `all`). Class C parts are not traced.
 
 An agent may prepare `trace.csv` from the build plan. The builder confirms or corrects it

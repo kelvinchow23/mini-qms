@@ -1,7 +1,7 @@
 # Release record (SOP-007 §6). Prepared by an agent; approved and merged by a human.
 build: B002
 units:
-  - sn: SN003
+  - sn: SYS-A-0001-261202A
     config_ok: true            # matches build.yaml config
     tests: all-pass            # or list NC refs with use-as-is dispositions
     trace_complete: true
