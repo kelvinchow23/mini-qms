@@ -10,6 +10,7 @@ from its front matter. Output is a review copy and is marked as uncontrolled.
 
 Requires: python-docx (pip install python-docx), PyYAML.
 """
+import os
 import re
 import sys
 from datetime import date
@@ -19,7 +20,7 @@ from docx import Document
 from docx.enum.text import WD_BREAK
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-from docx.shared import Pt, RGBColor
+from docx.shared import Inches, Pt, RGBColor
 
 INLINE = re.compile(r"(\*\*[^*]+\*\*|\*[^*\s][^*]*\*|`[^`]+`|\[[^\]]+\]\([^)]+\))")
 
@@ -113,7 +114,8 @@ def render_table(doc, lines):
     doc.add_paragraph()
 
 
-def render(doc, text, path, source):
+def render(doc, text, path, source, file_path=None):
+    file_path = file_path or path
     meta = {}
     if text.startswith("---"):
         _, fm, text = text.split("---", 2)
@@ -184,6 +186,15 @@ def render(doc, text, path, source):
                 style = "List Bullet 2" if indent else "List Bullet"
                 add_inline(doc.add_paragraph(style=style), item)
             continue
+        m = re.match(r"^!\[([^\]]*)\]\(([^)]+)\)", stripped)
+        if m:
+            img = os.path.normpath(os.path.join(os.path.dirname(file_path), m.group(2)))
+            if os.path.exists(img) and img.lower().endswith((".png", ".jpg", ".jpeg")):
+                doc.add_picture(img, width=Inches(6.3))
+            else:
+                doc.add_paragraph(f"[figure: {m.group(1)} ({m.group(2)})]")
+            i += 1
+            continue
         if stripped.startswith(">"):
             par = doc.add_paragraph(style="Intense Quote")
             add_inline(par, stripped.lstrip("> "))
@@ -219,7 +230,7 @@ def main(argv):
         if n:
             doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
         with open(path, encoding="utf-8") as f:
-            render(doc, f.read(), path.replace("\\", "/").split("/review-src/")[-1], source)
+            render(doc, f.read(), path.replace("\\", "/").split("/review-src/")[-1], source, path)
     doc.save(out)
     print(f"wrote {out} ({len(files)} documents)")
     return 0
