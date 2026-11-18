@@ -25,17 +25,17 @@ parts, harnesses), assemblies, firmware and consumables. Also serial numbers of 
 
 | Type | Format | Kept in | Example |
 |---|---|---|---|
-| **OTS part** (off the shelf) | `CCC-NNNN` | Part library (`parts-library` repo) | `FST-0001` M3x8 screws |
+| **OTS part** (off the shelf) | `CCC-NNNN` | OTS library (`minimal-qms-ots-library` repo) | `HWS-0001` M3x8 screws |
 | **Custom part** | `PPP-NNNN` | Product repo, `03_release/parts.csv` | `PRX-0004` printed lid |
 | **Custom assembly** | `PPP-A-NNNN` | Product repo, `03_release/parts.csv` | `PRX-A-0003` assembled PCB |
 
 - `CCC` is an OTS category code; `PPP` is the project code. Both are 3 capital letters,
-  registered in the part library, and never the same. `A` is a fixed letter that marks an
+  registered in the OTS library, and never the same. `A` is a fixed letter that marks an
   assembly.
 - An assembly has sub-parts or requires an assembly or modification instruction. A PCB
   ordered already assembled is an assembly.
 - Custom parts and assemblies share one number sequence per project.
-- Allocate numbers with the part library's `new_pn.py`. A part number never changes meaning
+- Allocate numbers with the OTS library's `new_pn.py`. A part number never changes meaning
   and is never reused.
 - OTS records hold where to buy: manufacturer, MPN, supplier, supplier part number, link,
   and unit price with its date. Custom records hold revision, lifecycle, make method and
@@ -103,7 +103,7 @@ purchase line or print job.
 - Product repo `03_release/bom.csv`: master BOM, one block of lines per assembly (top level
   and each sub-assembly), referring to OTS and custom PNs alike. Exported from the CAD tools
   at release.
-- Part library: OTS `parts.csv`, `categories.csv` and `projects.csv`.
+- OTS library: `parts/CCC.csv` (one file per prefix), `categories.csv` and `projects.csv`.
 
 These records are controlled under SOP-001. CI checks that every BOM line refers to an
 existing, `released` PN with a class, and that bought items have a supplier.

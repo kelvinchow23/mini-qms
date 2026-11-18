@@ -39,7 +39,7 @@ deviations/DEV-nnn.md           SOP-001
 
 | ID | Meaning | Defined in | Example |
 |---|---|---|---|
-| `CCC-NNNN` | OTS part (part library) | SOP-002 | `FST-0001` |
+| `CCC-NNNN` | OTS part (OTS library) | SOP-002 | `HWS-0001` |
 | `PPP-NNNN` + rev | Custom part (product repo) | SOP-002 | `PRX-0004` rev `B` |
 | `PPP-A-NNNN` + rev | Custom assembly (product repo) | SOP-002 | `PRX-A-0003` rev `A` |
 | `<PN>-YYMMDD<letter>` | Serial number (assemblies only) | SOP-002 | `PRX-A-0003-261118A` |

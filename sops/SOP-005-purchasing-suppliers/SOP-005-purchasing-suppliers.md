@@ -57,11 +57,11 @@ a released build.
 minimalQMS choice.*
 
 ## 5. Ordering for a build
-1. Generate the purchasing upload files with the part library's `requisition.py`, from
+1. Generate the purchasing upload files with the OTS library's `requisition.py`, from
    `bom.csv` and the build quantity. It produces one file per supplier in the purchasing
    system's upload format, less stock on hand.
 2. Check the files, then upload them to the organization's purchasing system.
-3. Record each placed order with the part library's `record_order.py`. It adds the
+3. Record each placed order with the OTS library's `record_order.py`. It adds the
    `purchases.csv` lines and stores the uploaded file in `purchasing/requisitions/`.
 
 *Basis: minimalQMS choice*
