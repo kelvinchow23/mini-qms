@@ -9,72 +9,69 @@ standard: ISO 9001:2026 # clause refs not yet checked against the purchased text
 
 # SOP-003 Design review
 
-Each section has a **Basis** line: *ISO §x.y* (required) or *minimalQMS choice*.
-The reasoning behind this SOP is in `docs/REVIEW-MODEL.md`.
+Each section ends with its basis: *ISO §x.y* (required by the standard) or *minimalQMS
+choice* (may be changed by teams using minimalQMS). Background: `docs/REVIEW-MODEL.md`.
 
 ## 1. Purpose
-Check that a design meets its requirements and that its risks are handled, record the
-decisions, and give a human a clear, informed yes or no, without making them fill in forms.
-*Basis: ISO §8.3.4 (reviews to evaluate whether results meet requirements, and to identify
-problems and actions; records retained)*
+To verify that a design meets its requirements and controls its risks, to record the
+decisions, and to give the approver an informed yes or no.
+*Basis: ISO §8.3.4*
 
 ## 2. Scope
-Formal reviews at phase gates G1–G3 (SOP-004), and before any design change that needs a
-formal review under SOP-001. The section on check-ins covers the informal contact in
-between.
+Formal reviews at gates G1–G3 (SOP-004) and for design changes that require formal review
+(SOP-001), plus check-ins between reviews.
 
-## 3. Three kinds of interaction
-| Kind | Purpose | Record | Approval? |
+## 3. Types of interaction
+
+| Type | Purpose | Record | Approval |
 |---|---|---|---|
-| **Check-in** | Keep the human informed: what changed, who changed it, what's next | One entry in `worklog.md` | No |
-| **Working decision** | Steer the work ("use the 0805 part") | `worklog.md` if notable; it shows up in the next review package | No |
-| **Formal review** | Approve a set of changes or pass a gate | `02_design/reviews/DR-nnn/` | **Yes** |
+| **Check-in** | Report what changed, who changed it and what is next | `worklog.md` | No |
+| **Working decision** | Direct the work | `worklog.md` when significant; included in the next review package | No |
+| **Formal review** | Approve a set of changes or pass a gate | `02_design/reviews/DR-nnn/` | Yes |
 
-Only a formal review approves anything. This keeps approvals deliberate and avoids
-approval fatigue.
+Only a formal review approves.
 *Basis: minimalQMS choice*
 
-## 4. Before the review: the package
-The author (usually an agent) prepares `DR-nnn/package.md` from the template. It contains:
-- **scope:** the items and revisions reviewed (from → to), CAD versions, ECRs and gate;
-- **change groups,** each with what changed and why, who made it (human, agent, or agent
-  directed by a human), where to look (links), visuals where useful (before/after renders,
-  annotated screenshots, PCB layer images), and the requirements and risks affected;
-- **independent findings:** from a fresh agent session with no memory of the design work;
-- **open items:** carried-over actions and known gaps.
+## 4. Review package
+The author, usually an agent, prepares `DR-nnn/package.md` from the template. The package
+contains:
+- **Scope:** items and revisions reviewed (from → to), CAD versions, ECRs and gate.
+- **Change groups:** for each group, what changed and why, who made the change (human,
+  agent, or agent directed by a human), links to the files, visuals where useful
+  (before/after renders, annotated screenshots, PCB layer images), and the requirements
+  and risks affected.
+- **Independent findings:** from a fresh agent session with no memory of the design work.
+- **Open items:** carried-over actions and known gaps.
 
-*Basis: ISO §8.3.4 (the review evaluates results against requirements). The package
-format and independent agent review are minimalQMS choices (SOP-001 §8).*
+*Basis: ISO §8.3.4. The package format and independent agent review are a minimalQMS
+choice (SOP-001 section 8).*
 
-## 5. During the review: the walkthrough
-1. The agent presents one change group at a time. The human asks questions and
-   challenges.
-2. For each group, the human gives a disposition: **accept**, **reject** (with a
-   reason), or **accept with action** (`A-nnn`, with an owner).
-3. For each independent finding, the human records **accept** or **reject** with a reason.
-4. The agent asks the overall question, naming exactly what's being approved, e.g.
-   *"Approve DR-004: PCB-0001 rev B, 5 groups accepted, 1 with action A-012?"*
-5. The human answers **yes** or **no**. That reply is the approval (SOP-001 §7).
+## 5. Walkthrough
+1. The agent presents each change group in turn. The approver questions and challenges it.
+2. The approver gives each group a disposition: accept, reject (with reason), or accept
+   with action (`A-nnn`, with an owner).
+3. The approver accepts or rejects each independent finding, with a reason for rejection.
+4. The agent asks one question that names exactly what is being approved, e.g. *"Approve
+   DR-004: PCB-0001 rev B, 5 groups accepted, 1 with action A-012?"*
+5. The approver answers yes or no. The answer is the approval (SOP-001 section 7).
 
-The review is run in an agent tool that saves the session transcript.
-*Basis: ISO §8.3.4 (identify problems and actions), §8.3.6. The walkthrough format is a
-minimalQMS choice.*
+Conduct the review in an agent tool that saves the session transcript.
+*Basis: ISO §8.3.4, §8.3.6. The walkthrough format is a minimalQMS choice.*
 
-## 6. After the review: records
-In `DR-nnn/`:
-- `package.md`: as reviewed, with its visuals.
-- `minutes.md`: generated from the template, with participants (humans, plus agents and
-  their models), the disposition of every group and finding, actions, and the decision.
-  The approval is quoted and its location in the transcript is given.
-- `transcript.*`: the raw session, unaltered.
+## 6. Records
+`DR-nnn/` contains:
+- `package.md` as reviewed, with its visuals;
+- `minutes.md`, generated from the template, with participants (humans, and agents with
+  their models), the disposition of every group and finding, actions, and the decision,
+  with the approval quoted and its location in the transcript;
+- `transcript.*`, the unaltered session transcript.
 
-The minutes go through a PR, and a human merges it (SOP-001). An action stays open until
-it's closed with evidence, or explicitly carried forward at the next gate.
-*Basis: ISO §8.3.4 and §8.3.6 (records of reviews and actions). Transcript archiving is a
-minimalQMS choice.*
+The minutes are merged by a human through a PR (SOP-001). An action remains open until it
+is closed with evidence or carried forward at the next gate.
+*Basis: ISO §8.3.4, §8.3.6. Transcript archiving is a minimalQMS choice.*
 
 ## 7. Check-ins
-Whenever useful (for example after a work session), the agent adds a short entry to
-`worklog.md`: what changed and who changed it, what's next, anything blocked, and items for
-the next review. No reply is needed.
-*Basis: minimalQMS choice (also supports ISO §7.1.6, organisational knowledge)*
+The agent adds a short entry to `worklog.md` after each work session, or more often when
+useful: what changed and who changed it, what is next, what is blocked, and items for the
+next review. No reply is required.
+*Basis: minimalQMS choice. Supports ISO §7.1.6.*
