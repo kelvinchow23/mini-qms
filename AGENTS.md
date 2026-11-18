@@ -58,6 +58,14 @@ ECR issue, and every commit references it (`(ECR #n)`).
 - **SOPs are short:** about one page each. Write an SOP only for a process that's about to
   be run. Plain language. Each SOP has a document ID, a revision and a "Purpose / Scope /
   Procedure / Records" structure.
+- **SOP style: formal and concise.**
+  - Present tense with the role as subject for responsibilities ("The approver decides …").
+    Imperative for steps ("Determine the root cause.").
+  - **Must** or **never** only for hard constraints. **May** for permissions.
+  - No contractions, idioms, asides or explanations of reasoning. Reasons belong in `docs/`.
+  - Number sections only. Steps are a short numbered list, with no sub-clauses.
+  - One idea per sentence, with no padding. Cross-references in brackets, e.g. (SOP-001).
+  - One term per concept, as defined in [docs/INTERFACES.md](docs/INTERFACES.md).
 - **Mark the basis of every SOP section:** *ISO §x.y* if the standard requires it, or
   *minimalQMS choice* if it doesn't. Check against [docs/ISO9001-MAP.md](docs/ISO9001-MAP.md).
   Don't add requirements the standard doesn't impose unless they clearly save the human work.
