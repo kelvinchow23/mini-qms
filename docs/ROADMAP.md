@@ -29,9 +29,9 @@ One SOP per PR. Status: ✅ merged · 🔄 open · ⬜ not started
 | 10 | **Copier product template:** product repo structure wired to the CI checks and `AGENTS.md`, recording which QMS rev it's built under | | ⬜ |
 | 11 | **Dry run and release:** generate a throwaway product, fix what breaks, write a CHANGELOG, tag `QMS-rev-A`. At the tag, enforce "agents never merge" on GitHub: agents get their own account, and a ruleset on `main` lets only the human merge. The bootstrap merge exception in AGENTS.md is removed. | | ⬜ |
 
-| – | Follow-ups: retention kept indefinitely (#16); assemblies and serial numbers (#17); gate timeline figure (#18); purchasing via parts-library (#19) | #16–#19 | ✅ |
-| – | Project codes for custom parts (`PPP-NNNN`, `PPP-A-NNNN`); part library holds OTS parts only | #20, parts-library#2 | 🔄 |
-| – | **parts-library repo:** organization-wide PN register, purchasing upload generator, order recording ([kelvinchow23/parts-library](https://github.com/kelvinchow23/parts-library)) | parts-library#1 | ✅ |
+| – | Follow-ups: retention kept indefinitely (#16); assemblies and serial numbers (#17); gate timeline figure (#18); purchasing via the OTS library (#19) | #16–#19 | ✅ |
+| – | Project codes for custom parts (`PPP-NNNN`, `PPP-A-NNNN`); OTS library holds off-the-shelf parts only | #20, ots-library#2 | ✅ |
+| – | **[minimal-qms-ots-library](https://github.com/kelvinchow23/minimal-qms-ots-library):** OTS part register (one CSV per prefix), purchasing upload generator, order recording, searchable catalogue site | ots-library#1–#4 | 🔄 |
 
 **If iteration 2 starts early:** ship the SOPs and appendices (steps 4–8c) first, tag them as
 QMS-rev A, and add the CI checks and Copier template (steps 9–10) as QMS-rev B during

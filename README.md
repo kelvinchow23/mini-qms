@@ -95,6 +95,15 @@ critiques point by point.
 This repo is the **org-level QMS**: SOPs with their appendices (forms and templates), reusable CI checks and the base
 agent instructions. It's versioned by revision (`QMS-rev A`, …).
 
+The minimalQMS family:
+
+| Repo | What it holds | Changes |
+|---|---|---|
+| **minimal-qms** (this repo) | Process: SOPs and appendices, CI checks, product scaffold | Rarely, by revision |
+| [**minimal-qms-ots-library**](https://github.com/kelvinchow23/minimal-qms-ots-library) | Off-the-shelf parts, prefix and project codes, purchasing tools, [searchable catalogue](https://kelvinchow23.github.io/minimal-qms-ots-library/) | With every purchase |
+| minimal-qms-playbook *(planned)* | Work instructions and agent skills for engineering practice | As practice improves |
+| Product repos | Custom parts, BOMs, reviews, builds and records of one product | Continuously |
+
 Each product lives in its own repo, generated from a **Copier** template here. Running
 `copier update` brings SOP and template changes into existing products as a reviewable PR,
 and each product records which QMS revision it was built under.

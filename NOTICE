@@ -5,7 +5,7 @@ This project adapts material from the following sources:
 
 - git-plm/parts, partnumbers.md (https://github.com/git-plm/parts)
   Used in: sops/SOP-002-parts-revisions-classes/SOP-002-parts-revisions-classes.md (part number format and guidelines),
-           category codes (now kept in the parts-library repo).
+           OTS part number format (prefix codes now kept in minimal-qms-ots-library).
   Changes: OTS format shortened to CCC-NNNN; revision kept as a separate field rather than
            encoded in the part number; category list reduced.
   Licence: MIT

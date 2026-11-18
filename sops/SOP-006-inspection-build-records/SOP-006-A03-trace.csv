@@ -1,4 +1,4 @@
 sn,pn,rev,qty,line_id,child_sn,notes
 PRX-A-0001-261202A,PRX-A-0003,A,1,P-0001,PRX-A-0003-261125A,purchased assembled board with its own serial
 PRX-A-0001-261202A,PRX-0004,C,2,P-0004,,printed parts traced to print job
-all,FST-0001,-,12,P-0007,,Class B: traced once per build
+all,HWS-0001,-,12,P-0007,,Class B: traced once per build
