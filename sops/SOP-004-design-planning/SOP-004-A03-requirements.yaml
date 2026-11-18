@@ -1,4 +1,4 @@
-# Requirements (SOP-004 §5). Frozen at G1; change through SOP-001.
+# SOP-004-A03 Requirements (appendix to SOP-004; revised with it)
 # verification: test / inspection / analysis / review
 - id: REQ-001
   statement: "<what the product must do or be, measurably>"

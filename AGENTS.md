@@ -7,7 +7,7 @@ vendor-specific files.
 ## What this repo is
 
 minimalQMS is a lean, ISO 9001-style QMS for small hardware teams. This repo is the
-**org-level QMS**: SOPs, templates, reusable CI checks and the Copier template that
+**org-level QMS**: SOPs with their appendices (forms and templates), reusable CI checks and the Copier template that
 generates product repos. Read [README.md](README.md) for the thesis and
 [docs/RATIONALE.md](docs/RATIONALE.md) for the design reasoning.
 
@@ -16,9 +16,10 @@ Layout (planned items are created as their PRs land):
 ```
 AGENTS.md / CLAUDE.md   agent instructions (this file)
 docs/                   rationale, original brief, design notes
-sops/                   SOP-001, SOP-002, ...           (planned)
-templates/              ECR, PR/ECO, review minutes      (planned)
-.github/                issue/PR templates, reusable CI  (planned)
+sops/                   one folder per SOP: the SOP plus its appendices (SOP-nnn-Ann forms
+                        and templates, revised with the SOP)
+tools/                  review-pack renderer, figure generator
+.github/                reusable CI                       (planned)
 product-template/       Copier template for product repos (planned)
 ```
 

@@ -1,4 +1,4 @@
-# Build record header (SOP-006 §4). Use actual dates; never backdate.
+# SOP-006-A01 Build record header (appendix to SOP-006; revised with it)
 build: B002
 started: YYYY-MM-DD
 builder: ae                    # id from roles.yaml

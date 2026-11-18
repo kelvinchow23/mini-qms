@@ -34,7 +34,7 @@ requires SOPs. That's why each SOP is about one page.
 | Clause | Requirement | minimalQMS | When |
 |---|---|---|---|
 | 4.3 | Scope of the QMS | `qms/scope.md` | Management layer, after rev A |
-| 4.4 | Information needed to run the processes | SOP-001 to SOP-008, `AGENTS.md`, templates | Rev A |
+| 4.4 | Information needed to run the processes | SOP-001 to SOP-008 with appendices, `AGENTS.md` | Rev A |
 | 5.2 | Quality policy | `qms/policy.md` (a few lines) | Management layer |
 | 6.2 | Quality objectives | `qms/objectives.yaml` (measurable, e.g. admin hours per build) | Management layer |
 

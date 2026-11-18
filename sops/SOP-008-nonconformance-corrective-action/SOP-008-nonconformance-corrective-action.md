@@ -22,8 +22,7 @@ Failed incoming inspections (SOP-006), failed tests (SOP-007), problems found in
 reported by customers, supplier problems, and procedures not followed.
 
 ## 3. Raising an NC
-Anyone, human or agent, who finds a nonconformity opens `nonconformance/NC-nnn.md` from the
-template on the day it is found. The NC states what is wrong, how it was found, and the
+Anyone, human or agent, who finds a nonconformity opens `nonconformance/NC-nnn.md` using SOP-008-A01 on the day it is found. The NC states what is wrong, how it was found, and the
 affected items (PN, revision, serial numbers, purchase lines). Label or segregate the
 affected items to prevent their use.
 *Basis: ISO §8.7.1*
@@ -55,3 +54,11 @@ required:
 Close the NC when the disposition is complete and any corrective action is verified as
 effective. CI blocks gate G4 while any NC affecting the build has no disposition.
 *Basis: ISO §8.7.2, §10.2.2*
+
+## Appendices
+Appendices are forms and templates that belong to this SOP. They carry the SOP's revision
+and change only through a revision of this SOP.
+
+| ID | Title | File | Used in product repos as |
+|---|---|---|---|
+| SOP-008-A01 | Nonconformance record | [SOP-008-A01-nc-record.md](SOP-008-A01-nc-record.md) | `nonconformance/NC-nnn.md` |

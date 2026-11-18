@@ -1,4 +1,4 @@
-# Records each gate needs (SOP-004 §3). CI blocks a gate whose records are missing.
+# SOP-004-A02 Gate requirements (appendix to SOP-004; revised with it)
 G0: {passed_by: approval, requires: [00_planning/plan.yaml, roles.yaml]}
 G1: {passed_by: formal_review, requires: [01_requirements/requirements.yaml, 01_requirements/risks.csv]}
 G2: {passed_by: formal_review, requires: [design review minutes with no open actions, or actions carried forward]}

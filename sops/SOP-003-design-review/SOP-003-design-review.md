@@ -33,7 +33,7 @@ Only a formal review approves.
 *Basis: minimalQMS choice*
 
 ## 4. Review package
-The author, usually an agent, prepares `DR-nnn/package.md` from the template. The package
+The author, usually an agent, prepares `DR-nnn/package.md` using SOP-003-A01. The package
 contains:
 - **Scope:** items and revisions reviewed (from → to), CAD versions, ECRs and gate.
 - **Change groups:** for each group, what changed and why, who made the change (human,
@@ -61,7 +61,7 @@ Conduct the review in an agent tool that saves the session transcript.
 ## 6. Records
 `DR-nnn/` contains:
 - `package.md` as reviewed, with its visuals;
-- `minutes.md`, generated from the template, with participants (humans, and agents with
+- `minutes.md`, generated using SOP-003-A02, with participants (humans, and agents with
   their models), the disposition of every group and finding, actions, and the decision,
   with the approval quoted and its location in the transcript;
 - `transcript.*`, the unaltered session transcript.
@@ -71,7 +71,17 @@ is closed with evidence or carried forward at the next gate.
 *Basis: ISO §8.3.4, §8.3.6. Transcript archiving is a minimalQMS choice.*
 
 ## 7. Check-ins
-The agent adds a short entry to `worklog.md` after each work session, or more often when
+The agent adds a short entry to `worklog.md` (SOP-003-A03) after each work session, or more often when
 useful: what changed and who changed it, what is next, what is blocked, and items for the
 next review. No reply is required.
 *Basis: minimalQMS choice. Supports ISO §7.1.6.*
+
+## Appendices
+Appendices are forms and templates that belong to this SOP. They carry the SOP's revision
+and change only through a revision of this SOP.
+
+| ID | Title | File | Used in product repos as |
+|---|---|---|---|
+| SOP-003-A01 | Review package | [SOP-003-A01-review-package.md](SOP-003-A01-review-package.md) | `02_design/reviews/DR-nnn/package.md` |
+| SOP-003-A02 | Review minutes | [SOP-003-A02-review-minutes.md](SOP-003-A02-review-minutes.md) | `02_design/reviews/DR-nnn/minutes.md` |
+| SOP-003-A03 | Work log | [SOP-003-A03-worklog.md](SOP-003-A03-worklog.md) | `worklog.md` |

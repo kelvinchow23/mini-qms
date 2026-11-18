@@ -72,3 +72,12 @@ controlled under SOP-001. The organisation keeps
 the documents behind each `order_ref` for the same retention period, and retrieves them
 by reference when required.
 *Basis: ISO §7.5.3*
+
+## Appendices
+Appendices are forms and templates that belong to this SOP. They carry the SOP's revision
+and change only through a revision of this SOP.
+
+| ID | Title | File | Used in product repos as |
+|---|---|---|---|
+| SOP-005-A01 | Purchase list | [SOP-005-A01-purchases.csv](SOP-005-A01-purchases.csv) | `purchasing/purchases.csv` |
+| SOP-005-A02 | Supplier list | [SOP-005-A02-suppliers.csv](SOP-005-A02-suppliers.csv) | `purchasing/suppliers.csv` |

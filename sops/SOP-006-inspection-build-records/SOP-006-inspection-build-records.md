@@ -58,3 +58,13 @@ during or immediately after assembly. Corrections are never made later from memo
 `build.yaml`, `inspection.csv` and `trace.csv` in `builds/B00n/` are controlled under
 SOP-001. CI checks that every Class A and B line in `trace.csv` refers to an existing
 purchase line, and that every Class A purchase line used has passed inspection.
+
+## Appendices
+Appendices are forms and templates that belong to this SOP. They carry the SOP's revision
+and change only through a revision of this SOP.
+
+| ID | Title | File | Used in product repos as |
+|---|---|---|---|
+| SOP-006-A01 | Build record header | [SOP-006-A01-build.yaml](SOP-006-A01-build.yaml) | `builds/B00n/build.yaml` |
+| SOP-006-A02 | Incoming inspection record | [SOP-006-A02-inspection.csv](SOP-006-A02-inspection.csv) | `builds/B00n/inspection.csv` |
+| SOP-006-A03 | Trace record | [SOP-006-A03-trace.csv](SOP-006-A03-trace.csv) | `builds/B00n/trace.csv` |

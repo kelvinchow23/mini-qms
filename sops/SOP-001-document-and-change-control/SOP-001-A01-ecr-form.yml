@@ -1,4 +1,4 @@
-# ECR: engineering change request (SOP-001 §6, step 1)
+# SOP-001-A01 ECR form (GitHub issue form) (appendix to SOP-001; revised with it)
 # A GitHub issue form, so it shows up as a simple form rather than a Markdown file.
 name: ECR (change request)
 description: Ask for a change to a part, design or document, and say why.
