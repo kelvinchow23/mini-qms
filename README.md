@@ -7,31 +7,35 @@ minimalQMS gives hardware development a backbone: requirements, design reviews, 
 changes, traceable parts and builds, and lessons learned. Agents do the legwork and the
 record-keeping. Humans make every decision.
 
-## Two ways in
+## Why minimalQMS
 
-### If you've worked under a quality system
+### Less red tape, more design
 
-You know how hardware development is supposed to go: requirements, design reviews, change
-control, traceability, release. You also know how much admin it takes, and how much of a
-traditional organization exists only to keep that machinery running.
+Developing physical products under a quality system usually involves a lot of red tape:
+document control, approval chases, purchasing paperwork, traceability records and audit
+preparation. In industry, a large share of a product team's effort goes into this
+supporting work rather than the design itself, and much of a traditional organization
+exists only to keep that machinery running.
 
-minimalQMS keeps the rigour and drops the overhead:
+minimalQMS uses AI agents to take that load off, so designers can focus on designing:
 - **Git is the PLM.** Change requests are issues, change orders are pull requests, and
   releases are tags. Every change is traceable by default.
 - **CI does the policing.** BOM, part-number and traceability checks run on every change.
 - **Agents do the clerical work.** They draft change requests, prepare review packages,
-  write minutes, generate purchase lists and keep build records. You review and approve.
+  write minutes, generate purchase lists and keep build records. Humans review and approve.
 - **Only what ISO 9001 actually needs.** Eight one-page SOPs, each section marked as an ISO
   requirement or a minimalQMS choice ([ISO 9001 map](docs/ISO9001-MAP.md)).
 
-### If you've never used one
+### A backbone for projects without one
 
-Most hardware is developed without a formal process: build, try, fix, repeat. That works
-until a design has to be repeated, handed over, shared or trusted.
+Many projects outside industry focus almost entirely on design, with little or no control
+around it: build, try, fix, repeat. That works until a design has to be repeated, handed
+over, shared or trusted.
 
-You don't need to learn any of this. The agent you already work with asks the questions an
-experienced engineer would ask, at the moment they matter, and quietly turns your answers
-into the records:
+minimalQMS gives these projects a backbone without asking anyone to learn a quality system.
+Its guidelines, based on the same standards industry follows, let the agent ask the
+developer the questions that improve a design, at the moment they matter, and turn the
+answers into records:
 
 > **Before ordering parts:** "The LED driver runs at 1.2 A. What should happen if the fan
 > stops? Do we need a thermal cut-off?"
@@ -42,12 +46,8 @@ into the records:
 > **After testing:** "Two of three units ran hotter than the others. Is that a problem
 > with those parts, or with the design?"
 
-You get the benefits without the vocabulary: fewer surprises, designs that others can
-rebuild, a clear history to share, and a project that improves from one iteration to the
-next.
-
-**Same backbone, two surfaces.** Experienced users read the SOPs. Newcomers answer
-questions. Both end up with the same controlled, traceable project.
+The result is fewer surprises, designs that others can rebuild, a clear history to share,
+and a project that improves from one iteration to the next.
 
 ## How it works
 
@@ -117,9 +117,9 @@ After the tag, changes to minimalQMS follow its own change control.
 
 ## Open questions
 
-- **Guided mode for newcomers.** Which questions should the agent ask at each gate, and
-  how does it adapt them to the project and the person? This is the core of the second way
-  in.
+- **Guided mode.** Which questions should the agent ask at each gate, and how does it
+  adapt them to the project and the person? This is what gives a project without a formal
+  process its backbone.
 - **Interface beyond git.** What lets a non-technical team use this without seeing git?
   So far: agents as the main interface, readable generated documents, and the OTS
   library's catalogue site.

@@ -39,8 +39,8 @@ iteration 2. Iteration 2's repo can be set up by hand from the SOP appendices in
 
 ## After rev A (each written just before it's needed)
 
-- **Guided mode for newcomers:** per-gate question sets that the agent uses to lead someone
-  without a quality background through the process (what could go wrong, how will it be
+- **Guided mode:** per-gate question sets that the agent uses to lead a developer without
+  a quality background through the process (what could go wrong, how will it be
   tested, is this a new revision or a new part, what did we learn). Likely lives in the
   playbook as agent skills, so it can evolve without revising the SOPs.
 
