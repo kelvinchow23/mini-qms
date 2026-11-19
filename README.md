@@ -1,101 +1,98 @@
 # minimalQMS
 
-A lean, ISO 9001-style quality management system for hardware that a very small
-team, even one person, can actually run. AI agents do the design legwork and the
-clerical work. Humans make every decision.
+A lean, ISO 9001-style quality management system for hardware, run with AI agents and
+decided by humans. It works for a team of one.
 
-## Why this exists
+minimalQMS gives hardware development a backbone: requirements, design reviews, controlled
+changes, traceable parts and builds, and lessons learned. Agents do the legwork and the
+record-keeping. Humans make every decision.
 
-Developing physical products under a quality system usually involves a lot of red
-tape: document control, approval chases, purchasing paperwork, traceability records
-and audit preparation. In a traditional organization, much of the headcount around a
-product exists only to keep that machinery running.
+## Two ways in
 
-minimalQMS tests a different claim:
+### If you've worked under a quality system
 
-> A small team can develop hardware with **controlled, traceable, auditable**
-> engineering, without the admin overhead, by treating hardware a bit more like
-> software and letting agents assist with both the design and the record-keeping.
+You know how hardware development is supposed to go: requirements, design reviews, change
+control, traceability, release. You also know how much admin it takes, and how much of a
+traditional organization exists only to keep that machinery running.
 
-This isn't about "AI built a product". It's about showing that agent-assisted
-hardware development can stay under real control: every change is traceable, every
-review is minuted, and humans sign off every step.
+minimalQMS keeps the rigour and drops the overhead:
+- **Git is the PLM.** Change requests are issues, change orders are pull requests, and
+  releases are tags. Every change is traceable by default.
+- **CI does the policing.** BOM, part-number and traceability checks run on every change.
+- **Agents do the clerical work.** They draft change requests, prepare review packages,
+  write minutes, generate purchase lists and keep build records. You review and approve.
+- **Only what ISO 9001 actually needs.** Eight one-page SOPs, each section marked as an ISO
+  requirement or a minimalQMS choice ([ISO 9001 map](docs/ISO9001-MAP.md)).
 
-It's meant to be reused. The structure is generic, so other people can build their
-own products on it.
+### If you've never used one
 
-## Design principles
+Hobbyists, academic researchers and open-source hardware developers usually work
+unstructured: build, try, fix, repeat. That works until a design has to be repeated,
+handed over, published or trusted.
 
-### Hardware treated like software
-- **Git is the PLM.** An issue is a change request (ECR), a PR is the change order (ECO),
-  and a human approves it. Releases are tags.
-- **Part lifecycle lives in git.** `parts.csv` is the part master. Each part has a part
-  number, revision and lifecycle state (draft → released → obsolete). A state or revision
-  changes only through a reviewed PR.
-- **CI does the policing.** BOM lint, commit-message lint and traceability checks run on
-  every PR, so nobody checks them by hand.
-- **Nobody has to learn git.** Engineers work by talking to an agent and reviewing on
-  GitHub. The agent runs the git commands.
+You don't need to learn any of this. The agent you already work with asks the questions an
+experienced engineer would ask, at the moment they matter, and quietly turns your answers
+into the records:
 
-### Design source of truth
-- **CAD owns the design. Git owns the release record.** The MCAD tool (Fusion 360 today,
-  Onshape possibly later) is the source of truth for the mechanical BOM structure. KiCad is
-  the source of truth for the PCB BOM.
-- On release, the BOMs are **exported** from CAD into git, together with the CAD version
-  identifiers they came from. They're joined with the part master (class, supplier, cost),
-  and the snapshot is frozen by a tag.
-- CI checks that the exported BOM and the part master agree, so CAD and git can't silently
-  drift apart.
-- CAD tools are connected through small adapters, so switching from Fusion to Onshape
-  doesn't change the process.
+> **Before ordering parts:** "The LED driver runs at 1.2 A. What should happen if the fan
+> stops? Do we need a thermal cut-off?"
+>
+> **After a change:** "You moved the mounting holes. The lid from the last build won't fit
+> any more. Is this a new revision, or a new part?"
+>
+> **After testing:** "Two of three units ran hotter than the others. Is that a problem
+> with those parts, or with the design?"
+
+You get the benefits without the vocabulary: fewer surprises, designs that others can
+rebuild, a clear history for a paper, thesis or open hardware release, and a project that
+improves from one iteration to the next.
+
+**Same backbone, two surfaces.** Experienced users read the SOPs. Newcomers answer
+questions. Both end up with the same controlled, traceable project.
+
+## How it works
+
+### Development is a cycle
+
+![Development cycle](docs/img/development-cycle.png)
+
+Each iteration passes six gates, from scope to close-out, starting from the last released
+revision. Lessons learned, problems found and feedback become the change requests for the
+next iteration. Small fixes between iterations skip the gates. See the
+[SOP overview](sops/README.md).
 
 ### Coworkable, not fully agentic
-Humans and agents work on the **same** design. Either can change the CAD or the PCB,
-every change records who made it, and agents never silently overwrite human work. The
-human stays in the loop through short check-ins, not a constant stream of questions.
+Humans and agents work on the **same** design. Either can change the CAD or the PCB, every
+change records who made it, and agents never silently overwrite human work.
 
-### Design review like a real review meeting
-Much of the design work, including PCB layout and MCAD, is done by agents steered by a
-human through chat. Approval fatigue is a real risk, so minimalQMS separates three kinds of
-interaction, and only one of them is an approval:
+### Three kinds of interaction, one kind of approval
+- **Check-ins** keep the human up to date. No decision is needed.
+- **Working decisions** steer the work ("use the 0805 part"). They are captured, not approved.
+- **Formal reviews** at gates work like a real review meeting. The agent prepares a package
+  (grouped changes, where to look, before/after visuals, affected risks, findings from an
+  independent AI reviewer) and walks the human through it. The human answers **yes or no**
+  to a question that names exactly what is being approved.
 
-- **Check-ins** keep the human up to date: what changed, who changed it, what's next.
-  No decision is needed.
-- **Working decisions** steer the work ("use the 0805 part"). They're captured, but
-  they aren't approvals.
-- **Formal reviews** happen at phase gates and before a change is released. The agent
-  prepares a review package: changes grouped as a person would present them, links to
-  exactly where to look, before/after renders and annotated screenshots of physical
-  changes, affected requirements and risks, and findings from an independent AI reviewer.
-  It walks the human through the package. The human accepts or rejects each item, then
-  answers **yes or no** to a question that names exactly what's being approved.
+Minutes are generated from the review, and the transcript is archived as evidence. Agents
+never approve. See [docs/REVIEW-MODEL.md](docs/REVIEW-MODEL.md).
 
-The minutes are generated from the review, and the raw transcript is archived next to
-them. CI checks that each approval quoted in the minutes really appears in the
-transcript. Agents never sign off.
-
-See [docs/REVIEW-MODEL.md](docs/REVIEW-MODEL.md) for the full model.
+### Design source of truth
+CAD owns the design; git owns the release record. At release, BOMs are exported from the
+CAD tools into git with the CAD version they came from, and checked against the part data.
 
 ### Only as much process as needed
-- **Risk-based traceability.** Critical parts (Class A) are traced to a specific order
-  and inspected. Bulk hardware (Class B) is traced to its batch PO. Consumables (Class C)
-  aren't traced.
+- **Risk-based traceability.** Critical parts are traced per unit, bulk hardware per
+  purchase, consumables not at all.
 - **No SOP before its process.** Each procedure is about one page and is written just
-  before it's first needed. A minimum viable 9001 QMS is about 6–8 short SOPs plus records.
+  before it is first needed.
 
 ## Why git?
 
-Git has known problems as a QMS, especially for non-technical people. minimalQMS uses git
-as the **database**, not the interface: people work through agents and readable
-generated documents. See [docs/RATIONALE.md](docs/RATIONALE.md), which answers the main
-critiques point by point.
+Git has known problems as a QMS, especially for people who don't use it. minimalQMS uses git
+as the **database**, not the interface: people work through agents and readable documents.
+See [docs/RATIONALE.md](docs/RATIONALE.md), which answers the main critiques.
 
-## Structure
-
-This repo is the **org-level QMS**: SOPs with their appendices (forms and templates), reusable CI checks and the base
-agent instructions. It's versioned by revision (`QMS-rev A`, …).
-
-The minimalQMS family:
+## The minimalQMS family
 
 | Repo | What it holds | Changes |
 |---|---|---|
@@ -104,81 +101,30 @@ The minimalQMS family:
 | minimal-qms-playbook *(planned)* | Work instructions and agent skills for engineering practice | As practice improves |
 | Product repos | Custom parts, BOMs, reviews, builds and records of one product | Continuously |
 
-Each product lives in its own repo, generated from a **Copier** template here. Running
-`copier update` brings SOP and template changes into existing products as a reviewable PR,
-and each product records which QMS revision it was built under.
+Each product lives in its own repo, generated from a Copier template in this repo. Each
+product records which QMS revision it was built under, and `copier update` offers later
+revisions as a reviewable change.
 
-## First showcase: the photoreactor
+## Showcases
 
-The first product run through minimalQMS is the photoreactor
-([`kelvinchow23/photo-reactor`](https://github.com/kelvinchow23/photo-reactor)).
-
-### How it started
-
-The photoreactor wasn't planned as a QMS showcase. It started as a design-sharing repo,
-and the first iteration was built almost entirely by agents:
-
-- **The PCB and the housing were designed by agents.** No human worked in KiCad or did
-  the CAD modelling directly. The human coached the agents through chat: stating intent,
-  questioning choices, asking for changes and checking the results.
-- **That coaching worked like a live design review:** intent, risks, changes and checks,
-  discussed in conversation. That's where minimalQMS's "design review by conversation" comes from.
-- **Then the agents picked the parts.** At that point, the obvious question was: if agents
-  can design it and source it, why not run the *whole* process with agents, under real
-  control? minimalQMS is the answer to that question.
-
-### Iteration 1: captured after the fact, not backdated
-
-Iteration 1 (build B001) was designed and its parts were bought **before minimalQMS
-existed**. Real projects often look like this: the prototype comes first and the quality
-system arrives later. minimalQMS handles it openly instead of rewriting history:
-
-- **The pre-QMS state is frozen as it was.** The photoreactor repo is tagged
-  `baseline-pre-QMS` without rewriting any git history.
-- **Every record shows the date it was actually created.** Purchases are captured from the
-  real order confirmations and invoices, with a deviation note explaining they're
-  retroactive. Supplier approval is recorded as retroactive too. Incoming inspection is
-  done now, on the parts as they are.
-- **Missing reviews aren't presented as if they happened.** The design chats that exist
-  are archived as evidence. A formal design review of the iteration 1 baseline is held
-  under SOP-003 and dated when it actually happens.
-- **ISO 9001 doesn't require history from before the QMS existed.** What it requires is
-  that work is controlled from adoption onward, and that a design is verified before
-  release. The retroactive capture is recorded as a deviation, so an auditor can see
-  exactly where control began.
-
-### Iteration 2: the first fully controlled run
-
-The second iteration is the first one run under minimalQMS from the start. Its design-review
-chats are minuted and signed off as they happen, its parts are bought under the purchasing
-process, and every unit is traced from order to sign-off.
-
-Comparing the two iterations is part of the showcase: the same product and the same small
-team, first without control, then with it.
-
-### It's done when
-
-- An iteration 2 unit is released, and `trace <serial>` resolves every part to its vendor,
-  order, date, cost and inspection result.
-- Iteration 1 is fully captured, with its deviation notes, and no backdated records.
-- An outside person runs a mock audit with no major findings.
-- There's an honest write-up of what the agents did well and badly, including where they
-  were wrong.
+- **Photoreactor:** [kelvinchow23/photo-reactor](https://github.com/kelvinchow23/photo-reactor)
 
 ## Status
 
-Building QMS-rev A. See [docs/ROADMAP.md](docs/ROADMAP.md) for the plan and
-[docs/HANDOFF.md](docs/HANDOFF.md) for the original brief.
+Building QMS-rev A. See [docs/ROADMAP.md](docs/ROADMAP.md) for the plan.
 
-Until QMS-rev A is tagged, minimalQMS is developed with lightweight branches and PRs (no ECRs).
-After the tag, changes to minimalQMS itself follow minimalQMS's own change control.
+Until QMS-rev A is tagged, minimalQMS is developed with lightweight branches and PRs.
+After the tag, changes to minimalQMS follow its own change control.
+
+## Open questions
+
+- **Guided mode for newcomers.** Which questions should the agent ask at each gate, and
+  how does it adapt them to the project and the person? This is the core of the second way
+  in.
+- **Interface beyond git.** What lets a non-technical team use this without seeing git?
+  So far: agents as the main interface, readable generated documents, and the OTS
+  library's catalogue site.
 
 ## Licence
 
 [MIT](LICENSE). Use it, fork it, build products on it.
-
-## Open questions
-
-- **Interface for non-technical engineering teams.** What app or GUI lets a typical
-  engineering team use this without seeing git? Options to explore: a simple web front
-  end over the repo, GitHub Projects, or Cowork or another agent as the main interface.
