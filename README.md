@@ -26,9 +26,8 @@ minimalQMS keeps the rigour and drops the overhead:
 
 ### If you've never used one
 
-Hobbyists, academic researchers and open-source hardware developers usually work
-unstructured: build, try, fix, repeat. That works until a design has to be repeated,
-handed over, published or trusted.
+Most hardware is developed without a formal process: build, try, fix, repeat. That works
+until a design has to be repeated, handed over, shared or trusted.
 
 You don't need to learn any of this. The agent you already work with asks the questions an
 experienced engineer would ask, at the moment they matter, and quietly turns your answers
@@ -44,8 +43,8 @@ into the records:
 > with those parts, or with the design?"
 
 You get the benefits without the vocabulary: fewer surprises, designs that others can
-rebuild, a clear history for a paper, thesis or open hardware release, and a project that
-improves from one iteration to the next.
+rebuild, a clear history to share, and a project that improves from one iteration to the
+next.
 
 **Same backbone, two surfaces.** Experienced users read the SOPs. Newcomers answer
 questions. Both end up with the same controlled, traceable project.
