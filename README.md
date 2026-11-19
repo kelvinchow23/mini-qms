@@ -18,12 +18,13 @@ supporting work rather than the design itself, and much of a traditional organiz
 exists only to keep that machinery running.
 
 minimalQMS uses AI agents to take that load off, so designers can focus on designing:
-- **Git is the PLM.** Change requests are issues, change orders are pull requests, and
-  releases are tags. Every change is traceable by default.
-- **CI does the policing.** BOM, part-number and traceability checks run on every change.
-- **Agents do the clerical work.** They draft change requests, prepare review packages,
-  write minutes, generate purchase lists and keep build records. Humans review and approve.
-- **Only what ISO 9001 actually needs.** Eight one-page SOPs, each section marked as an ISO
+- **Agents do the paperwork.** They draft change requests, prepare design reviews, write
+  minutes, prepare purchase lists and keep build records. Humans review and approve.
+- **Every change is tracked automatically,** with who made it, why, and who approved it.
+  Nobody maintains a document register by hand.
+- **Routine checks run on their own.** Incomplete BOMs, invalid part numbers and untraced
+  parts are flagged before anything is released.
+- **Only what ISO 9001 actually needs.** Eight one-page procedures, each marked as an ISO
   requirement or a minimalQMS choice ([ISO 9001 map](docs/ISO9001-MAP.md)).
 
 ### A backbone for projects without one
@@ -32,10 +33,10 @@ Many projects outside industry focus almost entirely on design, with little or n
 around it: build, try, fix, repeat. That works until a design has to be repeated, handed
 over, shared or trusted.
 
-minimalQMS gives these projects a backbone without asking anyone to learn a quality system.
-Its guidelines, based on the same standards industry follows, let the agent ask the
-developer the questions that improve a design, at the moment they matter, and turn the
-answers into records:
+More and more developers design by chatting with an AI agent. minimalQMS formalizes those
+casual chats. Its guidelines, based on the same standards industry follows, let the agent
+ask the questions that improve a design, at the moment they matter, and turn the answers
+into records. Nobody has to learn a quality system:
 
 > **Before ordering parts:** "The LED driver runs at 1.2 A. What should happen if the fan
 > stops? Do we need a thermal cut-off?"
