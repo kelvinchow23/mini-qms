@@ -9,15 +9,15 @@ record-keeping. Humans make every decision.
 
 ## Why minimalQMS
 
-### Less red tape, more design
+### Less bureaucracy, more time for design intent
 
-Developing physical products under a quality system usually involves a lot of red tape:
-document control, approval chases, purchasing paperwork, traceability records and audit
-preparation. In industry, a large share of a product team's effort goes into this
-supporting work rather than the design itself, and much of a traditional organization
-exists only to keep that machinery running.
+Running product development under a quality system brings a lot of supporting work:
+document control, approvals, purchasing paperwork, traceability records and audit
+preparation. Some of it is necessary. Much of it is inefficient bureaucracy that takes
+time away from the design itself.
 
-minimalQMS uses AI agents to take that load off, so designers can focus on designing:
+minimalQMS uses AI agents to carry that load, so designers can spend their time on design
+intent:
 - **Agents do the paperwork.** They draft change requests, prepare design reviews, write
   minutes, prepare purchase lists and keep build records. Humans review and approve.
 - **Every change is tracked automatically,** with who made it, why, and who approved it.
@@ -29,18 +29,17 @@ minimalQMS uses AI agents to take that load off, so designers can focus on desig
 
 ### A backbone for projects without one
 
-Many projects outside industry focus almost entirely on design, with little or no control
-around it: build, try, fix, repeat. That works until a design has to be repeated, handed
-over, shared or trusted.
+Many projects run without a formal process: personal builds, research prototypes,
+open-source hardware, and early prototypes in any organization. They focus on the design
+itself: build, try, fix, repeat. That works until a design has to be repeated, handed over,
+shared or trusted.
 
 More and more developers design by chatting with an AI agent. minimalQMS formalizes those
-casual chats. Its guidelines, based on the same standards industry follows, let the agent
-ask the questions that improve a design, at the moment they matter, and turn the answers
-into records. Nobody has to learn a quality system:
+casual chats. Start a project from this repository and its companions, and it follows the
+intent of the standards (controlled, traceable designs) without anyone formally knowing
+they are doing it. The agent does the prompting: it asks the questions and runs the checks
+that improve a design, at the moment they matter, and turns the answers into records:
 
-> **Before ordering parts:** "The LED driver runs at 1.2 A. What should happen if the fan
-> stops? Do we need a thermal cut-off?"
->
 > **After a change:** "You moved the mounting holes. The lid from the last build won't fit
 > any more. Is this a new revision, or a new part?"
 >
