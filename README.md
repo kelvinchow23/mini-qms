@@ -9,36 +9,38 @@ record-keeping. Humans make every decision.
 
 ## Why minimalQMS
 
-### Less bureaucracy, more time for design intent
+### Less bureaucracy, more design intent
 
 Running product development under a quality system brings a lot of supporting work:
 document control, approvals, purchasing paperwork, traceability records and audit
 preparation. Some of it is necessary. Much of it is inefficient bureaucracy that takes
 time away from the design itself.
 
-minimalQMS uses AI agents to carry that load, so designers can spend their time on design
-intent:
-- **Agents do the paperwork.** They draft change requests, prepare design reviews, write
-  minutes, prepare purchase lists and keep build records. Humans review and approve.
-- **Every change is tracked automatically,** with who made it, why, and who approved it.
-  Nobody maintains a document register by hand.
-- **Routine checks run on their own.** Incomplete BOMs, invalid part numbers and untraced
-  parts are flagged before anything is released.
-- **Only what ISO 9001 actually needs.** Eight one-page procedures, each marked as an ISO
-  requirement or a minimalQMS choice ([ISO 9001 map](docs/ISO9001-MAP.md)).
+minimalQMS lets designers spend that time on design intent:
+- **Design with agents.** Agents work on the CAD, the PCB and the parts selection alongside
+  you. You set the intent, steer the work, review and approve.
+- **Agents automate the admin.** Change requests, review packages, minutes, purchase lists
+  and build records are drafted for you.
+- **Cross-referencing is automatic.** Checks that used to mean comparing documents by hand
+  (BOMs against part lists, part numbers, revisions, purchase records, traceability) run on
+  every change, and problems are flagged before anything is released.
+- **A streamlined process based on ISO 9001.** Eight one-page procedures
+  ([how they map to the standard](docs/ISO9001-MAP.md)).
 
-### A backbone for projects without one
+### Formalizing informal design projects
 
 Many projects run without a formal process: personal builds, research prototypes,
 open-source hardware, and early prototypes in any organization. They focus on the design
 itself: build, try, fix, repeat. That works until a design has to be repeated, handed over,
 shared or trusted.
 
-More and more developers design by chatting with an AI agent. minimalQMS formalizes those
-casual chats. Start a project from this repository and its companions, and it follows the
-intent of the standards (controlled, traceable designs) without anyone formally knowing
-they are doing it. The agent does the prompting: it asks the questions and runs the checks
-that improve a design, at the moment they matter, and turns the answers into records:
+Informal projects also move much faster than a formal process allows, and that speed is
+worth keeping. More and more developers design by chatting with an AI agent, and
+minimalQMS formalizes those casual chats without slowing them down. Start a project from
+this repository and its companions, and it follows the intent of the standards
+(controlled, traceable designs) without anyone formally knowing they are doing it. The
+agent asks the questions and runs the checks that improve a design, at the moment they
+matter, and turns the answers into records:
 
 > **After a change:** "You moved the mounting holes. The lid from the last build won't fit
 > any more. Is this a new revision, or a new part?"
@@ -123,6 +125,12 @@ After the tag, changes to minimalQMS follow its own change control.
 - **Interface beyond git.** What lets a non-technical team use this without seeing git?
   So far: agents as the main interface, readable generated documents, and the OTS
   library's catalogue site.
+
+## Note on ISO 9001
+
+minimalQMS is based on ISO 9001 but is not certified, and using it does not make a project
+or organization ISO 9001 certified. Certification is done by an accredited certification
+body. minimalQMS does not reproduce text from the standard.
 
 ## Licence
 
