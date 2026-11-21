@@ -73,7 +73,9 @@ is closed with evidence or carried forward at the next gate.
 ## 7. Check-ins
 The agent adds a short entry to `worklog.md` (SOP-003-A03) after each work session, or more often when
 useful: what changed and who changed it, what is next, what is blocked, and items for the
-next review. No reply is required.
+next review. The entry also records the time spent in the session, by activity (SOP-004
+section 8): the agent's working time, and the human's hands-on time as stated by the human
+when the agent asks. No other reply is required.
 *Basis: minimalQMS choice. Supports ISO §7.1.6.*
 
 ## Appendices

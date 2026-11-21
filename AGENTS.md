@@ -66,6 +66,14 @@ ECR issue, and every commit references it (`(ECR #n)`).
    passed quickly, even several in one session, but always in order, each with its record
    and approval.
 
+## Time tracking
+
+At the end of each work session, add the session's time to the `worklog.md` entry
+(SOP-003 section 7): your own working time per activity, and the human's hands-on time per
+activity. Ask the human for theirs in one short question; do not estimate it for them.
+Activity names are listed in [docs/INTERFACES.md](docs/INTERFACES.md). At G4, compile the
+entries into `scorecard.csv` and ask the human for the "before" estimates.
+
 ## Writing conventions
 
 - **SOPs are short:** about one page each. Write an SOP only for a process that's about to

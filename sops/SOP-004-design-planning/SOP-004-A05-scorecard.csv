@@ -1,0 +1,11 @@
+iteration,activity,agent_hours,human_hours,human_hours_before_estimate,notes
+1,planning,,,,
+1,requirements,,,,
+1,design,,,,CAD and PCB work
+1,part_selection,,,,searching and choosing parts
+1,purchasing,,,,order files and records
+1,documentation,,,,"requirements, minutes, instructions, records"
+1,review,,,,formal reviews and approvals
+1,build,,,,
+1,test,,,,
+1,release,,,,release and close-out
