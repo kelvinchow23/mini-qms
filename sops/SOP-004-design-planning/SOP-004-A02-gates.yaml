@@ -2,6 +2,6 @@
 # Records each gate needs (SOP-004 section 3). CI blocks a gate whose records are missing.
 G0: {passed_by: approval, requires: [00_planning/plan.yaml, roles.yaml]}
 G1: {passed_by: formal_review, requires: [01_requirements/requirements.yaml, 01_requirements/risks.csv]}
-G2: {passed_by: formal_review, requires: [design review minutes, 03_release/parts.csv, 03_release/bom.csv, 03_release/test_procedures/]}
+G2: {passed_by: formal_review, requires: [design review minutes, 03_release/parts.csv, 03_release/bom.csv, 03_release/test_procedures/, 03_release/assembly/, 03_release/inspection_checks.csv]}
 G3: {passed_by: formal_review, requires: ["builds/B00n/build.yaml, inspection.csv, trace.csv", "builds/B00n/test_results.csv covering every requirement verified by test"]}
 G4: {passed_by: formal_review, requires: ["builds/B00n/release.yaml for every unit", "NC records closed or dispositioned", lessons learned in worklog.md or a close-out note]}
