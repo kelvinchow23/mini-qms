@@ -1,6 +1,6 @@
 ---
 id: DR-nnn
-gate: G2                 # G1 / G2 / G3, or "change" for a change-only review
+gate: G2                 # G1 / G2 / G3 / G4, or "change" for a change-only review
 ecrs: []                 # e.g. [12, 15]
 prepared_by: design-agent
 prepared_on: YYYY-MM-DD

@@ -19,7 +19,7 @@ One SOP per PR. Status: ✅ merged · 🔄 open · ⬜ not started
 | 5 | **SOP-002 Part numbering, revisions and part classes:** `CCC-NNNN` OTS parts and `PPP-NNNN` / `PPP-A-NNNN` custom parts (project code), separate revision letters, interchangeability rule, lifecycle states, A/B/C classes, serial numbers. `parts.csv` and `bom.csv` templates. | #15 | ✅ |
 | – | Interfaces: shared names, IDs, product repo layout, data flow ([INTERFACES.md](INTERFACES.md)) and this index | #13 | ✅ |
 | 6 | **SOP-003 Design review:** check-ins vs. working decisions vs. formal reviews; package, minutes and work log templates | #7 | ✅ |
-| 7 | **SOP-004 Design and development planning:** gates G0–G5, `plan.yaml`, `gates.yaml`, `requirements.yaml`, `risks.csv` | #8 | ✅ |
+| 7 | **SOP-004 Design and development planning:** gates G0–G4 (five since the restructure), `plan.yaml`, `gates.yaml`, `requirements.yaml`, `risks.csv` | #8 | ✅ |
 | 8 | **SOP-005 Purchasing and suppliers:** barebones `purchases.csv` referring to the organization's own requisitions and POs; `suppliers.csv` with a one-line basis | #9 | ✅ |
 | 8a | **SOP-006 Incoming inspection and build records:** inspection by class, `build.yaml`, `trace.csv` | #10 | ✅ |
 | 8b | **SOP-007 Test and release:** test procedures, equipment and calibration, results, `release.yaml` | #11 | ✅ |
