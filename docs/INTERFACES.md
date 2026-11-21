@@ -10,7 +10,8 @@ add it here first.**
 roles.yaml                      SOP-001  who holds which role
 worklog.md                      SOP-003  check-ins and notable working decisions
 00_planning/
-  plan.yaml                     SOP-004  phase gates: target and actual dates
+  plan.yaml                     SOP-004  gates: target and actual dates
+  scorecard.csv                 SOP-004  agent and human time per activity, per iteration
   gates.yaml                    SOP-004  what each gate requires
 01_requirements/
   requirements.yaml             SOP-004  REQ-nnn with verification method
@@ -70,6 +71,12 @@ IDs are never reused. Numbers are zero-padded so they sort correctly.
 | G2 | Design freeze | Formal review; parts, BOM and test procedures released (SOP-002, SOP-007) |
 | G3 | Verified | Formal review of build and test results (SOP-006, SOP-007) |
 | G4 | Released | Formal review: units released, lessons learned (SOP-007) |
+
+## Scorecard activities (SOP-004 section 8)
+
+`planning`, `requirements`, `design`, `part_selection`, `purchasing`, `documentation`,
+`review`, `build`, `test`, `release`. Time entries in `worklog.md` and rows in
+`scorecard.csv` use these names.
 
 ## Shared columns
 

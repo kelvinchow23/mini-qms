@@ -31,7 +31,7 @@ before the next stage starts. Gates are the stage reviews ISO 9001 refers to.
 | Requirements | **G1** | Requirements reviewed | `requirements.yaml` with a verification method for each requirement, and `risks.csv` |
 | Design | **G2** | Design freeze | Design reviewed against requirements and risks; parts and BOM released (SOP-002); test procedures (SOP-007), assembly instructions and inspection checks (SOP-006) written |
 | Build and verify | **G3** | Verified | Units built and tested; results show the requirements are met (SOP-006, SOP-007) |
-| Release and close-out | **G4** | Released | Units released (SOP-007); lessons learned recorded, including errors made by agents |
+| Release and close-out | **G4** | Released | Units released (SOP-007); lessons learned recorded, including errors made by agents; scorecard compiled (section 8) |
 
 `gates.yaml` lists the records each gate requires. CI blocks a gate with missing records.
 A gate that does not apply may be skipped, with the reason stated in `plan.yaml`.
@@ -81,6 +81,13 @@ revisions and passes the gates again.
 
 *Basis: ISO §8.3.2, §8.3.6. The iteration model is a minimalQMS choice.*
 
+## 8. Scorecard
+Each iteration has a scorecard (`00_planning/scorecard.csv`, SOP-004-A05), compiled by the
+agent at G4 from the time entries in `worklog.md`. For each activity it shows the agent's
+time, the human's hands-on time, and the human's estimate of the time the activity would
+have taken without agents. The scorecard is reviewed with the lessons learned at G4.
+*Basis: minimalQMS choice. Supports ISO §9.1 (monitoring and measurement).*
+
 ## Appendices
 Appendices are forms and templates that belong to this SOP. They carry the SOP's revision
 and change only through a revision of this SOP.
@@ -91,3 +98,4 @@ and change only through a revision of this SOP.
 | SOP-004-A02 | Gate requirements | [SOP-004-A02-gates.yaml](SOP-004-A02-gates.yaml) | `00_planning/gates.yaml` |
 | SOP-004-A03 | Requirements | [SOP-004-A03-requirements.yaml](SOP-004-A03-requirements.yaml) | `01_requirements/requirements.yaml` |
 | SOP-004-A04 | Risk list (simplified FMEA) | [SOP-004-A04-risks.csv](SOP-004-A04-risks.csv) | `01_requirements/risks.csv` |
+| SOP-004-A05 | Iteration scorecard | [SOP-004-A05-scorecard.csv](SOP-004-A05-scorecard.csv) | `00_planning/scorecard.csv` |
