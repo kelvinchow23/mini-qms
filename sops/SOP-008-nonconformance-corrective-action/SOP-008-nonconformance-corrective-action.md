@@ -18,8 +18,11 @@ remove the cause where this is justified.
 *Basis: ISO §8.7, §10.2*
 
 ## 2. Scope
-Failed incoming inspections (SOP-006), failed tests (SOP-007), problems found in use or
-reported by customers, supplier problems, and procedures not followed.
+Items that do not match the approved design or order: parts that fail incoming inspection
+(SOP-006), units built incorrectly or with defective parts (SOP-007), problems found in
+released units or reported by customers, supplier problems, and procedures not followed.
+A design that fails its own verification is a design problem, not an NC; it is corrected
+by a design change (SOP-004 section 6).
 
 ## 3. Raising an NC
 Anyone, human or agent, who finds a nonconformity opens `nonconformance/NC-nnn.md` using SOP-008-A01 on the day it is found. The NC states what is wrong, how it was found, and the

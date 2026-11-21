@@ -47,14 +47,17 @@ chats so you can look back at how each decision was reached.
 
 ## How it works
 
-### Development is a cycle
+### The process
 
-![Development cycle](docs/img/development-cycle.png)
+![minimalQMS process](docs/img/minimalqms-process.png)
 
-Each iteration goes through six gates, from scope to close-out, starting from the last
-released revision. What you learned, what went wrong and any feedback become the change
-requests for the next round. Small fixes between iterations don't need to go through the
-gates. The [SOP overview](sops/README.md) has the details.
+A project goes through five stages, and each ends at a gate where you approve the work
+before moving on. If a build fails verification, you don't start over: you change the
+design, have that change reviewed, and build and test again until it passes. Once the
+units are released, what you learned becomes the starting point for the next iteration.
+Small fixes to a released design, like a hole that's slightly too small, go through a
+change request on their own without the gates. The [SOP overview](sops/README.md) has the
+details.
 
 ### Humans and agents work on the same design
 

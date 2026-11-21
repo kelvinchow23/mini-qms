@@ -25,7 +25,7 @@ Design validation is planned through requirements and gates (SOP-004).
 Each requirement verified by test (SOP-004) refers to a test procedure
 `03_release/test_procedures/TP-nnn.md`. A test procedure states the setup, the equipment,
 the steps, and for each measurement the limits and the requirement checked. Test
-procedures are controlled documents (SOP-001) and are released at gate G3.
+procedures are controlled documents (SOP-001) and are approved at G2 (design freeze).
 *Basis: ISO §8.3.4, §8.6*
 
 ## 4. Test equipment
@@ -42,12 +42,19 @@ whether it requires calibration, the calibration due date and the certificate re
 Record results in `test_results.csv`, one row per measurement: serial number, test
 procedure and step, date, tester, equipment, measured value, limits and result (`pass` or
 `fail`). An agent may run automated tests and record their results. A human performs or
-confirms any measurement the agent cannot take directly. A failure requires an NC
-(SOP-008); the unit is not released until the NC is dispositioned.
-*Basis: ISO §8.6, §8.7*
+confirms any measurement the agent cannot take directly.
+
+Determine the cause of each failure:
+- **Design cause:** the design does not meet the requirement. Correct it by a design change
+  (SOP-001), review the change, and retest (SOP-004 section 6). This is not an NC.
+- **Unit cause:** the unit does not match the approved design (wrong part, assembly
+  error, defective part). Raise an NC (SOP-008); the unit is not released until the NC is
+  dispositioned.
+
+*Basis: ISO §8.3.4 (design verification), §8.6, §8.7*
 
 ## 6. Release
-A unit may be released when all tests for its configuration have passed, or failures are
+Units are released at G4. A unit may be released when all tests for its configuration have passed, or failures are
 covered by an NC dispositioned `use-as-is`; its trace record is complete (SOP-006); and no
 deviation prevents release. The agent prepares `release.yaml` with this evidence. The
 release approver approves it (SOP-001 section 7) and merges it. CI checks the evidence

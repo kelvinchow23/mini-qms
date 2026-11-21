@@ -60,8 +60,8 @@ ECR issue, and every commit references it (`(ECR #n)`).
    yourself.
 9. **Work on the current gate only.** Know which gate the project is at (`plan.yaml`).
    Exploring, researching and discussing later work is fine; acting on it is not. Do not
-   register a project before G0, allocate part numbers or choose parts before G2, release
-   parts before G3, or order anything before parts are released. Record ideas for later
+   register a project before G0, choose parts or allocate part numbers before the design
+   stage (after G1), release parts before G2, or order anything before parts are released. Record ideas for later
    gates in `worklog.md` and bring them up when that gate's work starts. Gates may be
    passed quickly, even several in one session, but always in order, each with its record
    and approval.

@@ -21,20 +21,21 @@ before work proceeds.
 Every product repo, from the start of a project or iteration to close-out. Day-to-day
 scheduling is outside this procedure; any tool may be used.
 
-## 3. Phase gates
+## 3. Stages and gates
+Development runs in five stages. Each stage ends at a gate, where the work is approved
+before the next stage starts. Gates are the stage reviews ISO 9001 refers to.
 
-| Gate | Name | Required to pass |
-|---|---|---|
-| **G0** | Scope | `plan.yaml` approved: goal, scope, make/buy, roles, target dates |
-| **G1** | Requirements frozen | `requirements.yaml` and `risks.csv` approved in a formal review |
-| **G2** | Design complete | Design reviewed against requirements and risks; actions closed or carried forward |
-| **G3** | Released for build | Parts and BOM released (SOP-002); test procedures released (SOP-007) |
-| **G4** | Built and verified | Every unit released or dispositioned (SOP-007, SOP-008) |
-| **G5** | Close-out | Lessons learned recorded, including errors made by agents |
+| Stage | Gate | Name | Required to pass |
+|---|---|---|---|
+| Scope | **G0** | Scope approved | `plan.yaml`: goal, scope, make/buy, roles, target dates |
+| Requirements | **G1** | Requirements reviewed | `requirements.yaml` with a verification method for each requirement, and `risks.csv` |
+| Design | **G2** | Design freeze | Design reviewed against requirements and risks; parts and BOM released (SOP-002); test procedures written (SOP-007) |
+| Build and verify | **G3** | Verified | Units built and tested; results show the requirements are met (SOP-006, SOP-007) |
+| Release and close-out | **G4** | Released | Units released (SOP-007); lessons learned recorded, including errors made by agents |
 
 `gates.yaml` lists the records each gate requires. CI blocks a gate with missing records.
 A gate that does not apply may be skipped, with the reason stated in `plan.yaml`.
-*Basis: ISO §8.3.2. The six gates are a minimalQMS choice.*
+*Basis: ISO §8.3.2, §8.3.4, §8.6. The five gates are a minimalQMS choice.*
 
 ## 4. Plan
 `plan.yaml` states the goal, scope, responsibilities (from `roles.yaml`), and for each
@@ -54,19 +55,22 @@ Both are frozen at G1. Later changes follow SOP-001.
 *Basis: ISO §8.3.3, §6.1.2. The FMEA format is a minimalQMS choice.*
 
 ## 6. Passing a gate
-Gates G1–G3 are passed by a formal review (SOP-003). Gates G0, G4 and G5 are passed by an
-explicit approval (SOP-001 section 7). Record the actual date and the approval reference
+G0 is passed by an explicit approval (SOP-001 section 7). G1 to G4 are passed by a formal
+review (SOP-003). Record the actual date and the approval reference
 in `plan.yaml`.
 
 Gates are passed in order. Several gates may be passed in quick succession, including in
 one session, provided each gate's records and approval exist before work for the next gate
 starts. Ideas for later gates are recorded in `worklog.md` until that gate is reached.
+When verification fails, the iteration stays in the build-and-verify stage. A design
+problem is corrected by a design change (SOP-001) with a review of that change, followed by
+a rebuild or retest. G3 is passed only when the results meet the requirements.
 *Basis: ISO §8.3.4, §8.3.5. Passing gates in quick succession is a minimalQMS choice.*
 
 ## 7. Iterations
 Development repeats in iterations. Each iteration starts at G0 from the last released
 revisions and passes the gates again.
-- **Inputs:** lessons learned (G5), nonconformances (SOP-008), feedback from use, and open
+- **Inputs:** lessons learned (G4), nonconformances (SOP-008), feedback from use, and open
   ECRs. G0 records which ECRs the iteration covers.
 - **Scope of each gate:** only what the iteration changes. A gate the iteration does not
   affect is skipped, with the reason in `plan.yaml`. Review packages cover the changes since

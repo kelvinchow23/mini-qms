@@ -15,5 +15,4 @@ gates:
   - {gate: G2, target: YYYY-MM-DD, actual: null, approval: null}
   - {gate: G3, target: YYYY-MM-DD, actual: null, approval: null}
   - {gate: G4, target: YYYY-MM-DD, actual: null, approval: null}
-  - {gate: G5, target: YYYY-MM-DD, actual: null, approval: null}
 skipped_gates: []            # e.g. [{gate: G1, reason: "..."}]

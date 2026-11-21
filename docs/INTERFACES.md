@@ -48,7 +48,7 @@ deviations/DEV-nnn.md           SOP-001
 | `DEV-nnn` | Deviation | SOP-001 | `DEV-001` |
 | `DR-nnn` | Formal design review | SOP-003 | `DR-004` |
 | `A-nnn` | Action from a review | SOP-003 | `A-012` |
-| `G0`–`G5` | Phase gates | SOP-004 | `G3` |
+| `G0`–`G4` | Gates | SOP-004 | `G2` |
 | `REQ-nnn` | Requirement | SOP-004 | `REQ-007` |
 | `RISK-nnn` | Risk (FMEA line) | SOP-004 | `RISK-003` |
 | `P-nnnn` | Purchase line | SOP-005 | `P-0042` |
@@ -59,16 +59,15 @@ deviations/DEV-nnn.md           SOP-001
 
 IDs are never reused. Numbers are zero-padded so they sort correctly.
 
-## Phase gates (SOP-004)
+## Gates (SOP-004)
 
 | Gate | Name | Passed by |
 |---|---|---|
-| G0 | Scope | Approval of the plan |
-| G1 | Requirements frozen | Formal review (SOP-003) |
-| G2 | Design complete | Formal review (SOP-003) |
-| G3 | Released for build | Formal review, plus parts and BOM released (SOP-002) |
-| G4 | Built and verified | Every unit released or dispositioned (SOP-007, SOP-008) |
-| G5 | Close-out | Lessons learned, including where AI was wrong |
+| G0 | Scope approved | Approval of the plan |
+| G1 | Requirements reviewed | Formal review (SOP-003) |
+| G2 | Design freeze | Formal review; parts, BOM and test procedures released (SOP-002, SOP-007) |
+| G3 | Verified | Formal review of build and test results (SOP-006, SOP-007) |
+| G4 | Released | Formal review: units released, lessons learned (SOP-007) |
 
 ## Shared columns
 
@@ -92,6 +91,7 @@ SOP-002 parts.csv (class) ─────────► SOP-005 what to buy · 
 SOP-005 purchases.csv (P-nnnn) ────► SOP-006 inspection and trace.csv
 SOP-006 inspection fail ───────────► SOP-008 NC record
 SOP-006 built units (serials) ─────► SOP-007 tests and release
-SOP-007 test fail ─────────────────► SOP-008 NC record
+SOP-007 unit built wrong ──────────► SOP-008 NC record
+SOP-007 design fails test ─────────► SOP-001 design change, retest
 SOP-008 corrective action ─────────► SOP-001 ECR, if the design must change
 ```

@@ -10,18 +10,16 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, Polygon
 
 # Phase boundaries on an arbitrary time axis (not to scale)
-X = {"start": 0, "G0": 1, "G1": 3, "G2": 6, "G3": 8, "build": 10, "G4": 12, "G5": 13.5}
+X = {"start": 0, "G0": 1, "G1": 3, "G2": 7, "buy": 8.6, "G3": 11, "G4": 12.8}
 PHASES = [
     ("Scope", "start", "G0"),
     ("Requirements", "G0", "G1"),
     ("Design", "G1", "G2"),
-    ("Release prep", "G2", "G3"),
-    ("Purchase & build", "G3", "build"),
-    ("Test & release", "build", "G4"),
-    ("Close-out", "G4", "G5"),
+    ("Build & verify", "G2", "G3"),
+    ("Release", "G3", "G4"),
 ]
-GATES = [("G0", "Scope"), ("G1", "Requirements\nfrozen"), ("G2", "Design\ncomplete"),
-         ("G3", "Released\nfor build"), ("G4", "Built &\nverified"), ("G5", "Close-out")]
+GATES = [("G0", "Scope\napproved"), ("G1", "Requirements\nreviewed"), ("G2", "Design\nfreeze"),
+         ("G3", "Verified"), ("G4", "Released")]
 
 INK = "#1f2937"
 MUTED = "#6b7280"
@@ -32,22 +30,22 @@ ACCENT = "#dc2626"  # gates and approvals
 
 # (label, [(start, end, style, text)], [review points])
 LANES = [
-    ("SOP-001  Change control", [("start", "G5", "light", "every change: ECR → PR → approval → human merge")], []),
-    ("SOP-003  Design review", [("start", "G5", "light", "check-ins in worklog.md", 10.75)], ["G1", "G2", "G3"]),
+    ("SOP-001  Change control", [("start", "G4", "light", "every change: ECR → PR → approval → human merge")], []),
+    ("SOP-003  Design review", [("start", "G4", "light", "check-ins in worklog.md", 5.0)], ["G1", "G2", "G3", "G4"]),
     ("SOP-004  Planning", [("start", "G1", "solid", "plan, requirements, risks"),
-                           ("G4", "G5", "solid", "lessons learned")], []),
-    ("SOP-002  Parts & revisions", [("G1", "G3", "solid", "part numbers, BOM → released")], []),
-    ("SOP-005  Purchasing", [("G3", "build", "solid", "order list → orders")], []),
-    ("SOP-006  Inspection & build", [("G3", "G4", "solid", "inspect · build · trace")], []),
-    ("SOP-007  Test & release", [("G2", "G3", "light", "test procedures"),
-                                 ("build", "G4", "solid", "test · release")], []),
-    ("SOP-008  Nonconformance", [("G3", "G5", "hatch", "as needed: contain · disposition · fix cause")], []),
+                           ("G3", "G4", "solid", "lessons")], []),
+    ("SOP-002  Parts & revisions", [("G1", "G2", "solid", "part numbers, BOM → released")], []),
+    ("SOP-005  Purchasing", [("G2", "buy", "solid", "orders")], []),
+    ("SOP-006  Inspection & build", [("G2", "G3", "solid", "inspect · build · trace")], []),
+    ("SOP-007  Test & release", [("G1", "G2", "light", "test procedures"),
+                                 ("buy", "G3", "solid", "test"), ("G3", "G4", "solid", "release")], []),
+    ("SOP-008  Nonconformance", [("G2", "G4", "hatch", "as needed: parts or units not as designed")], []),
 ]
 
 
 def main():
     fig, ax = plt.subplots(figsize=(13, 6.4), dpi=100)
-    left, right = -4.2, X["G5"] + 0.3
+    left, right = -4.2, X["G4"] + 0.9
     n = len(LANES)
     top = n + 2.05
     ax.set_xlim(left, right)
@@ -77,7 +75,7 @@ def main():
     for row, (label, bars, reviews) in enumerate(LANES):
         y = n - 1 - row
         ax.text(left + 0.05, y, label, ha="left", va="center", fontsize=9.5, color=INK, family="monospace")
-        ax.plot([X["start"], X["G5"]], [y, y], color=GRID, lw=0.8, zorder=0)
+        ax.plot([X["start"], X["G4"]], [y, y], color=GRID, lw=0.8, zorder=0)
         for bar in bars:
             a, b, style, text = bar[:4]
             x0, x1 = X[a], X[b]

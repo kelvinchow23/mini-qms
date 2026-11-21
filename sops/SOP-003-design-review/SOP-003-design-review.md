@@ -18,7 +18,7 @@ decisions, and to give the approver an informed yes or no.
 *Basis: ISO §8.3.4*
 
 ## 2. Scope
-Formal reviews at gates G1–G3 (SOP-004) and for design changes that require formal review
+Formal reviews at gates G1–G4 (SOP-004) and for design changes that require formal review
 (SOP-001), plus check-ins between reviews.
 
 ## 3. Types of interaction
