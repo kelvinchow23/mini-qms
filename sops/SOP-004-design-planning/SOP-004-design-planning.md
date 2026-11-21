@@ -29,7 +29,7 @@ before the next stage starts. Gates are the stage reviews ISO 9001 refers to.
 |---|---|---|---|
 | Scope | **G0** | Scope approved | `plan.yaml`: goal, scope, make/buy, roles, target dates |
 | Requirements | **G1** | Requirements reviewed | `requirements.yaml` with a verification method for each requirement, and `risks.csv` |
-| Design | **G2** | Design freeze | Design reviewed against requirements and risks; parts and BOM released (SOP-002); test procedures written (SOP-007) |
+| Design | **G2** | Design freeze | Design reviewed against requirements and risks; parts and BOM released (SOP-002); test procedures (SOP-007), assembly instructions and inspection checks (SOP-006) written |
 | Build and verify | **G3** | Verified | Units built and tested; results show the requirements are met (SOP-006, SOP-007) |
 | Release and close-out | **G4** | Released | Units released (SOP-007); lessons learned recorded, including errors made by agents |
 

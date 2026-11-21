@@ -20,6 +20,8 @@ worklog.md                      SOP-003  check-ins and notable working decisions
 03_release/
   parts.csv, bom.csv            SOP-002
   test_procedures/TP-nnn.md     SOP-007
+  assembly/PPP-A-NNNN.md        SOP-006  assembly instruction per in-house assembly
+  inspection_checks.csv         SOP-006  incoming checks for Class A parts
 purchasing/
   purchases.csv                 SOP-005
   suppliers.csv                 SOP-005

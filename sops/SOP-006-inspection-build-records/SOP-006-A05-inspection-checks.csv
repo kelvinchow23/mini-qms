@@ -1,0 +1,4 @@
+pn,check_id,characteristic,method,criterion,sample,notes
+PPP-0002,1,Board outline,Calipers,100.0 x 80.0 mm +/- 0.2 mm,first 3,example row - delete
+PPP-0002,2,Silkscreen revision,Visual,Shows rev A,all,example row - delete
+ECO-0001,1,Part marking,Visual,Matches MPN on the order,all,example row - delete

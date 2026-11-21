@@ -25,7 +25,7 @@ contents. Testing and release are covered by SOP-007.
 
 | Class | On receipt |
 |---|---|
-| **A** | Inspect against the order: correct part and revision, quantity, no visible damage, and any checks listed for the PN in `parts.csv`. Record the result in `inspection.csv`. |
+| **A** | Inspect against the order (correct part and revision, quantity, no visible damage) and against the checks for the PN in `inspection_checks.csv` (SOP-006-A05). Record the result in `inspection.csv`. |
 | **B** | Visually confirm the item. No record beyond the received date in `purchases.csv`. |
 | **C** | No inspection. |
 
@@ -34,7 +34,17 @@ When a Class A item fails, mark it `fail`, segregate it from accepted stock, and
 NC (SOP-008). Photos may be stored with the inspection record.
 *Basis: ISO §8.4.2, §8.6. Classes are defined in SOP-002.*
 
-## 4. Opening a build
+## 4. Assembly instructions and inspection checks
+Each assembly (`PPP-A-NNNN`) built in-house has an assembly instruction
+(`03_release/assembly/PPP-A-NNNN.md`, SOP-006-A04) with the same revision as the assembly.
+Each Class A part has its incoming checks in `03_release/inspection_checks.csv`
+(SOP-006-A05). Both are design outputs, approved at G2 with the BOM (SOP-004). The builder
+follows the instruction; a step that cannot be followed as written is recorded in the build
+record and an ECR is raised.
+*Basis: ISO §8.3.5 (design outputs specify production and inspection), §8.5.1 (documented
+information for production)*
+
+## 5. Opening a build
 Before assembly, record in `builds/B00n/build.yaml`:
 - build ID, actual start date and builder;
 - assembly PN and revision, and the QMS revision in use;
@@ -45,7 +55,7 @@ Before assembly, record in `builds/B00n/build.yaml`:
 Use only `released` parts and revisions (SOP-002). Any other use requires a deviation.
 *Basis: ISO §8.5.1, §8.5.2*
 
-## 5. Trace record
+## 6. Trace record
 `trace.csv` has one row per unit per traced part: serial number, PN, revision, quantity,
 purchase line (`P-nnnn`), and the sub-assembly's own serial number where it has one. Class A parts are traced per unit. Class B parts are traced once
 per build (serial number `all`). Class C parts are not traced.
@@ -54,9 +64,9 @@ An agent may prepare `trace.csv` from the build plan. The builder confirms or co
 during or immediately after assembly. Corrections are never made later from memory.
 *Basis: ISO §8.5.2. Traceability by class is a minimalQMS choice.*
 
-## 6. Records
-`build.yaml`, `inspection.csv` and `trace.csv` in `builds/B00n/` are controlled under
-SOP-001. CI checks that every Class A and B line in `trace.csv` refers to an existing
+## 7. Records
+`build.yaml`, `inspection.csv` and `trace.csv` in `builds/B00n/`, the assembly instructions
+and the inspection checks are controlled under SOP-001. CI checks that every Class A and B line in `trace.csv` refers to an existing
 purchase line, and that every Class A purchase line used has passed inspection.
 
 ## Appendices
@@ -68,3 +78,5 @@ and change only through a revision of this SOP.
 | SOP-006-A01 | Build record header | [SOP-006-A01-build.yaml](SOP-006-A01-build.yaml) | `builds/B00n/build.yaml` |
 | SOP-006-A02 | Incoming inspection record | [SOP-006-A02-inspection.csv](SOP-006-A02-inspection.csv) | `builds/B00n/inspection.csv` |
 | SOP-006-A03 | Trace record | [SOP-006-A03-trace.csv](SOP-006-A03-trace.csv) | `builds/B00n/trace.csv` |
+| SOP-006-A04 | Assembly instruction | [SOP-006-A04-assembly-instruction.md](SOP-006-A04-assembly-instruction.md) | `03_release/assembly/PPP-A-NNNN.md` |
+| SOP-006-A05 | Incoming inspection checks | [SOP-006-A05-inspection-checks.csv](SOP-006-A05-inspection-checks.csv) | `03_release/inspection_checks.csv` |
