@@ -64,7 +64,8 @@ ECR issue, and every commit references it (`(ECR #n)`).
    stage (after G1), release parts before G2, or order anything before parts are released. Record ideas for later
    gates in `worklog.md` and bring them up when that gate's work starts. Gates may be
    passed quickly, even several in one session, but always in order, each with its record
-   and approval.
+   and approval. During each stage, ask the human the questions in that gate's checklist
+   (SOP-004-A06) as the work makes them relevant, rather than all at once at the gate.
 
 ## Time tracking
 

@@ -34,6 +34,7 @@ before the next stage starts. Gates are the stage reviews ISO 9001 refers to.
 | Release and close-out | **G4** | Released | Units released (SOP-007); lessons learned recorded, including errors made by agents; scorecard compiled (section 8) |
 
 `gates.yaml` lists the records each gate requires. CI blocks a gate with missing records.
+The gate checklists (SOP-004-A06) list the records and the questions answered at each gate.
 A gate that does not apply may be skipped, with the reason stated in `plan.yaml`.
 *Basis: ISO §8.3.2, §8.3.4, §8.6. The five gates are a minimalQMS choice.*
 
@@ -99,3 +100,4 @@ and change only through a revision of this SOP.
 | SOP-004-A03 | Requirements | [SOP-004-A03-requirements.yaml](SOP-004-A03-requirements.yaml) | `01_requirements/requirements.yaml` |
 | SOP-004-A04 | Risk list (simplified FMEA) | [SOP-004-A04-risks.csv](SOP-004-A04-risks.csv) | `01_requirements/risks.csv` |
 | SOP-004-A05 | Iteration scorecard | [SOP-004-A05-scorecard.csv](SOP-004-A05-scorecard.csv) | `00_planning/scorecard.csv` |
+| SOP-004-A06 | Gate checklists | [SOP-004-A06-gate-checklists.md](SOP-004-A06-gate-checklists.md) | Used by agents and reviewers; not copied |
