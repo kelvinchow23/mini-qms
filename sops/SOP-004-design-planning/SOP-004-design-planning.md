@@ -89,6 +89,22 @@ time, the human's hands-on time, and the human's estimate of the time the activi
 have taken without agents. The scorecard is reviewed with the lessons learned at G4.
 *Basis: minimalQMS choice. Supports ISO §9.1 (monitoring and measurement).*
 
+## 9. Build package
+The build package (`03_build_package/`) holds the design outputs needed to buy, make,
+build and test the product:
+- `parts.csv` and `bom.csv` (SOP-002);
+- mechanical: STEP files and PDF drawings, and STL or 3MF files for printed parts, each
+  exported from the MCAD tool with the version it came from;
+- electronics: PCB fabrication and assembly files (e.g. Gerbers, PCB BOM, placement file),
+  exported from the ECAD tool;
+- software: released binaries or images, with their version;
+- assembly instructions and inspection checks (SOP-006), and test procedures (SOP-007).
+
+Design sources remain in `02_design/`. Large binary files are stored with Git LFS. The
+package is complete when the product can be bought, made, built and tested from it alone.
+It is approved at G2.
+*Basis: ISO §8.3.5, §8.5.1. The folder and its contents are a minimalQMS choice.*
+
 ## Appendices
 Appendices are forms and templates that belong to this SOP. They carry the SOP's revision
 and change only through a revision of this SOP.

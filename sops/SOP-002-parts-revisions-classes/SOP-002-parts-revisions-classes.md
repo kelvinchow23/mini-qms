@@ -26,8 +26,8 @@ parts, harnesses), assemblies, firmware and consumables. Also serial numbers of 
 | Type | Format | Kept in | Example |
 |---|---|---|---|
 | **OTS part** (off the shelf) | `CCC-NNNN` | OTS library (`minimal-qms-ots-library` repo) | `HWS-0001` M3x8 screws |
-| **Custom part** | `PPP-NNNN` | Product repo, `03_release/parts.csv` | `PRX-0004` printed lid |
-| **Custom assembly** | `PPP-A-NNNN` | Product repo, `03_release/parts.csv` | `PRX-A-0003` assembled PCB |
+| **Custom part** | `PPP-NNNN` | Product repo, `03_build_package/parts.csv` | `PRX-0004` printed lid |
+| **Custom assembly** | `PPP-A-NNNN` | Product repo, `03_build_package/parts.csv` | `PRX-A-0003` assembled PCB |
 
 - `CCC` is an OTS category code; `PPP` is the project code. Both are 3 capital letters,
   registered in the OTS library, and never the same. `A` is a fixed letter that marks an
@@ -98,9 +98,24 @@ purchase line or print job.
 
 *Basis: ISO §8.5.2. The format is a minimalQMS choice.*
 
-## 8. Records
-- Product repo `03_release/parts.csv`: custom parts and assemblies.
-- Product repo `03_release/bom.csv`: master BOM, one block of lines per assembly (top level
+## 8. Configurations and baselines
+A configuration is the set of part revisions, including software, that makes up an
+assembly. The BOM of the top assembly at a given revision defines it.
+- **Variants:** each variant of a product is a separate top assembly (`PPP-A-NNNN`) with its
+  own BOM, in the same repo. Variants share common parts; shared parts are never
+  duplicated. Variants that share little of their design are separate projects.
+- **Software** that ships in the product is a custom part. Its version tag is its revision,
+  and it appears on the BOM. A software update to a released product follows SOP-001.
+- **Baselines:** each released configuration is tagged `<top assembly>-rev<X>` (e.g.
+  `PRX-A-0001-revB`). `main` holds the current approved state; branches are short-lived. A
+  fix to an earlier baseline is made on a branch created from its tag.
+
+*Basis: ISO §8.3.5, §8.5.2, §8.5.6. ISO 10007 gives guidance on configuration management.
+The variant, software and tag rules are a minimalQMS choice.*
+
+## 9. Records
+- Product repo `03_build_package/parts.csv`: custom parts and assemblies.
+- Product repo `03_build_package/bom.csv`: master BOM, one block of lines per assembly (top level
   and each sub-assembly), referring to OTS and custom PNs alike. Exported from the CAD tools
   at release.
 - OTS library: `parts/CCC.csv` (one file per prefix), `categories.csv` and `projects.csv`.
@@ -114,5 +129,5 @@ and change only through a revision of this SOP.
 
 | ID | Title | File | Used in product repos as |
 |---|---|---|---|
-| SOP-002-A01 | Custom parts list | [SOP-002-A01-custom-parts.csv](SOP-002-A01-custom-parts.csv) | `03_release/parts.csv` |
-| SOP-002-A02 | Master BOM | [SOP-002-A02-bom.csv](SOP-002-A02-bom.csv) | `03_release/bom.csv` |
+| SOP-002-A01 | Custom parts list | [SOP-002-A01-custom-parts.csv](SOP-002-A01-custom-parts.csv) | `03_build_package/parts.csv` |
+| SOP-002-A02 | Master BOM | [SOP-002-A02-bom.csv](SOP-002-A02-bom.csv) | `03_build_package/bom.csv` |
