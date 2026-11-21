@@ -18,8 +18,11 @@ worklog.md                      SOP-003  check-ins and notable working decisions
   risks.csv                     SOP-004  RISK-nnn (lightweight FMEA)
 02_design/
   reviews/DR-nnn/               SOP-003  package, minutes, transcript, visuals
-03_release/
+03_build_package/               SOP-004  everything needed to buy, make, build and test
   parts.csv, bom.csv            SOP-002
+  mechanical/                   SOP-004  STEP, PDF drawings, STL/3MF (with MCAD version)
+  electronics/                  SOP-004  PCB fabrication and assembly files (with ECAD version)
+  software/                     SOP-004  released binaries or images
   test_procedures/TP-nnn.md     SOP-007
   assembly/PPP-A-NNNN.md        SOP-006  assembly instruction per in-house assembly
   inspection_checks.csv         SOP-006  incoming checks for Class A parts
@@ -33,6 +36,7 @@ builds/B00n/
   trace.csv                     SOP-006  which purchases went into which unit
   test_results.csv              SOP-007
   release.yaml                  SOP-007  release decision per unit
+builds/unit_history.csv         SOP-006  changes to units after release
 equipment/equipment.csv         SOP-007  test equipment and calibration due dates
 nonconformance/NC-nnn.md        SOP-008
 deviations/DEV-nnn.md           SOP-001
@@ -42,6 +46,7 @@ deviations/DEV-nnn.md           SOP-001
 
 | ID | Meaning | Defined in | Example |
 |---|---|---|---|
+| `<top assembly>-rev<X>` | Baseline tag of a released configuration | SOP-002 | `PRX-A-0001-revB` |
 | `CCC-NNNN` | OTS part (OTS library) | SOP-002 | `HWS-0001` |
 | `PPP-NNNN` + rev | Custom part (product repo) | SOP-002 | `PRX-0004` rev `B` |
 | `PPP-A-NNNN` + rev | Custom assembly (product repo) | SOP-002 | `PRX-A-0003` rev `A` |
