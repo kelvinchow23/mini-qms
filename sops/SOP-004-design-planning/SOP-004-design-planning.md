@@ -57,7 +57,11 @@ Both are frozen at G1. Later changes follow SOP-001.
 Gates G1–G3 are passed by a formal review (SOP-003). Gates G0, G4 and G5 are passed by an
 explicit approval (SOP-001 section 7). Record the actual date and the approval reference
 in `plan.yaml`.
-*Basis: ISO §8.3.4, §8.3.5*
+
+Gates are passed in order. Several gates may be passed in quick succession, including in
+one session, provided each gate's records and approval exist before work for the next gate
+starts. Ideas for later gates are recorded in `worklog.md` until that gate is reached.
+*Basis: ISO §8.3.4, §8.3.5. Passing gates in quick succession is a minimalQMS choice.*
 
 ## 7. Iterations
 Development repeats in iterations. Each iteration starts at G0 from the last released

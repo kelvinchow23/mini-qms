@@ -58,6 +58,13 @@ ECR issue, and every commit references it (`(ECR #n)`).
 8. **AI output is input, not a decision.** When you review a design or summarize a
    discussion, list each finding so a human can accept or reject it. Don't resolve them
    yourself.
+9. **Work on the current gate only.** Know which gate the project is at (`plan.yaml`).
+   Exploring, researching and discussing later work is fine; acting on it is not. Do not
+   register a project before G0, allocate part numbers or choose parts before G2, release
+   parts before G3, or order anything before parts are released. Record ideas for later
+   gates in `worklog.md` and bring them up when that gate's work starts. Gates may be
+   passed quickly, even several in one session, but always in order, each with its record
+   and approval.
 
 ## Writing conventions
 
