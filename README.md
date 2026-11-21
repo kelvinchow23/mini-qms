@@ -45,7 +45,15 @@ the agent asks the kind of questions a good reviewer would:
 When you get to a design review, or move on to the next stage, the agent summarizes the
 chats so you can look back at how each decision was reached.
 
+You don't have to read the procedures. They're there if you're curious, but you can ignore
+them. Set your project up with these repos and keep working with your agent like you
+normally would. It handles the process side as you go. When you look back through the
+project later, you'll probably find it's been following them without you really noticing.
+
 ## How it works
+
+None of this has to be learned up front. It's described here for anyone curious about
+what happens underneath.
 
 ### The process
 
