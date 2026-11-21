@@ -42,6 +42,8 @@ contains:
   and risks affected.
 - **Independent findings:** from a fresh agent session with no memory of the design work.
 - **Open items:** carried-over actions and known gaps.
+- **Gate checklist:** at a gate review, the answer to each question in the gate checklist
+  (SOP-004-A06), with links to the evidence.
 
 *Basis: ISO §8.3.4. The package format and independent agent review are a minimalQMS
 choice (SOP-001 section 8).*
